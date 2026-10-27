@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nandini | Placement Journey — B.Tech Placement Preparation Dashboard</title>
+  <meta name="description" content="A comprehensive, professional placement preparation dashboard and study tracker for Nandini, 3rd-year B.Tech Computer Engineering student preparing for software engineering placements.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+  
+  <!-- Google Fonts: Inter and Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Application Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="theme-light">
+
+  <div class="app-container">
+
+    <!-- DESKTOP & MOBILE SIDEBAR NAVIGATION -->
+    <aside class="app-sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-badge-icon">N</div>
+        <div class="brand-text">
+          <h1>Nandini</h1>
+          <span>Placement Journey 🎓</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <!-- Section: Overview -->
+        <div class="nav-section-title">Overview</div>
+        <a href="#view-dashboard" class="nav-item active" data-view="view-dashboard">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          </span>
+          <span>Dashboard</span>
+        </a>
+
+        <!-- Section: Daily Execution -->
+        <div class="nav-section-title">Daily Execution</div>
+        <a href="#view-planner" class="nav-item" data-view="view-planner">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          </span>
+          <span>Daily Planner</span>
+        </a>
+        <a href="#view-timer" class="nav-item" data-view="view-timer">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </span>
+          <span>Study Timer</span>
+        </a>
+
+        <!-- Section: Preparation Roadmap & Syllabus -->
+        <div class="nav-section-title">Curriculum & Practice</div>
+        <a href="#view-roadmap" class="nav-item" data-view="view-roadmap">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
+          </span>
+          <span>24-Week Roadmap</span>
+        </a>
+        <a href="#view-dsa" class="nav-item" data-view="view-dsa">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          </span>
+          <span>DSA & Coding</span>
+        </a>
+        <a href="#view-aptitude" class="nav-item" data-view="view-aptitude">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          </span>
+          <span>Aptitude & Reasoning</span>
+        </a>
+        <a href="#view-core" class="nav-item" data-view="view-core">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          </span>
+          <span>Core CS Subjects</span>
+        </a>
+        <a href="#view-skills" class="nav-item" data-view="view-skills">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </span>
+          <span>Soft Skills & HR</span>
+        </a>
+
+        <!-- Section: Portfolio & Applications -->
+        <div class="nav-section-title">Portfolio & Careers</div>
+        <a href="#view-certifications" class="nav-item" data-view="view-certifications">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+          </span>
+          <span>Certifications</span>
+        </a>
+        <a href="#view-projects" class="nav-item" data-view="view-projects">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+          </span>
+          <span>Project Portfolio</span>
+        </a>
+        <a href="#view-companies" class="nav-item" data-view="view-companies">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          </span>
+          <span>Target Companies</span>
+        </a>
+        <a href="#view-resumes" class="nav-item" data-view="view-resumes">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          </span>
+          <span>Resume & Pipeline</span>
+        </a>
+
+        <!-- Section: Insights & Settings -->
+        <div class="nav-section-title">Insights & Settings</div>
+        <a href="#view-analytics" class="nav-item" data-view="view-analytics">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          </span>
+          <span>Analytics & Review</span>
+        </a>
+        <a href="#view-settings" class="nav-item" data-view="view-settings">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          </span>
+          <span>Settings & Backup</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile-widget">
+          <div class="user-avatar">N</div>
+          <div class="user-info">
+            <span class="user-name">Nandini</span>
+            <span class="user-role">3rd Year B.Tech CSE</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN APPLICATION WRAPPER -->
+    <main class="main-wrapper">
+
+      <!-- TOPBAR NAVIGATION -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button class="sidebar-toggle-btn" id="sidebar-toggle-btn" aria-label="Toggle Navigation">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          <div class="topbar-title-meta">
+            <span class="topbar-subhead">SDE Placement Preparation</span>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="header-metric-pill" id="header-countdown-pill" title="Placement Drive Target Countdown">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <span>-- Days</span>
+          </div>
+          <div class="header-metric-pill" id="header-streak-badge" title="Consecutive Daily Study Streak">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
+            <span>0 Day Streak</span>
+          </div>
+          <div class="header-metric-pill" id="header-study-pill" title="Today's Studied Time vs Daily Target">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>0m Studied</span>
+          </div>
+          <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle Light / Dark Theme">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <span>Theme</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- PAGE CONTENT WRAPPER -->
+      <div class="page-content-wrapper">
+
+        <!-- ==========================================
+             1. EXECUTIVE DASHBOARD VIEW
+             ========================================== -->
+        <section id="view-dashboard" class="page-view active">
+          <!-- Executive Welcome Banner & Study Target -->
+          <div class="dash-executive-grid">
+            <div class="welcome-executive-card">
+              <div>
+                <div class="executive-meta-row">
+                  <span class="badge badge-primary" id="dash-prep-week">Week 1 of 24</span>
+                  <span class="badge badge-info" id="dash-days-remaining">-- days remaining</span>
+                </div>
+                <h2 class="welcome-headline">Welcome back, Nandini</h2>
+                <p class="welcome-quote" id="dash-target-date-label">
+                  Target Deadline: December 31, 2026 • 3rd Year Computer Engineering
+                </p>
+              </div>
+
+              <div class="study-target-box">
+                <div class="study-target-labels">
+                  <span id="dash-target-hours">2.0h Target (120m)</span>
+                  <span id="dash-studied-today" style="color: var(--color-primary);">0m completed (0%)</span>
+                </div>
+                <div class="progress-track">
+                  <div class="progress-fill" id="dash-study-bar-fill" style="width: 0%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Readiness Score Gauge Sidecard -->
+            <div class="app-card readiness-sidecard">
+              <span class="stat-card-label">Placement Readiness</span>
+              <div class="readiness-ring-wrap" id="dash-readiness-ring">
+                <div class="readiness-val" id="dash-readiness-val">--</div>
+              </div>
+              <span class="badge badge-primary" id="dash-readiness-status">Log sessions to compute</span>
+              <p class="card-desc" id="dash-readiness-expl" style="margin-top: 8px; font-size: 0.8rem; text-align: center;">
+                Weighted multi-dimensional readiness across DSA, Core CS, Projects, Aptitude & HR.
+              </p>
+            </div>
+          </div>
+
+          <!-- Recommendation Banner -->
+          <div class="recommendation-box" id="dash-recommendation-box">
+            <div class="rec-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            </div>
+            <div class="rec-content">
+              <h4>Recommended Next Action</h4>
+              <p>Practice 2 Medium Array problems on LeetCode (Kadane's Algorithm & Two Pointers) to maintain Week 1 momentum.</p>
+            </div>
+          </div>
+
+          <!-- Main Stat Cards Grid -->
+          <div class="stat-grid-4">
+            <div class="stat-metric-card">
+              <div class="stat-card-top">
+                <span class="stat-card-label">Roadmap Completion</span>
+                <div class="stat-card-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                </div>
+              </div>
+              <div class="stat-card-value" id="stat-prep-completion">0%</div>
+              <div class="stat-card-sub" id="stat-prep-milestones">0 of 24 weeks completed</div>
+            </div>
+
+            <div class="stat-metric-card">
+              <div class="stat-card-top">
+                <span class="stat-card-label">Unique DSA Solved</span>
+                <div class="stat-card-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+              </div>
+              <div class="stat-card-value" id="stat-dsa-count">0 / 80</div>
+              <div class="stat-card-sub">Target: 80 unique questions</div>
+            </div>
+
+            <div class="stat-metric-card">
+              <div class="stat-card-top">
+                <span class="stat-card-label">FindIt Project Progress</span>
+                <div class="stat-card-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                </div>
+              </div>
+              <div class="stat-card-value" id="stat-proj-pct">0%</div>
+              <div class="stat-card-sub">Lost & Found System Milestones</div>
+            </div>
+
+            <div class="stat-metric-card">
+              <div class="stat-card-top">
+                <span class="stat-card-label">Verified Certs</span>
+                <div class="stat-card-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                </div>
+              </div>
+              <div class="stat-card-value" id="stat-certs-count">0 Earned</div>
+              <div class="stat-card-sub" id="stat-streak-val">Streak: 0 days active</div>
+            </div>
+          </div>
+
+          <!-- Two-Column Priority & Skill Readiness Breakdown -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <!-- Left: Priority Action Items -->
+            <div class="app-card">
+              <div class="card-header-row">
+                <div>
+                  <h3 class="card-title">Priority Action Items</h3>
+                  <p class="card-desc">High-leverage tasks for this week's placement preparation</p>
+                </div>
+                <a href="#view-planner" data-view="view-planner" class="btn btn-sm btn-outline">View Planner</a>
+              </div>
+              <div class="priority-list-grid" id="dash-priority-items">
+                <!-- Injected via dashboard.js -->
+              </div>
+            </div>
+
+            <!-- Right: Placement Readiness Dimensions -->
+            <div class="app-card">
+              <div class="card-header-row">
+                <div>
+                  <h3 class="card-title">Readiness by Dimension</h3>
+                  <p class="card-desc">Breakdown across all 6 weighted placement pillars</p>
+                </div>
+                <a href="#view-analytics" data-view="view-analytics" class="btn btn-sm btn-outline">Full Analytics</a>
+              </div>
+              <div id="dash-skill-breakdown-container">
+                <!-- Injected via dashboard.js -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Dream Role & Target Companies Card -->
+          <div class="app-card" style="margin-top: 20px;">
+            <div class="card-header-row">
+              <div>
+                <h3 class="card-title">Target Role: <span id="dash-role-name" style="color: var(--color-primary);">Software Development Engineer (SDE)</span></h3>
+                <p class="card-desc">Targeting Top Product & IT Services Placement Drives</p>
+              </div>
+              <a href="#view-companies" data-view="view-companies" class="btn btn-sm btn-primary">Company Matrix</a>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 10px;">
+              <div class="stat-metric-card" style="margin-bottom: 0;">
+                <span class="stat-card-label">Dream Tier</span>
+                <div class="stat-card-value" id="dash-dream-comps" style="font-size: 1.25rem;">Google, Amazon, Microsoft, JPMC</div>
+              </div>
+              <div class="stat-metric-card" style="margin-bottom: 0;">
+                <span class="stat-card-label">Core Target Tier</span>
+                <div class="stat-card-value" id="dash-target-comps" style="font-size: 1.25rem;">TCS Digital, Infosys SP, Cognizant</div>
+              </div>
+              <div class="stat-metric-card" style="margin-bottom: 0;">
+                <span class="stat-card-label">Company Readiness Status</span>
+                <div class="stat-card-value" id="dash-comp-ready-status" style="font-size: 1.25rem; color: var(--color-primary);">In Progress</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             2. DAILY PLANNER VIEW
+             ========================================== -->
+        <section id="view-planner" class="page-view">
+          <div class="view-header">
+            <div class="view-header-row">
+              <div>
+                <h2 class="view-title">Daily Placement Planner</h2>
+                <p class="view-subtitle">Organize your 120-minute daily preparation, tasks, and evening reflections.</p>
+              </div>
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <button class="btn btn-sm btn-secondary" id="planner-btn-prev-day">◀ Prev</button>
+                <input type="date" class="form-input" id="planner-date-picker" style="width: auto; padding: 6px 10px;">
+                <button class="btn btn-sm btn-secondary" id="planner-btn-next-day">Next ▶</button>
+                <button class="btn btn-sm btn-primary" id="planner-btn-today">Today</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7-Day Calendar Strip -->
+          <div class="calendar-strip-container" id="planner-calendar-strip"></div>
+
+          <!-- Date Heading & Target Progress -->
+          <div class="app-card" style="margin-bottom: 20px;">
+            <div class="card-header-row">
+              <h3 id="planner-date-heading" style="font-size: 1.2rem;">Wednesday, October 21, 2026</h3>
+              <span class="badge badge-primary" id="planner-studied-vs-target">0m / 120m Studied</span>
+            </div>
+            <div class="progress-track" style="height: 10px;">
+              <div class="progress-fill" id="planner-target-bar-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <!-- 6 Categories Grid -->
+          <div class="app-card" style="margin-bottom: 20px;">
+            <div class="card-header-row">
+              <h3 class="card-title">Preparation Category Breakdown</h3>
+              <span class="card-desc">Target 120m across DSA, Core CS, Aptitude, Projects & HR</span>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px;" id="planner-categories-grid">
+              <!-- Injected via daily-planner.js -->
+            </div>
+          </div>
+
+          <!-- Two-Column Planner Layout -->
+          <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px;">
+            <!-- Left: Tasks List -->
+            <div class="app-card">
+              <div class="card-header-row">
+                <div>
+                  <h3 class="card-title">Scheduled Tasks</h3>
+                  <p class="card-desc" id="planner-tasks-stat-text">0 of 0 tasks completed</p>
+                </div>
+                <button class="btn btn-sm btn-primary" id="planner-btn-add-task">+ Add Task</button>
+              </div>
+
+              <div id="planner-tasks-list" style="display: flex; flex-direction: column; gap: 10px;"></div>
+              <div id="planner-tasks-empty" class="empty-state-card" style="display: none;">
+                <p>No tasks scheduled for this day yet. Click "+ Add Task" to schedule your placement study.</p>
+              </div>
+            </div>
+
+            <!-- Right: Reflection & Timer History -->
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+              <!-- Evening Reflection Card -->
+              <div class="app-card">
+                <div class="card-header-row">
+                  <h3 class="card-title">Evening Reflection</h3>
+                  <button class="btn btn-sm btn-outline" id="planner-btn-save-refl">Save Note</button>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">What went well today?</label>
+                  <input type="text" class="form-input" id="planner-refl-well" placeholder="e.g. Understood Kadane's algorithm, solved 2 medium questions">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Tomorrow's top focus:</label>
+                  <input type="text" class="form-input" id="planner-refl-focus" placeholder="e.g. Review DBMS ACID properties & indexing">
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label class="form-label">Confidence & Focus Rating:</label>
+                  <select class="form-select" id="planner-refl-mood">
+                    <option value="High Focus">High Focus & Great Retention</option>
+                    <option value="Steady Progress" selected>Steady Progress</option>
+                    <option value="Need More Practice">Challenging / Need More Practice</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Today's Study Sessions Card -->
+              <div class="app-card">
+                <div class="card-header-row">
+                  <h3 class="card-title">Study Sessions Logged</h3>
+                  <a href="#view-timer" data-view="view-timer" class="btn btn-sm btn-ghost">Open Timer ⏱️</a>
+                </div>
+                <div id="planner-sessions-history" style="display: flex; flex-direction: column; gap: 8px;"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             3. STUDY TIMER VIEW
+             ========================================== -->
+        <section id="view-timer" class="page-view">
+          <div class="view-header">
+            <h2 class="view-title">Study Timer</h2>
+            <p class="view-subtitle">Drift-free focus timer linked to your placement topics and daily tasks.</p>
+          </div>
+
+          <div class="timer-hero-wrapper app-card">
+            <!-- Mode Selector -->
+            <div class="timer-mode-group">
+              <button class="timer-mode-btn active" data-timer-mode="pomodoro">Pomodoro (25m)</button>
+              <button class="timer-mode-btn" data-timer-mode="deep-focus">Deep Focus (45m)</button>
+              <button class="timer-mode-btn" data-timer-mode="sprint">Sprint (60m)</button>
+              <button class="timer-mode-btn" data-timer-mode="stopwatch">Stopwatch</button>
+            </div>
+
+            <!-- Subject & Task Linker -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; text-align: left;">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label">Placement Subject:</label>
+                <select class="form-select" id="timer-subject-select">
+                  <option value="Data Structures & Algorithms">Data Structures & Algorithms</option>
+                  <option value="Core CS - Java & OOP">Core CS - Java & OOP</option>
+                  <option value="Core CS - DBMS & SQL">Core CS - DBMS & SQL</option>
+                  <option value="Core CS - Operating Systems">Core CS - Operating Systems</option>
+                  <option value="Core CS - Computer Networks">Core CS - Computer Networks</option>
+                  <option value="Aptitude & Reasoning">Aptitude & Reasoning</option>
+                  <option value="Project Development (FindIt)">Project Development (FindIt)</option>
+                  <option value="Soft Skills & HR Prep">Soft Skills & HR Prep</option>
+                </select>
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label">Link to Today's Task (Optional):</label>
+                <select class="form-select" id="timer-task-select">
+                  <option value="">-- No specific task linked --</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Circular Timer Display -->
+            <div class="timer-ring-container">
+              <div class="timer-time-display" id="timer-display-digits">25:00</div>
+              <div class="timer-status-label" id="timer-state-label">Ready to Focus</div>
+            </div>
+
+            <!-- Timer Action Buttons -->
+            <div class="timer-controls-row">
+              <button class="btn btn-lg btn-primary" id="timer-btn-start" style="min-width: 130px;">Start Session</button>
+              <button class="btn btn-lg btn-secondary" id="timer-btn-pause" style="display: none;">Pause</button>
+              <button class="btn btn-lg btn-secondary" id="timer-btn-resume" style="display: none;">Resume</button>
+              <button class="btn btn-lg btn-ghost" id="timer-btn-reset">Reset</button>
+              <button class="btn btn-lg btn-outline" id="timer-btn-complete" style="display: none;">Complete</button>
+            </div>
+
+            <div style="display: flex; justify-content: center; gap: 14px; margin-top: 10px;">
+              <button class="btn btn-sm btn-ghost" id="timer-btn-manual-log">+ Manual Session Correction</button>
+            </div>
+          </div>
+
+          <!-- Recent Sessions History -->
+          <div class="app-card" style="margin-top: 24px;">
+            <div class="card-header-row">
+              <h3 class="card-title">Timer Sessions History</h3>
+              <span class="card-desc">All completed focus intervals automatically saved to your storage</span>
+            </div>
+            <div id="timer-sessions-list">
+              <!-- Injected via timer.js -->
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             4. 24-WEEK ROADMAP VIEW
+             ========================================== -->
+        <section id="view-roadmap" class="page-view">
+          <div class="view-header">
+            <div class="view-header-row">
+              <div>
+                <h2 class="view-title">24-Week Placement Roadmap</h2>
+                <p class="view-subtitle">Months 1–6 comprehensive syllabus with weights, milestones, and timer integration.</p>
+              </div>
+              <div class="badge badge-primary" id="roadmap-pct-text">0% Completed</div>
+            </div>
+          </div>
+
+          <!-- Overall Progress Bar -->
+          <div class="app-card" style="margin-bottom: 20px;">
+            <div class="card-header-row">
+              <span class="form-label">Syllabus Completion Progress</span>
+              <span class="card-desc" id="roadmap-weeks-stat-label">0 of 24 weeks completed</span>
+            </div>
+            <div class="progress-track" style="height: 10px;">
+              <div class="progress-fill" id="roadmap-overall-progress-bar" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <!-- Month Navigation Tabs -->
+          <div class="filter-pills-row" id="roadmap-month-tabs">
+            <button class="filter-pill active" data-month="all">All Months (1–6)</button>
+            <button class="filter-pill" data-month="1">Month 1: DSA Foundations</button>
+            <button class="filter-pill" data-month="2">Month 2: Linear DS & Java</button>
+            <button class="filter-pill" data-month="3">Month 3: Non-Linear DS & DBMS</button>
+            <button class="filter-pill" data-month="4">Month 4: Adv Algo & OS</button>
+            <button class="filter-pill" data-month="5">Month 5: Networks & FindIt Project</button>
+            <button class="filter-pill" data-month="6">Month 6: Mocks & Applications</button>
+          </div>
+
+          <!-- Accordion Weeks Container -->
+          <div class="roadmap-container" id="roadmap-weeks-accordion">
+            <!-- Injected via roadmap.js -->
+          </div>
+        </section>
+
+        <!-- ==========================================
+             5. DSA & CODING TRACKER VIEW
+             ========================================== -->
+        <section id="view-dsa" class="page-view">
+          <div class="view-header">
+            <div class="view-header-row">
+              <div>
+                <h2 class="view-title">Data Structures & Algorithms Tracker</h2>
+                <p class="view-subtitle">Track unique solved problems, time/space complexities, topic coverage, and revision queue.</p>
+              </div>
+              <button class="btn btn-primary" id="dsa-btn-add-problem">+ Log Solved Problem</button>
+            </div>
+          </div>
+
+          <!-- Top Metrics -->
+          <div class="dsa-header-stats">
+            <div class="stat-metric-card">
+              <span class="stat-card-label">Unique Solved</span>
+              <div class="stat-card-value" id="dsa-stat-unique">0</div>
+              <span class="stat-card-sub" id="dsa-stat-target">Target: 80 problems</span>
+            </div>
+            <div class="stat-metric-card">
+              <span class="stat-card-label">Topic Coverage</span>
+              <div class="stat-card-value" id="dsa-stat-topics">0 / 10</div>
+              <span class="stat-card-sub">Core DSA Topics</span>
+            </div>
+            <div class="stat-metric-card">
+              <span class="stat-card-label">Marked for Revision</span>
+              <div class="stat-card-value" id="dsa-stat-revision">0</div>
+              <span class="stat-card-sub">Requires Re-solving</span>
+            </div>
+            <div class="stat-metric-card">
+              <span class="stat-card-label">Total Practice Submissions</span>
+              <div class="stat-card-value" id="dsa-stat-attempts">0</div>
+              <span class="stat-card-sub">Attempts logged</span>
+            </div>
+          </div>
+
+          <!-- Topic Filter Bar -->
+          <div class="filter-pills-row" id="dsa-topic-filters">
+            <button class="filter-pill active" data-dsa-topic="all">All Topics</button>
+            <button class="filter-pill" data-dsa-topic="Arrays">Arrays</button>
+            <button class="filter-pill" data-dsa-topic="Strings">Strings</button>
+            <button class="filter-pill" data-dsa-topic="Hashing">Hashing</button>
+            <button class="filter-pill" data-dsa-topic="Searching">Searching</button>
+            <button class="filter-pill" data-dsa-topic="Sorting">Sorting</button>
+            <button class="filter-pill" data-dsa-topic="Two Pointers">Two Pointers</button>
+            <button class="filter-pill" data-dsa-topic="Sliding Window">Sliding Window</button>
+            <button class="filter-pill" data-dsa-topic="Recursion">Recursion</button>
+            <button class="filter-pill" data-dsa-topic="Linked Lists">Linked Lists</button>
+            <button class="filter-pill" data-dsa-topic="Stacks">Stacks</button>
+          </div>
+
+          <!-- Problems Data Table -->
+          <div class="dsa-table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Status</th>
+                  <th>Problem Title</th>
+                  <th>Topic</th>
+                  <th>Difficulty</th>
+                  <th>Time / Space</th>
+                  <th>Attempts</th>
+                  <th>Revision</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="dsa-problems-table-body">
+                <!-- Injected via dsa.js -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             6. APTITUDE & REASONING VIEW
+             ========================================== -->
+        <section id="view-aptitude" class="page-view">
+          <div class="view-header">
+            <div class="view-header-row">
+              <div>
+                <h2 class="view-title">Aptitude & Logical Reasoning</h2>
+                <p class="view-subtitle">10 core aptitude categories, speed drill logs, accuracy metrics, and weak topic alerts.</p>
+              </div>
+              <button class="btn btn-primary" id="apt-btn-log-session">+ Log Practice Session</button>
+            </div>
+          </div>
+
+          <!-- Top Stats -->
+          <div class="stat-grid-4">
+            <div class="stat-metric-card">
+              <span class="stat-card-label">Questions Practiced</span>
+              <div class="stat-card-value" id="apt-stat-total">0</div>
+              <span class="stat-card-sub">Total questions attempted</span>
+            </div>
+            <div class="stat-metric-card">
+              <span class="stat-card-label">Overall Accuracy</span>
+              <div class="stat-card-value" id="apt-stat-accuracy">0%</div>
+              <span class="stat-card-sub">Target: &gt; 75% for online rounds</span>
+            </div>
+            <div class="stat-metric-card">
+              <span class="stat-card-label">Weak Topics Identified</span>
+              <div class="stat-card-value" id="apt-stat-weak">0</div>
+              <span class="stat-card-sub">Accuracy &lt; 60%</span>
+            </div>
+            <div class="stat-metric-card">
+              <span class="stat-card-label">Practice Sessions</span>
+              <div class="stat-card-value" id="apt-stat-sessions">0</div>
+              <span class="stat-card-sub">Speed drills logged</span>
+            </div>
+          </div>
+
+          <!-- 10 Aptitude Categories Grid -->
+          <div class="aptitude-grid" id="aptitude-categories-grid">
+            <!-- Injected via aptitude.js -->
+          </div>
+
+          <!-- Recent Practice Sessions History -->
+          <div class="app-card">
+            <div class="card-header-row">
+              <h3 class="card-title">Practice Session Logs</h3>
+              <span class="card-desc">Detailed logs of online test speed drills</span>
+            </div>
+            <div class="dsa-table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Category</th>
+                    <th>Attempted</th>
+                    <th>Correct</th>
+                    <th>Accuracy</th>
+                    <th>Time Spent</th>
+                    <th>Notes</th>
+                  </tr>
+                </thead>
+                <tbody id="aptitude-sessions-history">
+                  <!-- Injected via aptitude.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             7. CORE COMPUTER SCIENCE SUBJECTS VIEW
+             ========================================== -->
+        <section id="view-core" class="page-view">
+          <div class="view-header">
+            <div class="view-header-row">
+              <div>
+                <h2 class="view-title">Core Computer Science Subjects</h2>
+                <p class="view-subtitle">Java/OOP, DBMS/SQL, Operating Systems & Networks. 4-Stage lifecycle with quiz validation.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subject Tabs Filter -->
+          <div class="filter-pills-row" id="core-subject-tabs">
+            <button class="filter-pill active" data-core-sub="all">All 4 Core Subjects</button>
+            <button class="filter-pill" data-core-sub="Java/OOP">Java & OOP Concepts</button>
+            <button class="filter-pill" data-core-sub="DBMS">DBMS & SQL</button>
+            <button class="filter-pill" data-core-sub="OS">Operating Systems</button>
+            <button class="filter-pill" data-core-sub="CN">Computer Networks</button>
+          </div>
+
+          <!-- Core CS Subject Panels -->
+          <div class="core-cs-grid" id="core-subjects-container">
+            <!-- Injected via core-subjects.js -->
+          </div>
+        </section>
+
+        <!-- ==========================================
+             8. SOFT SKILLS & HR PREPARATION VIEW
+             ========================================== -->
+        <section id="view-skills" class="page-view">
+          <div class="view-header">
+            <div class="view-header-row">
+              <div>
+                <h2 class="view-title">Soft Skills & HR Communication</h2>
+                <p class="view-subtitle">5 competencies, self-introduction, STAR behavioral answers, and weekly speaking challenges.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Weekly Speaking Challenge Card -->
+          <div class="app-card" style="border-left: 4px solid var(--color-primary); margin-bottom: 24px;">
+            <div class="card-header-row">
+              <div>
+                <span class="badge badge-primary">Weekly Speaking Challenge</span>
+                <h3 class="card-title" style="margin-top: 6px;">"Explain One Technical Topic Aloud"</h3>
+                <p class="card-desc">Practice speaking clearly without filler words for 2 minutes on a random technical concept.</p>
+              </div>
+              <button class="btn btn-sm btn-primary" id="skills-btn-generate-topic">Generate Topic</button>
+            </div>
+            <div id="skills-challenge-content">
+              <!-- Injected via soft-skills.js -->
+            </div>
+          </div>
+
+          <!-- 5 Core Competencies Cards -->
+          <div class="soft-skills-container" id="soft-skills-cards-container">
+            <!-- Injected via soft-skills.js -->
+          </div>
+
+          <!-- Mock Interview Rubric -->
+          <div class="app-card" style="margin-top: 24px;">
+            <div class="card-header-row">
+              <h3 class="card-title">Technical & HR Interview Rubric</h3>
+              <span class="card-desc">Standard corporate placement evaluation criteria</span>
+            </div>
+            <div id="skills-rubric-container">
+              <!-- Injected via soft-skills.js -->
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             9. COURSES & CERTIFICATIONS VIEW
+             ========================================== -->
+        <section id="view-certifications" class="page-view">
+          <div class="view-header">
+            <div class="view-header-row">
+              <div>
+                <h2 class="view-title">Courses & Certifications</h2>
+                <p class="view-subtitle">Track MOOC courses, industry credentials (AWS, Oracle, NPTEL), and proof of completion.</p>
+              </div>
+              <button class="btn btn-primary" id="cert-btn-add">+ Add Course / Certification</button>
+            </div>
+          </div>
+
+          <!-- Top Stats -->
+          <div class="stat-grid-4">
+            <div class="stat-metric-card">
+              <span class="stat-card-label">Earned Certificates</span>
+              <div class="stat-card-value" id="cert-stat-earned">0</div>
+              <span class="stat-card-sub">Verified credentials</span>
+            </div>
+            <div class="stat-metric-card">
+              <span class="stat-card-label">In-Progress Courses</span>
+              <div class="stat-card-value" id="cert-stat-active">0</div>
+              <span class="stat-card-sub">Active learning</span>
+            </div>
+            <div class="stat-metric-card">
+              <span class="stat-card-label">Total Cert Tracked</span>
+              <div class="stat-card-value" id="cert-stat-total">0</div>
+              <span class="stat-card-sub">Portfolio additions</span>
+            </div>
+            <div class="stat-metric-card">
+              <span class="stat-card-label">Average Progress</span>
+              <div class="stat-card-value" id="cert-stat-avg-progress">0%</div>
+              <span class="stat-card-sub">Completion rate</span>
+            </div>
+          </div>
+
+          <!-- Certifications Grid -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px;" id="certifications-grid">
+            <!-- Injected via certifications.js -->
+          </div>
+
+          <!-- Recommended Placement Starters -->
+          <div class="app-card" style="margin-top: 24px;">
+            <div class="card-header-row">
+              <h3 class="card-title">Recommended Placement Credentials</h3>
+              <span class="card-desc">High-ROI certificates valued by tech recruiters</span>
+            </div>
+            <div id="certifications-recommended-list">
+              <!-- Injected via certifications.js -->
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             10. PROJECT PORTFOLIO VIEW
+             ========================================== -->
+        <section id="view-projects" class="page-view">
+          <div class="view-header">
+            <div class="view-header-row">
+              <div>
+                <h2 class="view-title">Project Portfolio & Engineering</h2>
+                <p class="view-subtitle">FindIt Lost and Found System 12-milestone tracker, technical challenges log, and interview readiness.</p>
+              </div>
+              <button class="btn btn-primary" id="proj-btn-add-project">+ Add Project</button>
+            </div>
+          </div>
+
+          <!-- Project Selector Tabs -->
+          <div class="filter-pills-row" id="projects-tab-bar">
+            <!-- Injected via projects.js -->
+          </div>
+
+          <!-- Active Project Content -->
+          <div id="active-project-container">
+            <!-- Injected via projects.js -->
+          </div>
+        </section>
+
+        <!-- ==========================================
+             11. TARGET COMPANIES VIEW
+             ========================================== -->
+        <section id="view-companies" class="page-view">
+          <div class="view-header">
+            <div class="view-header-row">
+              <div>
+                <h2 class="view-title">Target Companies & Readiness</h2>
+                <p class="view-subtitle">10 company profiles (Google, Amazon, JPMC, Microsoft, TCS, Infosys, etc.) with personalized checklists.</p>
+              </div>
+              <div class="filter-pills-row" style="margin-bottom: 0;">
+                <button class="filter-pill active" id="comp-btn-cards-view">Card View</button>
+                <button class="filter-pill" id="comp-btn-matrix-view">Comparison Matrix</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Company Cards Grid -->
+          <div class="company-cards-grid" id="companies-grid">
+            <!-- Injected via companies.js -->
+          </div>
+
+          <!-- Comparison Matrix Table (Hidden by default) -->
+          <div class="app-card" id="companies-matrix-container" style="display: none;">
+            <div class="card-header-row">
+              <h3 class="card-title">Company Comparison Matrix</h3>
+              <span class="card-desc">Compare CTC, hiring rounds, and technical criteria</span>
+            </div>
+            <div class="dsa-table-wrapper">
+              <table class="data-table" id="companies-matrix-table">
+                <!-- Injected via companies.js -->
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             12. RESUME & JOB APPLICATIONS VIEW
+             ========================================== -->
+        <section id="view-resumes" class="page-view">
+          <div class="view-header">
+            <div class="view-header-row">
+              <div>
+                <h2 class="view-title">Resume & Application Pipeline</h2>
+                <p class="view-subtitle">Tailored resume versions, 12-checkpoint ATS audit, and job application tracking.</p>
+              </div>
+              <button class="btn btn-primary" id="res-btn-add-app">+ Log Job Application</button>
+            </div>
+          </div>
+
+          <!-- ATS Review Checklist & Tailored Versions -->
+          <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 20px; margin-bottom: 24px;">
+            <!-- ATS Review Checklist -->
+            <div class="app-card">
+              <div class="card-header-row">
+                <h3 class="card-title">12-Point ATS Review</h3>
+                <span class="badge badge-primary" id="res-ats-score">0 / 12 passed</span>
+              </div>
+              <div id="resumes-ats-checklist">
+                <!-- Injected via resumes.js -->
+              </div>
+            </div>
+
+            <!-- Tailored Resume Versions -->
+            <div class="app-card">
+              <div class="card-header-row">
+                <h3 class="card-title">Tailored Resume Versions</h3>
+                <button class="btn btn-sm btn-outline" id="res-btn-add-version">+ Add Version</button>
+              </div>
+              <div id="resumes-versions-list">
+                <!-- Injected via resumes.js -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Job Application Pipeline Table -->
+          <div class="app-card">
+            <div class="card-header-row">
+              <h3 class="card-title">Job Application Pipeline</h3>
+              <span class="card-desc">Track every on-campus and off-campus opportunity</span>
+            </div>
+            <div class="dsa-table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Company</th>
+                    <th>Role</th>
+                    <th>Applied Date</th>
+                    <th>Resume Used</th>
+                    <th>Status</th>
+                    <th>Follow-up</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="resumes-applications-body">
+                  <!-- Injected via resumes.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             13. ANALYTICS & WEEKLY REVIEWS VIEW
+             ========================================== -->
+        <section id="view-analytics" class="page-view">
+          <div class="view-header">
+            <div class="view-header-row">
+              <div>
+                <h2 class="view-title">Placement Analytics & Reviews</h2>
+                <p class="view-subtitle">8 dimensions of preparation progress, interactive SVG charts, and weekly reflection journal.</p>
+              </div>
+              <div class="filter-pills-row" style="margin-bottom: 0;">
+                <button class="filter-pill active" id="analytics-range-7">Last 7 Days</button>
+                <button class="filter-pill" id="analytics-range-14">Last 14 Days</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8 Dimensions of Placement Preparation Scorecard -->
+          <div class="stat-grid-4">
+            <div class="stat-metric-card">
+              <span class="stat-card-label">1. Study Time</span>
+              <div class="stat-card-value" id="an-stat-hours">0h</div>
+              <span class="stat-card-sub" id="an-stat-today-time">Streak: <strong id="an-stat-streak">0d</strong></span>
+            </div>
+            <div class="stat-metric-card">
+              <span class="stat-card-label">2. DSA Mastery</span>
+              <div class="stat-card-value" id="an-stat-dsa">0 / 80</div>
+              <span class="stat-card-sub" id="an-stat-dsa-pct">0% target</span>
+            </div>
+            <div class="stat-metric-card">
+              <span class="stat-card-label">3. Core CS Proficiency</span>
+              <div class="stat-card-value" id="an-stat-core-ready" style="font-size: 1.25rem;">0 Ready</div>
+              <span class="stat-card-sub" id="an-stat-core-total">0 topics mastered</span>
+            </div>
+            <div class="stat-metric-card">
+              <span class="stat-card-label">4. Aptitude Accuracy</span>
+              <div class="stat-card-value" id="an-stat-apt-acc">0%</div>
+              <span class="stat-card-sub" id="an-stat-apt-solved">0 practiced</span>
+            </div>
+            <div class="stat-metric-card">
+              <span class="stat-card-label">5. Soft Skills Level</span>
+              <div class="stat-card-value" id="an-stat-soft-avg">0.0 / 5.0</div>
+              <span class="stat-card-sub" id="an-stat-speaking-status">Speaking Challenge</span>
+            </div>
+            <div class="stat-metric-card">
+              <span class="stat-card-label">6. Projects (FindIt)</span>
+              <div class="stat-card-value" id="an-stat-proj-milestones" style="font-size: 1.25rem;">0 / 12 steps</div>
+              <span class="stat-card-sub" id="an-stat-proj-count">1 Portfolio Project</span>
+            </div>
+            <div class="stat-metric-card">
+              <span class="stat-card-label">7. Certifications</span>
+              <div class="stat-card-value" id="an-stat-cert-earned">0 Earned</div>
+              <span class="stat-card-sub" id="an-stat-cert-active">0 in progress</span>
+            </div>
+            <div class="stat-metric-card">
+              <span class="stat-card-label">8. Companies Tracked</span>
+              <div class="stat-card-value" id="an-stat-comp-ready" style="font-size: 1.25rem;">0 Ready</div>
+              <span class="stat-card-sub" id="an-stat-app-applied">0 Applied</span>
+            </div>
+          </div>
+
+          <!-- Charts Row: Daily Study Bars & Subject Donut -->
+          <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; margin-bottom: 24px;">
+            <!-- Daily Study Bar Chart -->
+            <div class="analytics-chart-card">
+              <div class="card-header-row">
+                <h3 class="card-title">Daily Study Time (Minutes)</h3>
+                <span class="card-desc">Interactive daily breakdown</span>
+              </div>
+              <div id="chart-daily-study"></div>
+            </div>
+
+            <!-- Subject Donut Chart -->
+            <div class="analytics-chart-card">
+              <div class="card-header-row">
+                <h3 class="card-title">Subject Distribution</h3>
+                <span class="card-desc">Time allocation by topic</span>
+              </div>
+              <div id="chart-subject-donut"></div>
+              <div class="donut-legend" id="donut-legend"></div>
+            </div>
+          </div>
+
+          <!-- DSA Topics Breakdown & Core CS Progress -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+            <div class="app-card">
+              <div class="card-header-row">
+                <h3 class="card-title">DSA Topic Coverage Breakdown</h3>
+                <span class="card-desc">Problems solved per core topic (Target 10 each)</span>
+              </div>
+              <div id="chart-dsa-topics"></div>
+            </div>
+
+            <div class="app-card">
+              <div class="card-header-row">
+                <h3 class="card-title">Core Computer Science Readiness</h3>
+                <span class="card-desc">Curriculum mastery across 4 domains</span>
+              </div>
+              <div id="chart-core-cs-breakdown"></div>
+            </div>
+          </div>
+
+          <!-- Weekly Reflection Journal & History -->
+          <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 20px;">
+            <!-- New Weekly Review Form -->
+            <div class="app-card">
+              <div class="card-header-row">
+                <h3 class="card-title">Log Sunday Weekly Reflection</h3>
+                <span class="card-desc">5-minute review to consolidate learning</span>
+              </div>
+              <form id="weekly-review-form">
+                <div class="form-group">
+                  <label class="form-label">Roadmap Week Number:</label>
+                  <input type="number" class="form-input" id="rev-week-num" value="1" min="1" max="24" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">What went well & what did you complete?</label>
+                  <textarea class="form-textarea" id="rev-completed" rows="2" placeholder="e.g. Completed Array sliding window questions, finished DBMS Normalization notes" required></textarea>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">What concepts did you struggle with?</label>
+                  <textarea class="form-textarea" id="rev-struggled" rows="2" placeholder="e.g. Recursive backtracking stack overflow edge cases" required></textarea>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Weakest topics identified:</label>
+                  <input type="text" class="form-input" id="rev-weakest" placeholder="e.g. Probability in Aptitude, B-Trees in DBMS">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Top priority for next week:</label>
+                  <input type="text" class="form-input" id="rev-priority" placeholder="e.g. Solve 10 Linked List Medium problems & create FindIt wireframes" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Save Weekly Reflection</button>
+              </form>
+            </div>
+
+            <!-- Past Reviews History -->
+            <div class="app-card">
+              <div class="card-header-row">
+                <h3 class="card-title">Past Weekly Reflections</h3>
+                <span class="card-desc">Your recorded placement progress log</span>
+              </div>
+              <div id="weekly-reviews-history" style="max-height: 480px; overflow-y: auto;">
+                <!-- Injected via analytics.js -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             14. SETTINGS & DATA PRIVACY VIEW
+             ========================================== -->
+        <section id="view-settings" class="page-view">
+          <div class="view-header">
+            <h2 class="view-title">Settings & Data Management</h2>
+            <p class="view-subtitle">Customize target dates, readiness weights, LocalStorage backups, and application theme.</p>
+          </div>
+
+          <form id="settings-form">
+            <!-- Profile & Target Configuration -->
+            <div class="app-card" style="margin-bottom: 20px;">
+              <div class="card-header-row">
+                <h3 class="card-title">Placement Target Configuration</h3>
+                <span class="card-desc">Set your student name, dream role, and placement drive target date</span>
+              </div>
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label class="form-label">Student Name:</label>
+                  <input type="text" class="form-input" id="set-student-name" value="Nandini" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Dream Job Role:</label>
+                  <input type="text" class="form-input" id="set-target-role" value="Software Development Engineer (SDE)" required>
+                </div>
+              </div>
+              <div class="form-row-3">
+                <div class="form-group">
+                  <label class="form-label">Placement Target Date:</label>
+                  <input type="date" class="form-input" id="set-placement-deadline" value="2026-12-31" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Daily Study Target (Minutes):</label>
+                  <input type="number" class="form-input" id="set-daily-target" value="120" min="15" max="720" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">DSA Unique Problem Target:</label>
+                  <input type="number" class="form-input" id="set-dsa-target" value="80" min="10" max="500" required>
+                </div>
+              </div>
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label class="form-label">Application Theme:</label>
+                  <select class="form-select" id="set-theme-select">
+                    <option value="light">Light Theme (Warm White & Blush)</option>
+                    <option value="dark">Dark Theme (Charcoal & Mauve)</option>
+                  </select>
+                </div>
+                <div class="form-group" style="justify-content: center;">
+                  <label class="form-label">Audio & Celebration Chimes:</label>
+                  <label style="display: flex; align-items: center; gap: 8px; margin-top: 8px; cursor: pointer;">
+                    <input type="checkbox" id="set-sound-enabled" checked>
+                    <span>Enable Web Audio sound effects & timer bell</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Readiness Score Weights Customizer -->
+            <div class="app-card" style="margin-bottom: 20px;">
+              <div class="card-header-row">
+                <div>
+                  <h3 class="card-title">Placement Readiness Weight Distribution</h3>
+                  <p class="card-desc">Configure how each pillar impacts your 0–100 Readiness Score (Must total exactly 100%)</p>
+                </div>
+                <span class="badge badge-success" id="set-weights-sum">100% Total</span>
+              </div>
+              <div class="form-row-3">
+                <div class="form-group">
+                  <label class="form-label">DSA & Coding Weight (%):</label>
+                  <input type="number" class="form-input" id="set-weight-dsa" value="25" min="0" max="100">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Core CS Subjects Weight (%):</label>
+                  <input type="number" class="form-input" id="set-weight-core" value="20" min="0" max="100">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Project Portfolio Weight (%):</label>
+                  <input type="number" class="form-input" id="set-weight-proj" value="20" min="0" max="100">
+                </div>
+              </div>
+              <div class="form-row-3">
+                <div class="form-group">
+                  <label class="form-label">Aptitude & Reasoning Weight (%):</label>
+                  <input type="number" class="form-input" id="set-weight-apt" value="15" min="0" max="100">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Soft Skills & HR Weight (%):</label>
+                  <input type="number" class="form-input" id="set-weight-soft" value="10" min="0" max="100">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Certifications Weight (%):</label>
+                  <input type="number" class="form-input" id="set-weight-certs" value="10" min="0" max="100">
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Save Configuration Settings</button>
+            </div>
+          </form>
+
+          <!-- Storage, Backup & Privacy Card -->
+          <div class="app-card">
+            <div class="card-header-row">
+              <div>
+                <h3 class="card-title">Local Storage & Backup Management</h3>
+                <p class="card-desc">All placement journey data is stored 100% locally in your browser. No server required.</p>
+              </div>
+            </div>
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <button class="btn btn-secondary" id="settings-btn-export">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span>Export JSON Backup</span>
+              </button>
+              <label class="btn btn-secondary" style="cursor: pointer;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                <span>Restore JSON Backup</span>
+                <input type="file" id="settings-import-file" accept=".json" style="display: none;">
+              </label>
+              <button class="btn btn-danger" id="settings-btn-clear">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                <span>Reset to Defaults</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- ==========================================
+       MODALS DIALOGUES
+       ========================================== -->
+
+  <!-- 1. Planner Task Modal -->
+  <div class="app-modal" id="planner-task-modal" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Schedule Daily Task</h3>
+        <button class="modal-close-btn" data-close-modal>×</button>
+      </div>
+      <form id="planner-task-form">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Task Description: *</label>
+            <input type="text" name="planner-task-text" class="form-input" placeholder="e.g. Solve 3 Binary Search Medium questions" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Preparation Category:</label>
+            <select name="planner-task-category" class="form-select">
+              <option value="Programming and DSA">Programming and DSA</option>
+              <option value="Core Computer Science">Core Computer Science</option>
+              <option value="Aptitude and reasoning">Aptitude and reasoning</option>
+              <option value="Soft skills and communication">Soft skills and communication</option>
+              <option value="Course and certifications">Course and certifications</option>
+              <option value="Project work">Project work (FindIt)</option>
+            </select>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Start Time:</label>
+              <input type="time" name="planner-task-start" class="form-input">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Due Time:</label>
+              <input type="time" name="planner-task-due" class="form-input">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Priority Level:</label>
+            <select name="planner-task-prio" class="form-select">
+              <option value="High">High Priority</option>
+              <option value="Medium" selected>Medium Priority</option>
+              <option value="Low">Low Priority</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-close-modal>Cancel</button>
+          <button type="submit" class="btn btn-primary">Schedule Task</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. DSA Problem Modal -->
+  <div class="app-modal" id="dsa-problem-modal" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Log Solved DSA Problem</h3>
+        <button class="modal-close-btn" data-close-modal>×</button>
+      </div>
+      <form id="dsa-problem-form">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Problem Title: *</label>
+            <input type="text" name="dsa-title" class="form-input" placeholder="e.g. Maximum Subarray (Kadane's Algorithm)" required>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Core Topic: *</label>
+              <select name="dsa-topic" class="form-select" required>
+                <option value="Arrays">Arrays</option>
+                <option value="Strings">Strings</option>
+                <option value="Hashing">Hashing</option>
+                <option value="Searching">Searching</option>
+                <option value="Sorting">Sorting</option>
+                <option value="Two Pointers">Two Pointers</option>
+                <option value="Sliding Window">Sliding Window</option>
+                <option value="Recursion">Recursion</option>
+                <option value="Linked Lists">Linked Lists</option>
+                <option value="Stacks">Stacks</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Difficulty:</label>
+              <select name="dsa-diff" class="form-select">
+                <option value="Easy">Easy</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="Hard">Hard</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Time Complexity:</label>
+              <input type="text" name="dsa-time" class="form-input" placeholder="e.g. O(n)">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Space Complexity:</label>
+              <input type="text" name="dsa-space" class="form-input" placeholder="e.g. O(1)">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">LeetCode / GFG URL (Optional):</label>
+            <input type="url" name="dsa-link" class="form-input" placeholder="https://leetcode.com/problems/...">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Key Insight & Approach Notes:</label>
+            <textarea name="dsa-notes" class="form-textarea" rows="2" placeholder="e.g. Keep running sum; reset if sum drops below zero"></textarea>
+          </div>
+          <div class="form-group">
+            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+              <input type="checkbox" name="dsa-revision">
+              <span>Flag this problem for revision before company interviews</span>
+            </label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-close-modal>Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Problem</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. Aptitude Session Modal -->
+  <div class="app-modal" id="aptitude-session-modal" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Log Aptitude Practice Session</h3>
+        <button class="modal-close-btn" data-close-modal>×</button>
+      </div>
+      <form id="aptitude-session-form">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Aptitude Category: *</label>
+            <select name="apt-category" class="form-select" required>
+              <option value="Quantitative Aptitude - Arithmetic">Quantitative Aptitude - Arithmetic</option>
+              <option value="Quantitative Aptitude - Modern Math">Quantitative Aptitude - Modern Math</option>
+              <option value="Logical Reasoning - Analytical">Logical Reasoning - Analytical</option>
+              <option value="Logical Reasoning - Puzzles">Logical Reasoning - Puzzles</option>
+              <option value="Verbal Ability - Grammar">Verbal Ability - Grammar</option>
+              <option value="Verbal Ability - Reading Comprehension">Verbal Ability - Reading Comprehension</option>
+              <option value="Data Interpretation - Charts & Tables">Data Interpretation - Charts & Tables</option>
+              <option value="Coding Comprehension & Dry Run">Coding Comprehension & Dry Run</option>
+              <option value="Speed Math & Shortcuts">Speed Math & Shortcuts</option>
+              <option value="Mock Online Assessment Tests">Mock Online Assessment Tests</option>
+            </select>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Questions Attempted: *</label>
+              <input type="number" name="apt-attempted" class="form-input" min="1" max="100" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Correct Answers: *</label>
+              <input type="number" name="apt-correct" class="form-input" min="0" max="100" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Time Spent (Minutes):</label>
+            <input type="number" name="apt-minutes" class="form-input" min="1" max="180" value="20">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Notes & Weak Questions:</label>
+            <textarea name="apt-notes" class="form-textarea" rows="2" placeholder="e.g. Struggled with inverse ratio shortcuts"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-close-modal>Cancel</button>
+          <button type="submit" class="btn btn-primary">Log Session</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 4. Core CS Self-Assessment Quiz Modal -->
+  <div class="app-modal" id="core-cs-quiz-modal" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="core-quiz-title">Self-Assessment Validation</h3>
+        <button class="modal-close-btn" data-close-modal>×</button>
+      </div>
+      <div class="modal-body" id="core-quiz-body">
+        <!-- Injected via core-subjects.js -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-close-modal>Close</button>
+        <button type="button" class="btn btn-primary" id="core-quiz-btn-confirm">Submit Assessment</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Course / Certification Modal -->
+  <div class="app-modal" id="cert-modal" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Add Course / Certification</h3>
+        <button class="modal-close-btn" data-close-modal>×</button>
+      </div>
+      <form id="cert-form">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Course / Exam Title: *</label>
+            <input type="text" name="cert-title" class="form-input" placeholder="e.g. Oracle Certified Java SE Programmer" required>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Provider / Platform: *</label>
+              <select name="cert-provider" class="form-select" required>
+                <option value="Coursera">Coursera</option>
+                <option value="NPTEL">NPTEL</option>
+                <option value="Udemy">Udemy</option>
+                <option value="Oracle">Oracle</option>
+                <option value="AWS">AWS</option>
+                <option value="HackerRank">HackerRank</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Category:</label>
+              <select name="cert-category" class="form-select">
+                <option value="DSA & Algorithms">DSA & Algorithms</option>
+                <option value="Java & Backend">Java & Backend</option>
+                <option value="Databases & SQL">Databases & SQL</option>
+                <option value="Cloud & DevOps">Cloud & DevOps</option>
+                <option value="Soft Skills">Soft Skills</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Progress (%):</label>
+              <input type="number" name="cert-progress" class="form-input" min="0" max="100" value="0">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Status:</label>
+              <select name="cert-status" class="form-select">
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed / Earned</option>
+                <option value="Planned">Planned</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Certificate URL / Verification ID (Optional):</label>
+            <input type="text" name="cert-id" class="form-input" placeholder="e.g. CERT-8392019 or verify URL">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-close-modal>Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Course</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 6. Job Application Modal -->
+  <div class="app-modal" id="job-app-modal" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Log Job Application</h3>
+        <button class="modal-close-btn" data-close-modal>×</button>
+      </div>
+      <form id="job-app-form">
+        <div class="modal-body">
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Company Name: *</label>
+              <input type="text" name="app-company" class="form-input" placeholder="e.g. Amazon" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Role: *</label>
+              <input type="text" name="app-role" class="form-input" value="Software Development Engineer" required>
+            </div>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Application Date:</label>
+              <input type="date" name="app-date" class="form-input">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Status:</label>
+              <select name="app-status" class="form-select">
+                <option value="Applied">Applied</option>
+                <option value="OA Pending">OA Pending</option>
+                <option value="OA Cleared">OA Cleared</option>
+                <option value="Interviewing">Interviewing</option>
+                <option value="Offered">Offer Received 🎉</option>
+                <option value="Rejected">Rejected</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tailored Resume Used:</label>
+            <select name="app-resume" class="form-select" id="app-resume-select">
+              <option value="General SDE Resume">General SDE Resume</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Notes & Follow-up Details:</label>
+            <textarea name="app-notes" class="form-textarea" rows="2" placeholder="e.g. Applied through on-campus portal, OA scheduled on Nov 10"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-close-modal>Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Application</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 7. Timer Manual Log Modal -->
+  <div class="app-modal" id="timer-correction-modal" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Log Study Session Manually</h3>
+        <button class="modal-close-btn" data-close-modal>×</button>
+      </div>
+      <form id="timer-correction-form">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Subject: *</label>
+            <select name="corr-subject" class="form-select" required>
+              <option value="Data Structures & Algorithms">Data Structures & Algorithms</option>
+              <option value="Core CS - Java & OOP">Core CS - Java & OOP</option>
+              <option value="Core CS - DBMS & SQL">Core CS - DBMS & SQL</option>
+              <option value="Core CS - Operating Systems">Core CS - Operating Systems</option>
+              <option value="Core CS - Computer Networks">Core CS - Computer Networks</option>
+              <option value="Aptitude & Reasoning">Aptitude & Reasoning</option>
+              <option value="Project Development (FindIt)">Project Development (FindIt)</option>
+              <option value="Soft Skills & HR Prep">Soft Skills & HR Prep</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Duration (Minutes): *</label>
+            <input type="number" name="corr-minutes" class="form-input" min="1" max="600" value="30" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Session Notes:</label>
+            <input type="text" name="corr-notes" class="form-input" placeholder="e.g. Offline textbook study and code tracing on paper">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-close-modal>Cancel</button>
+          <button type="submit" class="btn btn-primary">Add Session Log</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       JAVASCRIPT SCRIPTS IN EXACT DEPENDENCY ORDER
+       ========================================== -->
+  <script src="js/audio.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/roadmap-data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/daily-planner.js"></script>
+  <script src="js/timer.js"></script>
+  <script src="js/roadmap.js"></script>
+  <script src="js/dsa.js"></script>
+  <script src="js/aptitude.js"></script>
+  <script src="js/core-subjects.js"></script>
+  <script src="js/soft-skills.js"></script>
+  <script src="js/certifications.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/companies.js"></script>
+  <script src="js/resumes.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
