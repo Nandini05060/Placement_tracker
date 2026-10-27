@@ -1,137 +1,142 @@
 /* ==========================================================================
-   PLACEMENT TRACKER — MODERN MINIMAL & AESTHETIC DESIGN SYSTEM
-   Art Direction: Sleek Modern Tech × Frosted Glassmorphism × Electric Violet & Cyan Accents
-   Themes: Deep Obsidian Night (Dark) & Clean Pristine Slate (Light)
+   PLACEMENT TRACKER — WARM MINIMAL & COTTAGE AESTHETIC DESIGN SYSTEM
+   Inspiration: "Fragments" Watercolor Cozy Studio × Soft Peach, Cream & Terracotta
+   Atmosphere: Gentle, peaceful, decluttered, minimal & organized for calm focus
    ========================================================================== */
 
 :root {
-  /* Core Master Palette - Modern Clean Light Mode */
-  --bg-app: #F8FAFC;
-  --bg-main: #F8FAFC;
-  --bg-sidebar: #FFFFFF;
-  --bg-card: #FFFFFF;
-  --bg-card-elevated: #F8FAFC;
-  --bg-card-subtle: #F1F5F9;
-  --bg-topbar: rgba(255, 255, 255, 0.82);
-  --bg-input: #FFFFFF;
-  --bg-hover: #F1F5F9;
-  --bg-hover-subtle: rgba(99, 102, 241, 0.06);
+  /* Warm Linen & Peach Aesthetic Light Theme */
+  --bg-app: #FAF6F0;
+  --bg-main: #FAF6F0;
+  --bg-sidebar: #FFFDF9;
+  --bg-card: #FFFDF9;
+  --bg-card-elevated: #F6EFE9;
+  --bg-card-subtle: #F5ECE5;
+  --bg-topbar: rgba(250, 246, 240, 0.88);
+  --bg-input: #FFFDFB;
+  --bg-hover: #F3E8DF;
+  --bg-hover-subtle: rgba(222, 126, 115, 0.08);
 
-  --color-primary: #6366F1;
-  --color-primary-hover: #4F46E5;
-  --color-primary-blush: #EEF2FF;
-  --color-primary-text: #4F46E5;
-  --color-accent-cyan: #06B6D4;
-  --color-accent-violet: #8B5CF6;
-  --color-pale-rose: #EEF2FF;
-  --color-light-pink: #E0E7FF;
-  --color-lavender: #F5F3FF;
-  --color-lavender-accent: #7C3AED;
-  --color-lavender-text: #5B21B6;
-  --color-lavender-soft: #F5F3FF;
+  /* Primary: Soft Terracotta & Coral Blush */
+  --color-primary: #DE7E73;
+  --color-primary-hover: #CF6F64;
+  --color-primary-blush: #FDF2EE;
+  --color-primary-text: #C45E53;
+  --color-accent-cyan: #7FA085;       /* Soft Botanical Sage Green */
+  --color-accent-violet: #E5989B;     /* Dusty Rose Tulip */
+  --color-pale-rose: #FBF0EB;
+  --color-light-pink: #F7E4DE;
+  --color-lavender: #F6ECE8;
+  --color-lavender-accent: #D87D82;
+  --color-lavender-text: #A35459;
+  --color-lavender-soft: #FDF7F4;
 
-  --text-main: #0F172A;
-  --text-secondary: #475569;
-  --text-muted: #94A3B8;
+  /* Typography: Warm Roasted Coffee & Cocoa Taupe */
+  --text-main: #3C3130;
+  --text-secondary: #6E605E;
+  --text-muted: #9E8F8C;
 
-  --border-soft: #E2E8F0;
-  --border-subtle: #F1F5F9;
-  --border-focus: #6366F1;
+  /* Subtle Warm Cashmere Borders */
+  --border-soft: #EDE2D8;
+  --border-subtle: #F5ECE5;
+  --border-focus: #DE7E73;
 
-  --color-success: #10B981;
-  --color-success-bg: #ECFDF5;
-  --color-success-border: #A7F3D0;
+  /* Natural Botanical Status Colors */
+  --color-success: #5C946E;
+  --color-success-bg: #F1F7F2;
+  --color-success-border: #D7EADB;
 
-  --color-warning: #F59E0B;
-  --color-warning-bg: #FFFBEB;
-  --color-warning-border: #FDE68A;
+  --color-warning: #D98A38;
+  --color-warning-bg: #FFF8EE;
+  --color-warning-border: #FCE3C8;
 
-  --color-danger: #EF4444;
-  --color-danger-bg: #FEF2F2;
-  --color-danger-border: #FECACA;
+  --color-danger: #CF5C5C;
+  --color-danger-bg: #FDF3F3;
+  --color-danger-border: #FAD7D7;
 
-  --color-info: #0284C7;
-  --color-info-bg: #F0F9FF;
-  --color-info-border: #BAE6FD;
+  --color-info: #7C8BB8;
+  --color-info-bg: #F3F5FA;
+  --color-info-border: #DCE1F2;
 
-  --radius-xs: 6px;
-  --radius-sm: 10px;
-  --radius-md: 14px;
-  --radius-lg: 18px;
-  --radius-xl: 24px;
+  /* Soft Organic Rounded Radii */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
   --radius-full: 9999px;
 
-  /* Layered Shadows */
-  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
-  --shadow-sm: 0 2px 6px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.03);
-  --shadow-md: 0 8px 24px -4px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
-  --shadow-lg: 0 16px 36px -6px rgba(15, 23, 42, 0.12), 0 4px 12px -2px rgba(15, 23, 42, 0.05);
-  --shadow-glow: 0 0 24px -4px rgba(99, 102, 241, 0.25);
+  /* Soft Ambient Organic Shadows */
+  --shadow-xs: 0 1px 2px rgba(120, 85, 75, 0.04);
+  --shadow-sm: 0 2px 8px rgba(120, 85, 75, 0.05), 0 1px 2px rgba(120, 85, 75, 0.03);
+  --shadow-md: 0 8px 24px -4px rgba(120, 85, 75, 0.08), 0 2px 6px -1px rgba(120, 85, 75, 0.04);
+  --shadow-lg: 0 16px 36px -6px rgba(120, 85, 75, 0.10);
+  --shadow-glow: 0 0 24px -4px rgba(222, 126, 115, 0.28);
 
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-heading: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Outfit', 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --sidebar-width: 264px;
   --topbar-height: 64px;
 }
 
-/* Sleek Deep Obsidian Night (Dark Theme) */
+/* Cozy Candlelit Mocha Night (Dark Theme) */
 html[data-theme="dark"],
 body[data-theme="dark"],
 .theme-dark {
-  --bg-app: #0A0D14;
-  --bg-main: #0A0D14;
-  --bg-sidebar: #0F1420;
-  --bg-card: #141B2D;
-  --bg-card-elevated: #1B243C;
-  --bg-card-subtle: #111726;
-  --bg-topbar: rgba(10, 13, 20, 0.85);
-  --bg-input: #0F1420;
-  --bg-hover: #1E2742;
-  --bg-hover-subtle: rgba(99, 102, 241, 0.14);
+  --bg-app: #1C1717;
+  --bg-main: #1C1717;
+  --bg-sidebar: #231C1C;
+  --bg-card: #272020;
+  --bg-card-elevated: #312929;
+  --bg-card-subtle: #211B1B;
+  --bg-topbar: rgba(28, 23, 23, 0.88);
+  --bg-input: #241E1E;
+  --bg-hover: #332929;
+  --bg-hover-subtle: rgba(229, 152, 155, 0.12);
 
-  --color-primary: #818CF8;
-  --color-primary-hover: #A5B4FC;
-  --color-primary-blush: rgba(129, 140, 248, 0.15);
-  --color-primary-text: #A5B4FC;
-  --color-accent-cyan: #22D3EE;
-  --color-accent-violet: #A78BFA;
-  --color-pale-rose: #1B2238;
-  --color-light-pink: #252F4C;
-  --color-lavender: #181E32;
-  --color-lavender-accent: #C4B5FD;
-  --color-lavender-text: #DDD6FE;
-  --color-lavender-soft: #121828;
+  --color-primary: #E5989B;
+  --color-primary-hover: #F0AAA9;
+  --color-primary-blush: rgba(229, 152, 155, 0.16);
+  --color-primary-text: #F4B8B6;
+  --color-accent-cyan: #95B89B;
+  --color-accent-violet: #DDA6BC;
+  --color-pale-rose: #2A2222;
+  --color-light-pink: #332929;
+  --color-lavender: #292024;
+  --color-lavender-accent: #EAAFC8;
+  --color-lavender-text: #F5D2E1;
+  --color-lavender-soft: #20181B;
 
-  --text-main: #F8FAFC;
-  --text-secondary: #94A3B8;
-  --text-muted: #64748B;
+  --text-main: #FAF5F0;
+  --text-secondary: #C9BCB8;
+  --text-muted: #8E7E7A;
 
-  --border-soft: #232C42;
-  --border-subtle: #192032;
-  --border-focus: #818CF8;
+  --border-soft: #3D3232;
+  --border-subtle: #2B2323;
+  --border-focus: #E5989B;
 
-  --color-success: #34D399;
-  --color-success-bg: rgba(52, 211, 153, 0.12);
-  --color-success-border: rgba(52, 211, 153, 0.28);
+  --color-success: #6FB383;
+  --color-success-bg: rgba(111, 179, 131, 0.14);
+  --color-success-border: rgba(111, 179, 131, 0.3);
 
-  --color-warning: #FBBF24;
-  --color-warning-bg: rgba(251, 191, 36, 0.12);
-  --color-warning-border: rgba(251, 191, 36, 0.28);
+  --color-warning: #EBB067;
+  --color-warning-bg: rgba(235, 176, 103, 0.14);
+  --color-warning-border: rgba(235, 176, 103, 0.3);
 
-  --color-danger: #F87171;
-  --color-danger-bg: rgba(248, 113, 113, 0.12);
-  --color-danger-border: rgba(248, 113, 113, 0.28);
+  --color-danger: #E87D7D;
+  --color-danger-bg: rgba(232, 125, 125, 0.14);
+  --color-danger-border: rgba(232, 125, 125, 0.3);
 
-  --color-info: #38BDF8;
-  --color-info-bg: rgba(56, 189, 248, 0.12);
-  --color-info-border: rgba(56, 189, 248, 0.28);
+  --color-info: #98A6D4;
+  --color-info-bg: rgba(152, 166, 212, 0.14);
+  --color-info-border: rgba(152, 166, 212, 0.3);
 
   --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
   --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.5);
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.6);
   --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.7);
-  --shadow-glow: 0 0 28px -4px rgba(129, 140, 248, 0.3);
+  --shadow-glow: 0 0 28px -4px rgba(229, 152, 155, 0.28);
 }
 
 /* Base Styles & Typography */
@@ -145,14 +150,14 @@ body {
   font-family: var(--font-body);
   background-color: var(--bg-app);
   color: var(--text-main);
-  line-height: 1.55;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
   transition: background-color 0.25s ease, color 0.25s ease;
   background-image: 
-    radial-gradient(ellipse at 85% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 60%),
-    radial-gradient(ellipse at 15% 100%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
+    radial-gradient(ellipse at 85% 0%, rgba(222, 126, 115, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 15% 100%, rgba(127, 160, 133, 0.07) 0%, transparent 50%);
   background-attachment: fixed;
 }
 
@@ -198,10 +203,10 @@ a:hover {
 
 @keyframes pulseGlow {
   0%, 100% {
-    box-shadow: 0 0 15px rgba(99, 102, 241, 0.25);
+    box-shadow: 0 0 15px rgba(222, 126, 115, 0.25);
   }
   50% {
-    box-shadow: 0 0 28px rgba(99, 102, 241, 0.55);
+    box-shadow: 0 0 28px rgba(222, 126, 115, 0.50);
   }
 }
 
@@ -209,7 +214,7 @@ a:hover {
   animation: pulseGlow 2.5s infinite;
 }
 
-/* Card Component */
+/* Card Component - Cozy, Gentle, Minimal */
 .card {
   background-color: var(--bg-card);
   border-radius: var(--radius-lg);
@@ -222,7 +227,7 @@ a:hover {
 
 .card:hover {
   box-shadow: var(--shadow-md);
-  border-color: rgba(99, 102, 241, 0.3);
+  border-color: rgba(222, 126, 115, 0.35);
 }
 
 .card-elevated {
@@ -237,11 +242,11 @@ a:hover {
 
 .card-elevated:hover {
   box-shadow: var(--shadow-md);
-  border-color: rgba(99, 102, 241, 0.4);
+  border-color: rgba(222, 126, 115, 0.35);
 }
 
 .card-header {
-  padding: 16px 20px;
+  padding: 18px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -249,7 +254,7 @@ a:hover {
 }
 
 .card-title {
-  font-size: 1.02rem;
+  font-size: 1.05rem;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -263,10 +268,10 @@ a:hover {
 }
 
 .card-body {
-  padding: 20px;
+  padding: 22px;
 }
 
-/* Buttons */
+/* Buttons - Warm Terracotta & Peach Gradient */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -274,7 +279,7 @@ a:hover {
   gap: 8px;
   font-weight: 600;
   font-size: 0.85rem;
-  padding: 8px 16px;
+  padding: 8px 18px;
   border-radius: var(--radius-md);
   border: 1px solid transparent;
   cursor: pointer;
@@ -291,12 +296,13 @@ a:hover {
 .btn-primary {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent-violet) 100%);
   color: #FFFFFF !important;
-  box-shadow: 0 2px 10px rgba(99, 102, 241, 0.28);
+  box-shadow: 0 3px 12px rgba(222, 126, 115, 0.28);
 }
 
 .btn-primary:hover {
-  filter: brightness(1.08);
-  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.42);
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 16px rgba(222, 126, 115, 0.38);
 }
 
 .btn-secondary {
@@ -332,13 +338,13 @@ a:hover {
 }
 
 .btn-sm {
-  padding: 5px 11px;
+  padding: 6px 12px;
   font-size: 0.78rem;
   border-radius: var(--radius-sm);
 }
 
 .btn-lg {
-  padding: 12px 24px;
+  padding: 12px 28px;
   font-size: 0.98rem;
   border-radius: var(--radius-md);
 }
@@ -348,14 +354,14 @@ a:hover {
   border-radius: var(--radius-md);
 }
 
-/* Badges & Tags */
+/* Badges & Tags - Soft, Pastel, Minimal */
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 5px;
   font-size: 0.75rem;
   font-weight: 600;
-  padding: 3px 10px;
+  padding: 4px 12px;
   border-radius: var(--radius-full);
   line-height: 1.4;
   letter-spacing: 0.01em;
@@ -364,13 +370,13 @@ a:hover {
 .badge-primary {
   background-color: var(--color-primary-blush);
   color: var(--color-primary-text);
-  border: 1px solid rgba(99, 102, 241, 0.25);
+  border: 1px solid rgba(222, 126, 115, 0.24);
 }
 
 .badge-lavender {
   background-color: var(--color-lavender);
   color: var(--color-lavender-accent);
-  border: 1px solid rgba(139, 92, 246, 0.25);
+  border: 1px solid rgba(216, 125, 130, 0.24);
 }
 
 .badge-success {
@@ -418,7 +424,7 @@ a:hover {
   background-color: var(--bg-input);
   border: 1px solid var(--border-soft);
   border-radius: var(--radius-md);
-  padding: 9px 13px;
+  padding: 10px 14px;
   color: var(--text-main);
   outline: none;
   width: 100%;
@@ -427,7 +433,7 @@ a:hover {
 
 .form-input:focus, .input-field:focus, .form-select:focus, .form-textarea:focus {
   border-color: var(--border-focus);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  box-shadow: 0 0 0 3px rgba(222, 126, 115, 0.18);
 }
 
 .form-textarea {
@@ -464,7 +470,7 @@ a:hover {
 
 .stat-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(99, 102, 241, 0.35);
+  border-color: rgba(222, 126, 115, 0.35);
 }
 
 .stat-card-label {
@@ -488,7 +494,7 @@ a:hover {
   color: var(--text-secondary);
 }
 
-/* Progress Bar */
+/* Progress Bar - Soft Rose / Terracotta */
 .progress-track {
   width: 100%;
   height: 8px;
@@ -537,7 +543,7 @@ a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(30, 20, 20, 0.45);
   backdrop-filter: blur(4px);
   z-index: 95;
 }

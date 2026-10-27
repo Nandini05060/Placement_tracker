@@ -21,7 +21,7 @@ export function getDefaultData() {
       dailyTargetMinutes: 120,
       weeklyHoursGoal: 14,
       dsaTarget: 80,
-      theme: 'dark',
+      theme: 'light',
       soundEnabled: true,
       college: 'B.Tech Computer Science & Engineering',
       gradYear: '2026',

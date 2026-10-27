@@ -190,12 +190,15 @@ export function Dashboard({ data, store = placementStore, onNavigate, setActiveV
         }}
       >
         <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px', flexWrap: 'wrap' }}>
             <span style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--color-primary)', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
               {studentName} | Placement Dashboard
             </span>
             <span style={{ color: 'var(--border-soft)' }}>•</span>
             <span style={{ fontSize: '0.76rem', color: 'var(--text-secondary)' }}>{todayDateFormatted}</span>
+            <span className="badge badge-lavender" style={{ fontSize: '0.72rem', fontStyle: 'italic', marginLeft: '4px' }}>
+              🌸 life is a collection of little moments • go at your own pace
+            </span>
           </div>
           <h1 style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--text-main)', margin: '0 0 4px 0', letterSpacing: '-0.02em' }}>
             {greeting}, {studentName}.
