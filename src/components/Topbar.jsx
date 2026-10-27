@@ -108,11 +108,11 @@ export function Topbar({
 
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span style={{ fontSize: '0.68rem', color: 'var(--color-primary)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+            <span style={{ fontSize: '0.68rem', color: 'var(--color-primary-text)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
               {currentInfo.breadcrumb}
             </span>
           </div>
-          <h2 style={{ fontSize: '1.18rem', fontWeight: 800, margin: '1px 0 0 0', letterSpacing: '-0.02em', color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
+          <h2 style={{ fontSize: '1.28rem', fontWeight: 600, margin: '1px 0 0 0', letterSpacing: '-0.01em', color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
             {currentInfo.title}
           </h2>
         </div>
@@ -157,11 +157,11 @@ export function Topbar({
       </div>
 
       {/* Right: Status Pills & Action Controls */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
         {/* Days Countdown Pill */}
         <div
-          className="badge badge-lavender"
-          style={{ padding: '6px 12px', fontSize: '0.78rem', gap: '6px', cursor: 'default' }}
+          className="badge badge-primary"
+          style={{ padding: '5px 11px', fontSize: '0.76rem', gap: '5px', cursor: 'default' }}
           title="Days until target placement drive deadline"
         >
           <Calendar size={13} />
@@ -171,17 +171,17 @@ export function Topbar({
         {/* Streak Pill */}
         <div
           className="badge badge-warning"
-          style={{ padding: '6px 12px', fontSize: '0.78rem', gap: '6px', cursor: 'default' }}
+          style={{ padding: '5px 11px', fontSize: '0.76rem', gap: '5px', cursor: 'default' }}
           title="Daily study streak"
         >
           <Flame size={13} />
           <span>{streakInfo.currentStreak}d Streak</span>
         </div>
 
-        {/* Study Time Pill */}
+        {/* Study Time Pill - Muted Botanical Sage */}
         <div
-          className="badge badge-primary"
-          style={{ padding: '6px 12px', fontSize: '0.78rem', gap: '6px', cursor: 'default' }}
+          className="badge badge-success"
+          style={{ padding: '5px 11px', fontSize: '0.76rem', gap: '5px', cursor: 'default' }}
           title="Today's studied time vs daily goal"
         >
           <Clock size={13} />

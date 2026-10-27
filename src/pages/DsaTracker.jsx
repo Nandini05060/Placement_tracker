@@ -221,10 +221,10 @@ export function DsaTracker({ data, store }) {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '16px' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-              <span className="badge badge-primary">DSA Master Tracker</span>
-              <span className="badge badge-lavender">TakeUForward Partnered</span>
+              <span className="badge badge-primary">DSA Practice Journal</span>
+              <span className="badge badge-success">Striver's A2Z Sheet</span>
             </div>
-            <h1 style={{ fontSize: '1.65rem', fontWeight: 800, margin: '0 0 6px 0', color: 'var(--text-main)' }}>
+            <h1 style={{ fontSize: '2.0rem', fontWeight: 600, margin: '0 0 6px 0', color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
               Data Structures & Algorithms
             </h1>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', margin: 0, maxWidth: '720px' }}>
@@ -248,17 +248,17 @@ export function DsaTracker({ data, store }) {
         <div className="stat-grid-4" style={{ marginTop: '22px', marginBottom: 0 }}>
           <div className="stat-card">
             <span className="stat-card-label">Total Solved</span>
-            <div className="stat-card-value" style={{ color: 'var(--color-primary)' }}>
+            <div className="stat-card-value" style={{ color: 'var(--color-primary-text)' }}>
               {totalSolvedOverall} <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>/ {target} target</span>
             </div>
-            <div className="progress-track" style={{ height: '6px', marginTop: '6px' }}>
-              <div className="progress-fill" style={{ width: `${Math.min(100, (totalSolvedOverall / target) * 100)}%` }} />
+            <div className="progress-track" style={{ height: '4px', marginTop: '6px' }}>
+              <div className="progress-fill" style={{ width: `${Math.min(100, (totalSolvedOverall / target) * 100)}%`, backgroundColor: 'var(--color-primary)' }} />
             </div>
           </div>
 
           <div className="stat-card">
             <span className="stat-card-label">Striver A2Z Progress</span>
-            <div className="stat-card-value" style={{ color: 'var(--color-success)' }}>
+            <div className="stat-card-value" style={{ color: 'var(--color-sage)' }}>
               {solvedStriverCount} <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>/ {totalStriverCount}</span>
             </div>
             <div className="stat-card-sub">{Math.round((solvedStriverCount / (totalStriverCount || 1)) * 100)}% syllabus completed</div>
@@ -287,21 +287,21 @@ export function DsaTracker({ data, store }) {
         <button
           className={`btn ${activeTab === 'strivers' ? 'btn-primary' : 'btn-ghost'}`}
           onClick={() => setActiveTab('strivers')}
-          style={{ borderRadius: 'var(--radius-md) var(--radius-md) 0 0', fontWeight: 700 }}
+          style={{ borderRadius: 'var(--radius-md) var(--radius-md) 0 0', fontWeight: 600 }}
         >
-          <Sparkles size={16} />
+          <Sparkles size={15} />
           <span>Striver's A2Z DSA Sheet (18 Steps)</span>
-          <span className="badge badge-lavender" style={{ marginLeft: '4px' }}>{totalStriverCount}</span>
+          <span className="badge badge-primary" style={{ marginLeft: '4px' }}>{totalStriverCount}</span>
         </button>
 
         <button
           className={`btn ${activeTab === 'custom' ? 'btn-primary' : 'btn-ghost'}`}
           onClick={() => setActiveTab('custom')}
-          style={{ borderRadius: 'var(--radius-md) var(--radius-md) 0 0', fontWeight: 700 }}
+          style={{ borderRadius: 'var(--radius-md) var(--radius-md) 0 0', fontWeight: 600 }}
         >
-          <Code2 size={16} />
+          <Code2 size={15} />
           <span>Custom Problem Log</span>
-          <span className="badge badge-lavender" style={{ marginLeft: '4px' }}>{customProblems.length}</span>
+          <span className="badge badge-primary" style={{ marginLeft: '4px' }}>{customProblems.length}</span>
         </button>
       </div>
 

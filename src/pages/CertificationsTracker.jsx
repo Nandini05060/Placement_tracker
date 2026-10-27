@@ -139,14 +139,14 @@ export function CertificationsTracker({ data, store }) {
       <div className="card" style={{ padding: '24px', background: 'var(--bg-card)' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
               <span className="badge badge-primary">Verified Credentials</span>
               <span className="badge badge-lavender">Personal Certifications</span>
             </div>
-            <h1 style={{ fontSize: '1.65rem', fontWeight: 800, margin: '0 0 4px 0', color: 'var(--text-main)' }}>
+            <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.0rem', fontWeight: 600, margin: '0 0 6px 0', color: 'var(--text-main)', letterSpacing: '-0.01em' }}>
               Certifications & Badges
             </h1>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', margin: 0, maxWidth: '700px' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', margin: 0, maxWidth: '700px', lineHeight: 1.55 }}>
               Add and track your verified industry certifications, cloud badges, and coursework credentials. These reflect automatically on your ATS resume.
             </p>
           </div>
@@ -167,7 +167,7 @@ export function CertificationsTracker({ data, store }) {
         <div className="stat-grid-4" style={{ marginTop: '22px', marginBottom: 0 }}>
           <div className="stat-card">
             <span className="stat-card-label">Earned Credentials</span>
-            <div className="stat-card-value" style={{ color: 'var(--color-success)' }}>
+            <div className="stat-card-value" style={{ fontFamily: 'var(--font-heading)', fontSize: '2.0rem', fontWeight: 600, color: 'var(--color-success)' }}>
               {completedCount}
             </div>
             <div className="stat-card-sub">Verified & completed</div>
@@ -175,7 +175,7 @@ export function CertificationsTracker({ data, store }) {
 
           <div className="stat-card">
             <span className="stat-card-label">In Progress</span>
-            <div className="stat-card-value" style={{ color: 'var(--color-warning)' }}>
+            <div className="stat-card-value" style={{ fontFamily: 'var(--font-heading)', fontSize: '2.0rem', fontWeight: 600, color: 'var(--color-warning)' }}>
               {inProgressCount}
             </div>
             <div className="stat-card-sub">Currently enrolled courses</div>
@@ -183,7 +183,7 @@ export function CertificationsTracker({ data, store }) {
 
           <div className="stat-card">
             <span className="stat-card-label">Planned Next</span>
-            <div className="stat-card-value" style={{ color: 'var(--color-primary)' }}>
+            <div className="stat-card-value" style={{ fontFamily: 'var(--font-heading)', fontSize: '2.0rem', fontWeight: 600, color: 'var(--color-primary)' }}>
               {plannedCount}
             </div>
             <div className="stat-card-sub">Target certifications</div>
@@ -191,7 +191,7 @@ export function CertificationsTracker({ data, store }) {
 
           <div className="stat-card">
             <span className="stat-card-label">Total Portfolio</span>
-            <div className="stat-card-value">{certs.length}</div>
+            <div className="stat-card-value" style={{ fontFamily: 'var(--font-heading)', fontSize: '2.0rem', fontWeight: 600 }}>{certs.length}</div>
             <div className="stat-card-sub">Overall tracked certifications</div>
           </div>
         </div>
@@ -288,7 +288,7 @@ export function CertificationsTracker({ data, store }) {
                     </span>
                   </div>
 
-                  <h3 style={{ fontSize: '1.15rem', fontWeight: 800, margin: '0 0 6px 0', color: 'var(--text-main)' }}>
+                  <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.25rem', fontWeight: 600, margin: '0 0 6px 0', color: 'var(--text-main)', letterSpacing: '-0.01em' }}>
                     {cert.name}
                   </h3>
 

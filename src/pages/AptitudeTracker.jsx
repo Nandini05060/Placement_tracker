@@ -205,9 +205,9 @@ export function AptitudeTracker({ data, store }) {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
               <span className="badge badge-primary">R.S. Aggarwal Quantitative Aptitude</span>
-              <span className="badge badge-lavender">Sections I & II Standard</span>
+              <span className="badge badge-success">30-Min Daily Practice</span>
             </div>
-            <h1 style={{ fontSize: '1.65rem', fontWeight: 800, margin: '0 0 6px 0', color: 'var(--text-main)' }}>
+            <h1 style={{ fontSize: '2.0rem', fontWeight: 600, margin: '0 0 6px 0', color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
               Quantitative Aptitude & Reasoning
             </h1>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', margin: 0, maxWidth: '720px' }}>
@@ -224,7 +224,7 @@ export function AptitudeTracker({ data, store }) {
         <div className="stat-grid-4" style={{ marginTop: '22px', marginBottom: 0 }}>
           <div className="stat-card">
             <span className="stat-card-label">Mastered Chapters</span>
-            <div className="stat-card-value" style={{ color: 'var(--color-success)' }}>
+            <div className="stat-card-value" style={{ color: 'var(--color-sage)' }}>
               {masteredCount} <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>/ {totalChapters}</span>
             </div>
             <div className="stat-card-sub">{Math.round((masteredCount / totalChapters) * 100)}% syllabus mastery</div>
@@ -240,7 +240,7 @@ export function AptitudeTracker({ data, store }) {
 
           <div className="stat-card">
             <span className="stat-card-label">Questions Solved</span>
-            <div className="stat-card-value" style={{ color: 'var(--color-primary)' }}>
+            <div className="stat-card-value" style={{ color: 'var(--color-primary-text)' }}>
               {totalQuestionsPracticed}
             </div>
             <div className="stat-card-sub">Quantitative & DI drills</div>
@@ -260,7 +260,7 @@ export function AptitudeTracker({ data, store }) {
         style={{
           padding: '24px',
           background: 'var(--bg-card)',
-          border: isTimerRunning ? '1px solid rgba(99, 102, 241, 0.45)' : '1px solid var(--border-soft)',
+          border: isTimerRunning ? '1px solid var(--color-primary)' : '1px solid var(--border-soft)',
           boxShadow: isTimerRunning ? 'var(--shadow-glow)' : 'var(--shadow-sm)'
         }}
       >
@@ -271,17 +271,17 @@ export function AptitudeTracker({ data, store }) {
                 width: '36px',
                 height: '36px',
                 borderRadius: 'var(--radius-sm)',
-                backgroundColor: 'var(--color-primary-blush)',
-                color: 'var(--color-primary)',
+                backgroundColor: 'var(--color-primary-pale)',
+                color: 'var(--color-primary-text)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center'
               }}
             >
-              <Clock size={20} />
+              <Clock size={18} />
             </div>
             <div>
-              <h2 style={{ fontSize: '1.15rem', margin: 0, fontWeight: 800, color: 'var(--text-main)' }}>
+              <h2 style={{ fontSize: '1.25rem', margin: 0, fontWeight: 600, color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
                 30-Minute Daily Aptitude Practice Sprint
               </h2>
               <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
@@ -313,11 +313,12 @@ export function AptitudeTracker({ data, store }) {
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
             <div
               style={{
-                fontSize: '2.8rem',
-                fontWeight: 800,
-                letterSpacing: '-0.03em',
+                fontSize: '3.0rem',
+                fontWeight: 600,
+                letterSpacing: '-0.02em',
                 fontFamily: 'var(--font-heading)',
-                color: isTimerRunning ? 'var(--color-primary)' : 'var(--text-main)'
+                fontVariantNumeric: 'tabular-nums',
+                color: isTimerRunning ? 'var(--color-primary-text)' : 'var(--text-main)'
               }}
             >
               {formattedTime}

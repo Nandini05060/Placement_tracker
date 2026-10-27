@@ -1,142 +1,168 @@
 /* ==========================================================================
-   PLACEMENT TRACKER — WARM MINIMAL & COTTAGE AESTHETIC DESIGN SYSTEM
-   Inspiration: "Fragments" Watercolor Cozy Studio × Soft Peach, Cream & Terracotta
-   Atmosphere: Gentle, peaceful, decluttered, minimal & organized for calm focus
+   PLACEMENT TRACKER — REFINED EDITORIAL & MINIMAL BOTANICAL DESIGN SYSTEM
+   Palette Balance:
+     • 75% Warm Ivory & Cream (#F8F4EF canvas, #FFFCF8 warm cards, #F2EAE3 subtle)
+     • 15% Muted Sage & Soft Olive (#8B967C, #A5A58A, #59634F completed/positive)
+     • 10% Dusty Rose & Blush Pink (#C98F88, #E8C2BA, #B87973 accents & primary)
+   Typography:
+     • Headings: Cormorant Garamond (refined, graceful editorial serif)
+     • Body/UI: DM Sans & Plus Jakarta Sans (clean, legible, modern)
+     • Accents: Caveat (gentle personal handwritten touch)
    ========================================================================== */
 
 :root {
-  /* Warm Linen & Peach Aesthetic Light Theme */
-  --bg-app: #FAF6F0;
-  --bg-main: #FAF6F0;
-  --bg-sidebar: #FFFDF9;
-  --bg-card: #FFFDF9;
-  --bg-card-elevated: #F6EFE9;
-  --bg-card-subtle: #F5ECE5;
-  --bg-topbar: rgba(250, 246, 240, 0.88);
-  --bg-input: #FFFDFB;
-  --bg-hover: #F3E8DF;
-  --bg-hover-subtle: rgba(222, 126, 115, 0.08);
+  /* 75% Warm Ivory, Cream & Linen Canvas */
+  --bg-app: #F8F4EF;
+  --bg-main: #F8F4EF;
+  --bg-sidebar: #FFFCF8;
+  --bg-card: #FFFCF8;
+  --bg-card-elevated: #F5EEE8;
+  --bg-card-subtle: #F2EAE3;
+  --bg-topbar: rgba(248, 244, 239, 0.92);
+  --bg-input: #FFFFFF;
+  --bg-hover: #F2EAE3;
+  --bg-hover-subtle: rgba(201, 143, 136, 0.08);
 
-  /* Primary: Soft Terracotta & Coral Blush */
-  --color-primary: #DE7E73;
-  --color-primary-hover: #CF6F64;
-  --color-primary-blush: #FDF2EE;
-  --color-primary-text: #C45E53;
-  --color-accent-cyan: #7FA085;       /* Soft Botanical Sage Green */
-  --color-accent-violet: #E5989B;     /* Dusty Rose Tulip */
-  --color-pale-rose: #FBF0EB;
-  --color-light-pink: #F7E4DE;
-  --color-lavender: #F6ECE8;
-  --color-lavender-accent: #D87D82;
-  --color-lavender-text: #A35459;
-  --color-lavender-soft: #FDF7F4;
+  /* 10% Dusty Rose & Soft Blush Accents */
+  --color-primary: #C98F88;
+  --color-primary-hover: #B87973;
+  --color-primary-blush: #E8C2BA;
+  --color-primary-pale: #F3DFD9;
+  --color-primary-text: #A8655E;
+  --color-accent-violet: #D4A39D;
+  --color-pale-rose: #FBF4F2;
+  --color-light-pink: #F7EAE6;
+  --color-lavender: #F4EAE6;
+  --color-lavender-accent: #B87973;
+  --color-lavender-text: #96534C;
+  --color-lavender-soft: #FDF9F7;
 
-  /* Typography: Warm Roasted Coffee & Cocoa Taupe */
-  --text-main: #3C3130;
-  --text-secondary: #6E605E;
-  --text-muted: #9E8F8C;
+  /* 15% Muted Sage & Botanical Olive Accents */
+  --color-sage: #8B967C;
+  --color-sage-bg: #F1F4EE;
+  --color-sage-border: #D8DFD0;
+  --color-olive: #A5A58A;
+  --color-olive-bg: #F5F5EE;
+  --color-olive-border: #DEDECF;
+  --color-botanical-dark: #59634F;
+  --color-accent-cyan: #8B967C;
 
-  /* Subtle Warm Cashmere Borders */
-  --border-soft: #EDE2D8;
-  --border-subtle: #F5ECE5;
-  --border-focus: #DE7E73;
+  /* Typography: Dark Charcoal-Brown (Never pure harsh black) */
+  --text-main: #39352F;
+  --text-secondary: #777067;
+  --text-muted: #A39A90;
+
+  /* Delicate Warm Cashmere & Linen Borders */
+  --border-soft: #E8DED4;
+  --border-subtle: #F0E8DF;
+  --border-focus: #C98F88;
 
   /* Natural Botanical Status Colors */
-  --color-success: #5C946E;
-  --color-success-bg: #F1F7F2;
-  --color-success-border: #D7EADB;
+  --color-success: #8B967C;
+  --color-success-bg: #F1F4EE;
+  --color-success-border: #D8DFD0;
 
-  --color-warning: #D98A38;
-  --color-warning-bg: #FFF8EE;
-  --color-warning-border: #FCE3C8;
+  --color-warning: #C48E48;
+  --color-warning-bg: #FDF7ED;
+  --color-warning-border: #F3DEC2;
 
-  --color-danger: #CF5C5C;
-  --color-danger-bg: #FDF3F3;
-  --color-danger-border: #FAD7D7;
+  --color-danger: #C26363;
+  --color-danger-bg: #FDF4F4;
+  --color-danger-border: #F5D3D3;
 
-  --color-info: #7C8BB8;
-  --color-info-bg: #F3F5FA;
-  --color-info-border: #DCE1F2;
+  --color-info: #7E8D9B;
+  --color-info-bg: #F2F5F7;
+  --color-info-border: #D6DFE6;
 
-  /* Soft Organic Rounded Radii */
-  --radius-xs: 8px;
-  --radius-sm: 12px;
-  --radius-md: 16px;
-  --radius-lg: 22px;
-  --radius-xl: 28px;
+  /* Editorial Restrained Radii (14px - 18px for cards, avoid over-rounded pill shapes) */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
   --radius-full: 9999px;
 
-  /* Soft Ambient Organic Shadows */
-  --shadow-xs: 0 1px 2px rgba(120, 85, 75, 0.04);
-  --shadow-sm: 0 2px 8px rgba(120, 85, 75, 0.05), 0 1px 2px rgba(120, 85, 75, 0.03);
-  --shadow-md: 0 8px 24px -4px rgba(120, 85, 75, 0.08), 0 2px 6px -1px rgba(120, 85, 75, 0.04);
-  --shadow-lg: 0 16px 36px -6px rgba(120, 85, 75, 0.10);
-  --shadow-glow: 0 0 24px -4px rgba(222, 126, 115, 0.28);
+  /* Soft Ambient Editorial Shadows */
+  --shadow-xs: 0 1px 2px rgba(57, 53, 47, 0.03);
+  --shadow-sm: 0 2px 6px rgba(57, 53, 47, 0.04), 0 1px 2px rgba(57, 53, 47, 0.02);
+  --shadow-md: 0 6px 18px -3px rgba(57, 53, 47, 0.06), 0 2px 6px -1px rgba(57, 53, 47, 0.03);
+  --shadow-lg: 0 12px 28px -4px rgba(57, 53, 47, 0.08);
+  --shadow-glow: 0 0 20px -2px rgba(201, 143, 136, 0.22);
 
-  --font-body: 'Outfit', 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-heading: 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Refined Editorial Typography Hierarchy */
+  --font-body: 'DM Sans', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Cormorant Garamond', 'Georgia', serif;
+  --font-accent: 'Caveat', cursive, serif;
 
-  --sidebar-width: 264px;
+  --sidebar-width: 260px;
   --topbar-height: 64px;
 }
 
-/* Cozy Candlelit Mocha Night (Dark Theme) */
+/* Cozy Candlelit Mocha Night (Refined Muted Dark Mode) */
 html[data-theme="dark"],
 body[data-theme="dark"],
 .theme-dark {
-  --bg-app: #1C1717;
-  --bg-main: #1C1717;
-  --bg-sidebar: #231C1C;
-  --bg-card: #272020;
-  --bg-card-elevated: #312929;
-  --bg-card-subtle: #211B1B;
-  --bg-topbar: rgba(28, 23, 23, 0.88);
-  --bg-input: #241E1E;
-  --bg-hover: #332929;
-  --bg-hover-subtle: rgba(229, 152, 155, 0.12);
+  --bg-app: #1D1A18;
+  --bg-main: #1D1A18;
+  --bg-sidebar: #24201E;
+  --bg-card: #272320;
+  --bg-card-elevated: #302B27;
+  --bg-card-subtle: #221E1C;
+  --bg-topbar: rgba(29, 26, 24, 0.92);
+  --bg-input: #231F1D;
+  --bg-hover: #322C28;
+  --bg-hover-subtle: rgba(201, 143, 136, 0.12);
 
-  --color-primary: #E5989B;
-  --color-primary-hover: #F0AAA9;
-  --color-primary-blush: rgba(229, 152, 155, 0.16);
-  --color-primary-text: #F4B8B6;
-  --color-accent-cyan: #95B89B;
-  --color-accent-violet: #DDA6BC;
-  --color-pale-rose: #2A2222;
-  --color-light-pink: #332929;
-  --color-lavender: #292024;
-  --color-lavender-accent: #EAAFC8;
-  --color-lavender-text: #F5D2E1;
-  --color-lavender-soft: #20181B;
+  --color-primary: #D49B94;
+  --color-primary-hover: #E0ADA7;
+  --color-primary-blush: rgba(212, 155, 148, 0.18);
+  --color-primary-text: #E8B6B1;
+  --color-accent-violet: #DEACA6;
+  --color-pale-rose: #2C2624;
+  --color-light-pink: #342C2A;
+  --color-lavender: #2E2726;
+  --color-lavender-accent: #E2ADA8;
+  --color-lavender-text: #F0CBC7;
+  --color-lavender-soft: #231C1B;
 
-  --text-main: #FAF5F0;
-  --text-secondary: #C9BCB8;
-  --text-muted: #8E7E7A;
+  --color-sage: #9BAA8B;
+  --color-sage-bg: rgba(155, 170, 139, 0.15);
+  --color-sage-border: rgba(155, 170, 139, 0.32);
+  --color-olive: #B4B499;
+  --color-olive-bg: rgba(180, 180, 153, 0.14);
+  --color-olive-border: rgba(180, 180, 153, 0.3);
+  --color-botanical-dark: #A5BA95;
+  --color-accent-cyan: #9BAA8B;
 
-  --border-soft: #3D3232;
-  --border-subtle: #2B2323;
-  --border-focus: #E5989B;
+  --text-main: #F5EFEB;
+  --text-secondary: #C4BBB3;
+  --text-muted: #8E847C;
 
-  --color-success: #6FB383;
-  --color-success-bg: rgba(111, 179, 131, 0.14);
-  --color-success-border: rgba(111, 179, 131, 0.3);
+  --border-soft: #3D3631;
+  --border-subtle: #2C2622;
+  --border-focus: #D49B94;
 
-  --color-warning: #EBB067;
-  --color-warning-bg: rgba(235, 176, 103, 0.14);
-  --color-warning-border: rgba(235, 176, 103, 0.3);
+  --color-success: #9BAA8B;
+  --color-success-bg: rgba(155, 170, 139, 0.15);
+  --color-success-border: rgba(155, 170, 139, 0.32);
 
-  --color-danger: #E87D7D;
-  --color-danger-bg: rgba(232, 125, 125, 0.14);
-  --color-danger-border: rgba(232, 125, 125, 0.3);
+  --color-warning: #D9A564;
+  --color-warning-bg: rgba(217, 165, 100, 0.14);
+  --color-warning-border: rgba(217, 165, 100, 0.3);
 
-  --color-info: #98A6D4;
-  --color-info-bg: rgba(152, 166, 212, 0.14);
-  --color-info-border: rgba(152, 166, 212, 0.3);
+  --color-danger: #DD7878;
+  --color-danger-bg: rgba(221, 120, 120, 0.14);
+  --color-danger-border: rgba(221, 120, 120, 0.3);
 
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
-  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.5);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.6);
-  --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.7);
-  --shadow-glow: 0 0 28px -4px rgba(229, 152, 155, 0.28);
+  --color-info: #8FA2B5;
+  --color-info-bg: rgba(143, 162, 181, 0.14);
+  --color-info-border: rgba(143, 162, 181, 0.3);
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 14px 30px rgba(0, 0, 0, 0.65);
+  --shadow-glow: 0 0 22px -2px rgba(212, 155, 148, 0.22);
 }
 
 /* Base Styles & Typography */
@@ -156,21 +182,43 @@ body {
   min-height: 100vh;
   transition: background-color 0.25s ease, color 0.25s ease;
   background-image: 
-    radial-gradient(ellipse at 85% 0%, rgba(222, 126, 115, 0.08) 0%, transparent 60%),
-    radial-gradient(ellipse at 15% 100%, rgba(127, 160, 133, 0.07) 0%, transparent 50%);
+    radial-gradient(ellipse at 85% 0%, rgba(201, 143, 136, 0.05) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 100%, rgba(139, 150, 124, 0.06) 0%, transparent 50%);
   background-attachment: fixed;
 }
 
+/* Editorial Serif Headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   color: var(--text-main);
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   line-height: 1.25;
 }
 
+h1 {
+  font-size: 2.15rem;
+  letter-spacing: -0.015em;
+}
+
+h2 {
+  font-size: 1.45rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+.font-serif {
+  font-family: var(--font-heading) !important;
+}
+
+.font-handwriting {
+  font-family: var(--font-accent) !important;
+}
+
 button, input, select, textarea {
-  font-family: inherit;
+  font-family: var(--font-body);
   font-size: 0.88rem;
   color: inherit;
 }
@@ -185,11 +233,11 @@ a:hover {
   opacity: 0.85;
 }
 
-/* Animations */
+/* Subtle Editorial Animations */
 @keyframes fadeInSlideUp {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(6px);
   }
   to {
     opacity: 1;
@@ -201,20 +249,7 @@ a:hover {
   animation: fadeInSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-@keyframes pulseGlow {
-  0%, 100% {
-    box-shadow: 0 0 15px rgba(222, 126, 115, 0.25);
-  }
-  50% {
-    box-shadow: 0 0 28px rgba(222, 126, 115, 0.50);
-  }
-}
-
-.pulse-glow {
-  animation: pulseGlow 2.5s infinite;
-}
-
-/* Card Component - Cozy, Gentle, Minimal */
+/* Card Component — Warm White Paper Surface with Delicate Border */
 .card {
   background-color: var(--bg-card);
   border-radius: var(--radius-lg);
@@ -227,7 +262,7 @@ a:hover {
 
 .card:hover {
   box-shadow: var(--shadow-md);
-  border-color: rgba(222, 126, 115, 0.35);
+  border-color: rgba(201, 143, 136, 0.4);
 }
 
 .card-elevated {
@@ -242,11 +277,11 @@ a:hover {
 
 .card-elevated:hover {
   box-shadow: var(--shadow-md);
-  border-color: rgba(222, 126, 115, 0.35);
+  border-color: rgba(201, 143, 136, 0.4);
 }
 
 .card-header {
-  padding: 18px 24px;
+  padding: 16px 22px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -254,32 +289,36 @@ a:hover {
 }
 
 .card-title {
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: 1.12rem;
+  font-weight: 600;
   display: flex;
   align-items: center;
   gap: 10px;
+  color: var(--text-main);
 }
 
 .card-subtitle {
   font-size: 0.82rem;
   color: var(--text-secondary);
-  margin-top: 3px;
+  margin-top: 2px;
+  font-weight: 400;
 }
 
 .card-body {
-  padding: 22px;
+  padding: 20px 22px;
 }
 
-/* Buttons - Warm Terracotta & Peach Gradient */
+/* Buttons — Refined Dusty Rose & Warm Linen */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  font-weight: 600;
-  font-size: 0.85rem;
-  padding: 8px 18px;
+  gap: 7px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.84rem;
+  padding: 8px 16px;
   border-radius: var(--radius-md);
   border: 1px solid transparent;
   cursor: pointer;
@@ -293,27 +332,40 @@ a:hover {
   transform: scale(0.98);
 }
 
+/* 10% Dusty Rose Primary Button */
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent-violet) 100%);
+  background-color: var(--color-primary);
   color: #FFFFFF !important;
-  box-shadow: 0 3px 12px rgba(222, 126, 115, 0.28);
+  box-shadow: 0 2px 8px rgba(201, 143, 136, 0.28);
 }
 
 .btn-primary:hover {
-  filter: brightness(1.06);
+  background-color: var(--color-primary-hover);
   transform: translateY(-1px);
-  box-shadow: 0 5px 16px rgba(222, 126, 115, 0.38);
+  box-shadow: 0 4px 12px rgba(201, 143, 136, 0.36);
 }
 
+/* Warm Linen Secondary Button */
 .btn-secondary {
-  background-color: var(--bg-card-subtle);
+  background-color: var(--bg-card);
   color: var(--text-main);
-  border-color: var(--border-soft);
+  border: 1px solid var(--border-soft);
 }
 
 .btn-secondary:hover {
   background-color: var(--bg-hover);
   border-color: var(--border-focus);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-soft);
+}
+
+.btn-outline:hover {
+  background-color: var(--bg-hover);
+  border-color: var(--color-primary);
 }
 
 .btn-ghost {
@@ -329,7 +381,7 @@ a:hover {
 .btn-danger {
   background-color: var(--color-danger-bg);
   color: var(--color-danger);
-  border-color: var(--color-danger-border);
+  border: 1px solid var(--color-danger-border);
 }
 
 .btn-danger:hover {
@@ -344,8 +396,8 @@ a:hover {
 }
 
 .btn-lg {
-  padding: 12px 28px;
-  font-size: 0.98rem;
+  padding: 12px 26px;
+  font-size: 0.95rem;
   border-radius: var(--radius-md);
 }
 
@@ -354,35 +406,42 @@ a:hover {
   border-radius: var(--radius-md);
 }
 
-/* Badges & Tags - Soft, Pastel, Minimal */
+/* Badges & Tags — Muted Sage & Soft Rose */
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 4px 12px;
+  font-size: 0.74rem;
+  font-weight: 500;
+  padding: 3px 10px;
   border-radius: var(--radius-full);
   line-height: 1.4;
   letter-spacing: 0.01em;
 }
 
 .badge-primary {
-  background-color: var(--color-primary-blush);
+  background-color: var(--color-primary-pale);
   color: var(--color-primary-text);
-  border: 1px solid rgba(222, 126, 115, 0.24);
+  border: 1px solid rgba(201, 143, 136, 0.28);
 }
 
 .badge-lavender {
   background-color: var(--color-lavender);
   color: var(--color-lavender-accent);
-  border: 1px solid rgba(216, 125, 130, 0.24);
+  border: 1px solid rgba(201, 143, 136, 0.24);
 }
 
-.badge-success {
-  background-color: var(--color-success-bg);
-  color: var(--color-success);
-  border: 1px solid var(--color-success-border);
+/* 15% Muted Sage for Success & Completed */
+.badge-success, .badge-sage {
+  background-color: var(--color-sage-bg);
+  color: var(--color-botanical-dark);
+  border: 1px solid var(--color-sage-border);
+}
+
+.badge-olive {
+  background-color: var(--color-olive-bg);
+  color: var(--color-botanical-dark);
+  border: 1px solid var(--color-olive-border);
 }
 
 .badge-warning {
@@ -403,17 +462,17 @@ a:hover {
   border: 1px solid var(--color-info-border);
 }
 
-/* Form Controls */
+/* Form Controls — Clean, Warm Linen with Rose Focus Ring */
 .form-group {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  margin-bottom: 16px;
+  margin-bottom: 15px;
 }
 
 .form-label {
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-secondary);
   display: flex;
   align-items: center;
@@ -424,16 +483,17 @@ a:hover {
   background-color: var(--bg-input);
   border: 1px solid var(--border-soft);
   border-radius: var(--radius-md);
-  padding: 10px 14px;
+  padding: 9px 13px;
   color: var(--text-main);
   outline: none;
   width: 100%;
+  font-size: 0.86rem;
   transition: border-color 0.18s ease, box-shadow 0.18s ease;
 }
 
 .form-input:focus, .input-field:focus, .form-select:focus, .form-textarea:focus {
   border-color: var(--border-focus);
-  box-shadow: 0 0 0 3px rgba(222, 126, 115, 0.18);
+  box-shadow: 0 0 0 3px rgba(201, 143, 136, 0.16);
 }
 
 .form-textarea {
@@ -441,18 +501,18 @@ a:hover {
   min-height: 80px;
 }
 
-/* Stat Grid */
+/* Stat Grid & Minimal KPI Cards */
 .stat-grid-4 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 16px;
+  gap: 15px;
   margin-bottom: 20px;
 }
 
 .stat-grid-3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
+  gap: 15px;
   margin-bottom: 20px;
 }
 
@@ -470,51 +530,74 @@ a:hover {
 
 .stat-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(222, 126, 115, 0.35);
+  border-color: rgba(201, 143, 136, 0.4);
 }
 
 .stat-card-label {
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   font-weight: 600;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
 }
 
 .stat-card-value {
-  font-size: 1.65rem;
-  font-weight: 800;
+  font-size: 1.85rem;
+  font-weight: 600;
   color: var(--text-main);
   font-family: var(--font-heading);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
 }
 
 .stat-card-sub {
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   color: var(--text-secondary);
 }
 
-/* Progress Bar - Soft Rose / Terracotta */
-.progress-track {
+/* Progress Bars — Muted Sage or Dusty Rose */
+.progress-track, .progress-bar-bg {
   width: 100%;
-  height: 8px;
+  height: 6px;
   background-color: var(--bg-card-subtle);
   border-radius: var(--radius-full);
   overflow: hidden;
   position: relative;
 }
 
-.progress-fill {
+.progress-fill, .progress-bar-fill {
   height: 100%;
   border-radius: var(--radius-full);
   transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent-violet) 100%);
+  background-color: var(--color-sage);
+}
+
+.progress-fill-rose {
+  background-color: var(--color-primary);
+}
+
+/* Subtle Editorial Botanical Divider */
+.botanical-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 18px 0;
+  color: var(--border-soft);
+}
+
+.botanical-divider::before,
+.botanical-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--border-soft);
 }
 
 /* Scrollbars */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -543,8 +626,8 @@ a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(30, 20, 20, 0.45);
-  backdrop-filter: blur(4px);
+  background-color: rgba(40, 35, 30, 0.4);
+  backdrop-filter: blur(3px);
   z-index: 95;
 }
 

@@ -100,10 +100,10 @@ export function AnalyticsReports({ data }) {
       {/* 1. Top Header */}
       <div className="card" style={{ padding: '24px', background: 'var(--bg-card)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-          <span className="badge badge-primary">Executive Telemetry</span>
-          <span className="badge badge-lavender">Performance Analytics</span>
+          <span className="badge badge-primary">Preparation Analytics</span>
+          <span className="badge badge-success">Progress Journal</span>
         </div>
-        <h1 style={{ fontSize: '1.65rem', fontWeight: 800, margin: '0 0 6px 0', color: 'var(--text-main)' }}>
+        <h1 style={{ fontSize: '2.0rem', fontWeight: 600, margin: '0 0 6px 0', color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
           Placement Preparation Analytics
         </h1>
         <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', margin: 0, maxWidth: '720px' }}>
@@ -114,7 +114,7 @@ export function AnalyticsReports({ data }) {
         <div className="stat-grid-4" style={{ marginTop: '22px', marginBottom: 0 }}>
           <div className="stat-card">
             <span className="stat-card-label">Overall Readiness</span>
-            <div className="stat-card-value" style={{ color: 'var(--color-primary)' }}>
+            <div className="stat-card-value" style={{ color: 'var(--color-primary-text)' }}>
               {skillReadiness.overallScore}%
             </div>
             <div className="stat-card-sub">Placement interview preparedness</div>
@@ -122,7 +122,7 @@ export function AnalyticsReports({ data }) {
 
           <div className="stat-card">
             <span className="stat-card-label">Total DSA Solved</span>
-            <div className="stat-card-value" style={{ color: 'var(--color-success)' }}>
+            <div className="stat-card-value" style={{ color: 'var(--color-sage)' }}>
               {totalDsaSolved}
             </div>
             <div className="stat-card-sub">{solvedStriversCount} Striver + {customSolved} Custom</div>
@@ -138,7 +138,7 @@ export function AnalyticsReports({ data }) {
 
           <div className="stat-card">
             <span className="stat-card-label">Total Study Time</span>
-            <div className="stat-card-value" style={{ color: 'var(--color-accent-violet)' }}>
+            <div className="stat-card-value" style={{ color: 'var(--color-primary-text)' }}>
               {totalHours} hrs
             </div>
             <div className="stat-card-sub">{streakInfo.currentStreak} day study streak</div>
@@ -150,7 +150,7 @@ export function AnalyticsReports({ data }) {
       <div className="card" style={{ padding: '24px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', flexWrap: 'wrap', gap: '8px' }}>
           <div>
-            <h2 style={{ fontSize: '1.1rem', margin: 0, fontWeight: 800 }}>
+            <h2 style={{ fontSize: '1.25rem', margin: 0, fontWeight: 600, fontFamily: 'var(--font-heading)' }}>
               7-Day Study Duration Velocity
             </h2>
             <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
@@ -158,7 +158,7 @@ export function AnalyticsReports({ data }) {
             </div>
           </div>
 
-          <span className="badge badge-lavender">
+          <span className="badge badge-primary">
             Goal: {dailyTarget} mins/day
           </span>
         </div>
@@ -182,22 +182,22 @@ export function AnalyticsReports({ data }) {
                   gap: '6px'
                 }}
               >
-                <span style={{ fontSize: '0.72rem', fontWeight: 700, color: hitTarget ? 'var(--color-success)' : 'var(--text-secondary)' }}>
+                <span style={{ fontSize: '0.72rem', fontWeight: 600, color: hitTarget ? 'var(--color-sage)' : 'var(--text-secondary)' }}>
                   {d.mins}m
                 </span>
 
                 <div
                   style={{
                     width: '100%',
-                    maxWidth: '44px',
+                    maxWidth: '40px',
                     height: `${Math.max(6, barHeightPct)}%`,
-                    backgroundColor: hitTarget ? 'var(--color-success)' : 'var(--color-primary)',
-                    borderRadius: '6px 6px 0 0',
+                    backgroundColor: hitTarget ? 'var(--color-sage)' : 'var(--color-primary)',
+                    borderRadius: '4px 4px 0 0',
                     transition: 'height 0.4s ease'
                   }}
                 />
 
-                <span style={{ fontSize: '0.74rem', color: 'var(--text-muted)', fontWeight: 600 }}>
+                <span style={{ fontSize: '0.74rem', color: 'var(--text-muted)', fontWeight: 500 }}>
                   {d.dayName}
                 </span>
               </div>
@@ -211,8 +211,8 @@ export function AnalyticsReports({ data }) {
         {/* DSA & Striver Sheet Telemetry */}
         <div className="card" style={{ padding: '22px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '14px' }}>
-            <Code2 size={18} color="var(--color-primary)" />
-            <h3 style={{ fontSize: '1.05rem', margin: 0, fontWeight: 700 }}>
+            <Code2 size={18} color="var(--color-primary-text)" />
+            <h3 style={{ fontSize: '1.18rem', margin: 0, fontWeight: 600, fontFamily: 'var(--font-heading)' }}>
               DSA & TakeUForward Matrix
             </h3>
           </div>

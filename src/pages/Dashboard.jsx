@@ -191,37 +191,37 @@ export function Dashboard({ data, store = placementStore, onNavigate, setActiveV
       >
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px', flexWrap: 'wrap' }}>
-            <span style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--color-primary)', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
-              {studentName} | Placement Dashboard
+            <span style={{ fontSize: '0.7rem', fontWeight: 600, color: 'var(--color-primary-text)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+              {studentName} • Placement Journal
             </span>
             <span style={{ color: 'var(--border-soft)' }}>•</span>
             <span style={{ fontSize: '0.76rem', color: 'var(--text-secondary)' }}>{todayDateFormatted}</span>
             <span className="badge badge-lavender" style={{ fontSize: '0.72rem', fontStyle: 'italic', marginLeft: '4px' }}>
-              🌸 life is a collection of little moments • go at your own pace
+              🌿 small steps, meaningful progress • go at your own pace
             </span>
           </div>
-          <h1 style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--text-main)', margin: '0 0 4px 0', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '2.1rem', fontWeight: 600, color: 'var(--text-main)', margin: '0 0 4px 0', letterSpacing: '-0.015em', fontFamily: 'var(--font-heading)' }}>
             {greeting}, {studentName}.
           </h1>
-          <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', margin: 0 }}>
-            Here is your daily preparation overview. Consistent daily study is the key to placement success.
+          <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', margin: 0, fontWeight: 400 }}>
+            Here is your daily preparation overview. Consistent, gentle practice is the foundation of placement success.
           </p>
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <div
             style={{
-              padding: '10px 16px',
+              padding: '12px 18px',
               backgroundColor: 'var(--bg-main)',
-              borderRadius: 'var(--radius-sm)',
+              borderRadius: 'var(--radius-md)',
               border: '1px solid var(--border-soft)',
               textAlign: 'right'
             }}
           >
-            <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 700 }}>
+            <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600, letterSpacing: '0.06em' }}>
               Target Window
             </div>
-            <div style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--color-primary)' }}>
+            <div style={{ fontSize: '1.45rem', fontWeight: 600, color: 'var(--color-primary-text)', fontFamily: 'var(--font-heading)', lineHeight: 1.2 }}>
               {daysRemaining} Days
             </div>
             <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)' }}>
@@ -235,10 +235,10 @@ export function Dashboard({ data, store = placementStore, onNavigate, setActiveV
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '14px' }}>
         {/* KPI 1: Roadmap Completion */}
         <div className="card" style={{ padding: '18px 20px', display: 'flex', flexDirection: 'column' }}>
-          <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>
+          <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '8px' }}>
             Roadmap Completion
           </div>
-          <div style={{ fontSize: '1.9rem', fontWeight: 800, color: 'var(--text-main)', lineHeight: 1.1 }}>
+          <div style={{ fontSize: '2.05rem', fontWeight: 600, color: 'var(--text-main)', fontFamily: 'var(--font-heading)', lineHeight: 1.1 }}>
             {roadmapPct}%
           </div>
           <div style={{ fontSize: '0.74rem', color: 'var(--text-secondary)', marginTop: '4px' }}>
@@ -251,70 +251,70 @@ export function Dashboard({ data, store = placementStore, onNavigate, setActiveV
 
         {/* KPI 2: Skill Readiness */}
         <div className="card" style={{ padding: '18px 20px', display: 'flex', flexDirection: 'column' }}>
-          <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>
+          <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '8px' }}>
             Skill Readiness
           </div>
-          <div style={{ fontSize: '1.9rem', fontWeight: 800, color: skillReadiness.isAssessed ? 'var(--color-primary)' : 'var(--text-muted)', lineHeight: 1.1 }}>
+          <div style={{ fontSize: '2.05rem', fontWeight: 600, color: skillReadiness.isAssessed ? 'var(--color-sage)' : 'var(--text-muted)', fontFamily: 'var(--font-heading)', lineHeight: 1.1 }}>
             {skillReadiness.isAssessed ? `${skillReadiness.overallScore}%` : 'Not Assessed'}
           </div>
           <div style={{ fontSize: '0.74rem', color: 'var(--text-secondary)', marginTop: '4px' }}>
             {skillReadiness.isAssessed ? 'Demonstrated scores' : 'Requires verified assessments'}
           </div>
           <div className="progress-bar-bg" style={{ height: '4px', marginTop: '12px' }}>
-            <div className="progress-bar-fill" style={{ width: `${skillReadiness.overallScore || 0}%`, backgroundColor: 'var(--color-primary)' }} />
+            <div className="progress-bar-fill" style={{ width: `${skillReadiness.overallScore || 0}%`, backgroundColor: 'var(--color-sage)' }} />
           </div>
         </div>
 
         {/* KPI 3: Study Time Today */}
         <div className="card" style={{ padding: '18px 20px', display: 'flex', flexDirection: 'column' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-            <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
               Study Time Today
             </span>
-            <span className="badge badge-primary" style={{ fontSize: '0.66rem', padding: '1px 6px' }}>
+            <span className="badge badge-success" style={{ fontSize: '0.68rem', padding: '2px 8px' }}>
               {dailyTargetMinutes}m Goal
             </span>
           </div>
-          <div style={{ fontSize: '1.9rem', fontWeight: 800, color: 'var(--text-main)', lineHeight: 1.1 }}>
+          <div style={{ fontSize: '2.05rem', fontWeight: 600, color: 'var(--text-main)', fontFamily: 'var(--font-heading)', lineHeight: 1.1 }}>
             {todayStudiedMinutes} / {dailyTargetMinutes}m
           </div>
           <div style={{ fontSize: '0.74rem', color: 'var(--text-secondary)', marginTop: '4px' }}>
             {remainingMinutes > 0 ? `${remainingMinutes}m remaining` : 'Daily goal achieved!'}
           </div>
           <div className="progress-bar-bg" style={{ height: '4px', marginTop: '12px' }}>
-            <div className="progress-bar-fill" style={{ width: `${studyPct}%`, backgroundColor: studyPct >= 100 ? 'var(--color-success)' : 'var(--color-primary)' }} />
+            <div className="progress-bar-fill" style={{ width: `${studyPct}%`, backgroundColor: studyPct >= 100 ? 'var(--color-sage)' : 'var(--color-primary)' }} />
           </div>
         </div>
 
         {/* KPI 4: DSA Questions Solved */}
         <div className="card" style={{ padding: '18px 20px', display: 'flex', flexDirection: 'column' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-            <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
               DSA Questions Solved
             </span>
-            <span className="badge badge-success" style={{ fontSize: '0.66rem', padding: '1px 6px' }}>
+            <span className="badge badge-primary" style={{ fontSize: '0.68rem', padding: '2px 8px' }}>
               Target: {dsaTarget}
             </span>
           </div>
-          <div style={{ fontSize: '1.9rem', fontWeight: 800, color: 'var(--text-main)', lineHeight: 1.1 }}>
+          <div style={{ fontSize: '2.05rem', fontWeight: 600, color: 'var(--text-main)', fontFamily: 'var(--font-heading)', lineHeight: 1.1 }}>
             {solvedDsa} / {dsaTarget}
           </div>
           <div style={{ fontSize: '0.74rem', color: 'var(--text-secondary)', marginTop: '4px' }}>
             {dsaPct}% completed
           </div>
           <div className="progress-bar-bg" style={{ height: '4px', marginTop: '12px' }}>
-            <div className="progress-bar-fill" style={{ width: `${dsaPct}%`, backgroundColor: 'var(--color-success)' }} />
+            <div className="progress-bar-fill" style={{ width: `${dsaPct}%`, backgroundColor: 'var(--color-sage)' }} />
           </div>
         </div>
 
         {/* KPI 5: Current Streak */}
         <div className="card" style={{ padding: '18px 20px', display: 'flex', flexDirection: 'column' }}>
-          <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>
+          <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '8px' }}>
             Current Streak
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <Flame size={24} style={{ color: streakInfo.currentStreak > 0 ? '#F59E0B' : 'var(--text-muted)' }} />
-            <span style={{ fontSize: '1.9rem', fontWeight: 800, color: 'var(--text-main)', lineHeight: 1.1 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Flame size={22} style={{ color: streakInfo.currentStreak > 0 ? '#C48E48' : 'var(--text-muted)' }} />
+            <span style={{ fontSize: '2.05rem', fontWeight: 600, color: 'var(--text-main)', fontFamily: 'var(--font-heading)', lineHeight: 1.1 }}>
               {streakInfo.currentStreak} {streakInfo.currentStreak === 1 ? 'day' : 'days'}
             </span>
           </div>
@@ -333,7 +333,7 @@ export function Dashboard({ data, store = placementStore, onNavigate, setActiveV
         <div className="card" style={{ padding: '22px 24px', display: 'flex', flexDirection: 'column' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
             <div>
-              <h2 style={{ fontSize: '1.08rem', fontWeight: 800, color: 'var(--text-main)', margin: '0 0 2px 0' }}>
+              <h2 style={{ fontSize: '1.24rem', fontWeight: 600, color: 'var(--text-main)', margin: '0 0 2px 0', fontFamily: 'var(--font-heading)' }}>
                 Today's Study Plan
               </h2>
               <div style={{ fontSize: '0.76rem', color: 'var(--text-secondary)' }}>
@@ -341,7 +341,7 @@ export function Dashboard({ data, store = placementStore, onNavigate, setActiveV
               </div>
             </div>
 
-            <div style={{ display: 'flex', gap: '6px' }}>
+            <div style={{ display: 'flex', gap: '8px' }}>
               <button className="btn btn-secondary btn-sm" onClick={() => navigate('planner')}>
                 <Plus size={13} />
                 <span>Add Task</span>
@@ -355,8 +355,8 @@ export function Dashboard({ data, store = placementStore, onNavigate, setActiveV
 
           {todayTasks.length === 0 ? (
             <div style={{ padding: '32px 16px', textAlign: 'center', color: 'var(--text-secondary)', margin: 'auto 0' }}>
-              <CheckCircle2 size={32} style={{ color: 'var(--color-success)', marginBottom: '8px' }} />
-              <div style={{ fontWeight: 700, fontSize: '0.9rem', color: 'var(--text-main)' }}>No pending tasks for today</div>
+              <CheckCircle2 size={32} style={{ color: 'var(--color-sage)', marginBottom: '8px' }} />
+              <div style={{ fontWeight: 600, fontSize: '1.05rem', color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>No pending tasks for today</div>
               <div style={{ fontSize: '0.78rem', marginTop: '4px' }}>Click "Add Task" to plan today's focus topics.</div>
             </div>
           ) : (
@@ -381,7 +381,7 @@ export function Dashboard({ data, store = placementStore, onNavigate, setActiveV
                       className="btn btn-ghost"
                       onClick={() => handleCompleteTask(task.id)}
                       disabled={task.completed}
-                      style={{ padding: '2px', color: task.completed ? 'var(--color-success)' : 'var(--border-soft)' }}
+                      style={{ padding: '2px', color: task.completed ? 'var(--color-sage)' : 'var(--border-soft)' }}
                     >
                       <CheckCircle2 size={18} />
                     </button>
@@ -389,7 +389,7 @@ export function Dashboard({ data, store = placementStore, onNavigate, setActiveV
                       <div
                         style={{
                           fontSize: '0.84rem',
-                          fontWeight: 600,
+                          fontWeight: 500,
                           color: task.completed ? 'var(--text-muted)' : 'var(--text-main)',
                           textDecoration: task.completed ? 'line-through' : 'none',
                           textOverflow: 'ellipsis',
@@ -410,7 +410,7 @@ export function Dashboard({ data, store = placementStore, onNavigate, setActiveV
                       className="btn btn-ghost btn-sm"
                       onClick={() => navigate('timer')}
                       title="Start Timer"
-                      style={{ color: 'var(--color-primary)', padding: '4px' }}
+                      style={{ color: 'var(--color-primary-text)', padding: '4px' }}
                     >
                       <Play size={13} fill="currentColor" />
                     </button>
@@ -425,7 +425,7 @@ export function Dashboard({ data, store = placementStore, onNavigate, setActiveV
         <div className="card" style={{ padding: '22px 24px', display: 'flex', flexDirection: 'column' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
             <div>
-              <h2 style={{ fontSize: '1.08rem', fontWeight: 800, color: 'var(--text-main)', margin: '0 0 2px 0' }}>
+              <h2 style={{ fontSize: '1.24rem', fontWeight: 600, color: 'var(--text-main)', margin: '0 0 2px 0', fontFamily: 'var(--font-heading)' }}>
                 Next Upcoming Milestone
               </h2>
               <div style={{ fontSize: '0.76rem', color: 'var(--text-secondary)' }}>
@@ -444,15 +444,15 @@ export function Dashboard({ data, store = placementStore, onNavigate, setActiveV
               marginBottom: '14px'
             }}
           >
-            <div style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            <div style={{ fontSize: '0.7rem', fontWeight: 600, color: 'var(--color-primary-text)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
               {activeNextCategory}
             </div>
-            <div style={{ fontWeight: 700, fontSize: '0.94rem', color: 'var(--text-main)', marginTop: '4px', lineHeight: 1.35 }}>
+            <div style={{ fontWeight: 600, fontSize: '1.05rem', color: 'var(--text-main)', marginTop: '4px', lineHeight: 1.35, fontFamily: 'var(--font-heading)' }}>
               {activeNextTitle}
             </div>
           </div>
 
-          <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: 1.45, margin: '0 0 16px 0' }}>
+          <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.45, margin: '0 0 16px 0' }}>
             {activeNextDetail}
           </p>
 
@@ -480,7 +480,7 @@ export function Dashboard({ data, store = placementStore, onNavigate, setActiveV
       <div className="card" style={{ padding: '22px 24px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', flexWrap: 'wrap', gap: '8px' }}>
           <div>
-            <h2 style={{ fontSize: '1.12rem', fontWeight: 800, color: 'var(--text-main)', margin: '0 0 2px 0' }}>
+            <h2 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-main)', margin: '0 0 2px 0', fontFamily: 'var(--font-heading)' }}>
               Overall Preparation Progress
             </h2>
             <div style={{ fontSize: '0.76rem', color: 'var(--text-secondary)' }}>
@@ -511,10 +511,10 @@ export function Dashboard({ data, store = placementStore, onNavigate, setActiveV
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '7px' }}>
-                    <Icon size={14} style={{ color: 'var(--color-primary)' }} />
-                    <span style={{ fontWeight: 700, fontSize: '0.82rem', color: 'var(--text-main)' }}>{cat.name}</span>
+                    <Icon size={14} style={{ color: 'var(--color-primary-text)' }} />
+                    <span style={{ fontWeight: 600, fontSize: '0.84rem', color: 'var(--text-main)' }}>{cat.name}</span>
                   </div>
-                  <span style={{ fontWeight: 800, fontSize: '0.84rem', color: cat.score >= 50 ? 'var(--color-success)' : 'var(--color-primary)' }}>
+                  <span style={{ fontWeight: 600, fontSize: '0.92rem', color: cat.score >= 50 ? 'var(--color-sage)' : 'var(--color-primary-text)', fontFamily: 'var(--font-heading)' }}>
                     {cat.score}%
                   </span>
                 </div>
@@ -524,7 +524,7 @@ export function Dashboard({ data, store = placementStore, onNavigate, setActiveV
                     className="progress-bar-fill"
                     style={{
                       width: `${cat.score}%`,
-                      backgroundColor: cat.score >= 50 ? 'var(--color-success)' : 'var(--color-primary)'
+                      backgroundColor: cat.score >= 50 ? 'var(--color-sage)' : 'var(--color-primary)'
                     }}
                   />
                 </div>

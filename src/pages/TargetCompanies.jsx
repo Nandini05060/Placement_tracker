@@ -373,15 +373,15 @@ export function TargetCompanies({ data, onNavigate }) {
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
               <span className="badge badge-primary">Target Companies</span>
-              <span className="badge badge-lavender">Placement Hub</span>
+              <span className="badge badge-success">Company Research</span>
             </div>
-            <h1 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-main)', margin: '0 0 4px 0' }}>
+            <h1 style={{ fontSize: '2.0rem', fontWeight: 600, color: 'var(--text-main)', margin: '0 0 4px 0', fontFamily: 'var(--font-heading)' }}>
               Target Companies & Interview Questions
             </h1>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', margin: 0 }}>
-              Track preparation status for aspirational product leaders and core placement drivers. Practise curated LeetCode interview questions.
+              Track preparation status for aspirational product leaders and core placement drivers. Practise curated interview questions.
             </p>
           </div>
 

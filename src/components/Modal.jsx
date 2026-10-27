@@ -56,11 +56,11 @@ export function Modal({ isOpen = true, onClose, title, children, footer, maxWidt
             justifyContent: 'space-between'
           }}
         >
-          <h3 style={{ fontSize: '1.1rem', margin: 0 }}>{title}</h3>
+          <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-main)', margin: 0, letterSpacing: '-0.01em' }}>{title}</h3>
           <button
             className="btn btn-ghost"
             onClick={onClose}
-            style={{ padding: '4px', borderRadius: 'var(--radius-sm)' }}
+            style={{ padding: '6px', borderRadius: 'var(--radius-sm)', color: 'var(--text-muted)' }}
             aria-label="Close modal"
           >
             <X size={18} />

@@ -297,7 +297,7 @@ export function StudyTimer({ data, store }) {
               <span className="badge badge-primary">Focus Studio</span>
               <span className="badge badge-lavender">Deep Work Timer</span>
             </div>
-            <h1 style={{ fontSize: '1.6rem', fontWeight: 800, margin: '0 0 4px 0', color: 'var(--text-main)' }}>
+            <h1 style={{ fontSize: '2.0rem', fontWeight: 600, margin: '0 0 4px 0', color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
               Study Timer & Focus Sprint
             </h1>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', margin: 0 }}>
@@ -318,17 +318,17 @@ export function StudyTimer({ data, store }) {
         {/* Daily Target Progress Strip */}
         <div style={{ marginTop: '20px' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', marginBottom: '6px' }}>
-            <span style={{ fontWeight: 600, color: 'var(--text-main)' }}>Today's Deep Focus Target</span>
-            <span style={{ fontWeight: 700, color: todayMinutes >= dailyTarget ? 'var(--color-success)' : 'var(--color-primary)' }}>
+            <span style={{ fontWeight: 500, color: 'var(--text-main)' }}>Today's Deep Focus Target</span>
+            <span style={{ fontWeight: 600, color: todayMinutes >= dailyTarget ? 'var(--color-sage)' : 'var(--color-primary-text)' }}>
               {todayMinutes}m / {dailyTarget}m ({Math.min(100, Math.round((todayMinutes / dailyTarget) * 100))}%)
             </span>
           </div>
-          <div className="progress-track" style={{ height: '8px' }}>
+          <div className="progress-track" style={{ height: '6px' }}>
             <div
               className="progress-fill"
               style={{
                 width: `${Math.min(100, (todayMinutes / dailyTarget) * 100)}%`,
-                background: todayMinutes >= dailyTarget ? 'var(--color-success)' : 'linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent-violet) 100%)'
+                backgroundColor: todayMinutes >= dailyTarget ? 'var(--color-sage)' : 'var(--color-primary)'
               }}
             />
           </div>
@@ -345,9 +345,9 @@ export function StudyTimer({ data, store }) {
           padding: '36px 24px',
           textAlign: 'center',
           background: 'var(--bg-card)',
-          border: isRunning ? '1px solid rgba(99, 102, 241, 0.5)' : '1px solid var(--border-soft)',
-          boxShadow: isRunning ? 'var(--shadow-glow)' : 'var(--shadow-md)',
-          borderRadius: 'var(--radius-xl)',
+          border: isRunning ? '1px solid var(--color-primary)' : '1px solid var(--border-soft)',
+          boxShadow: isRunning ? 'var(--shadow-glow)' : 'var(--shadow-sm)',
+          borderRadius: 'var(--radius-lg)',
           transition: 'all 0.3s ease'
         }}
       >
@@ -468,20 +468,14 @@ export function StudyTimer({ data, store }) {
             viewBox="0 0 280 280"
             style={{ transform: 'rotate(-90deg)', position: 'absolute', top: 0, left: 0 }}
           >
-            <defs>
-              <linearGradient id="timerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="var(--color-primary)" />
-                <stop offset="100%" stopColor="var(--color-accent-violet)" />
-              </linearGradient>
-            </defs>
-            <circle cx="140" cy="140" r="116" fill="none" stroke="var(--border-soft)" strokeWidth="10" />
+            <circle cx="140" cy="140" r="116" fill="none" stroke="var(--border-soft)" strokeWidth="8" />
             <circle
               cx="140"
               cy="140"
               r="116"
               fill="none"
-              stroke={isBreak ? 'var(--color-success)' : 'url(#timerGrad)'}
-              strokeWidth="10"
+              stroke={isBreak ? 'var(--color-sage)' : 'var(--color-primary)'}
+              strokeWidth="8"
               strokeDasharray={2 * Math.PI * 116}
               strokeDashoffset={(2 * Math.PI * 116) - ((2 * Math.PI * 116) * timerProgress)}
               strokeLinecap="round"
@@ -505,10 +499,10 @@ export function StudyTimer({ data, store }) {
             <span
               style={{
                 fontSize: '0.74rem',
-                fontWeight: 800,
+                fontWeight: 600,
                 textTransform: 'uppercase',
                 letterSpacing: '0.08em',
-                color: isBreak ? 'var(--color-success)' : 'var(--color-primary)',
+                color: isBreak ? 'var(--color-sage)' : 'var(--color-primary-text)',
                 marginBottom: '4px'
               }}
             >
@@ -517,9 +511,9 @@ export function StudyTimer({ data, store }) {
 
             <div
               style={{
-                fontSize: '3.6rem',
-                fontWeight: 800,
-                letterSpacing: '-0.04em',
+                fontSize: '3.8rem',
+                fontWeight: 600,
+                letterSpacing: '-0.02em',
                 fontFamily: 'var(--font-heading)',
                 fontVariantNumeric: 'tabular-nums',
                 color: 'var(--text-main)',

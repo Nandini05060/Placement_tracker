@@ -133,14 +133,14 @@ export function ProjectsTracker({ data, store }) {
       <div className="card" style={{ padding: '24px', background: 'var(--bg-card)' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
               <span className="badge badge-primary">Engineering Portfolio</span>
               <span className="badge badge-lavender">GitHub & Vercel / Render Live Demos</span>
             </div>
-            <h1 style={{ fontSize: '1.65rem', fontWeight: 800, margin: '0 0 4px 0', color: 'var(--text-main)' }}>
+            <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.0rem', fontWeight: 600, margin: '0 0 6px 0', color: 'var(--text-main)', letterSpacing: '-0.01em' }}>
               Projects & Deployed Demos
             </h1>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', margin: 0, maxWidth: '720px' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', margin: 0, maxWidth: '720px', lineHeight: 1.55 }}>
               Showcase your technical projects with direct links to GitHub repositories and live deployments (Vercel, Render, AWS). These populate automatically on your ATS resume.
             </p>
           </div>
@@ -154,7 +154,7 @@ export function ProjectsTracker({ data, store }) {
         <div className="stat-grid-4" style={{ marginTop: '22px', marginBottom: 0 }}>
           <div className="stat-card">
             <span className="stat-card-label">Total Projects</span>
-            <div className="stat-card-value" style={{ color: 'var(--color-primary)' }}>
+            <div className="stat-card-value" style={{ fontFamily: 'var(--font-heading)', fontSize: '2.0rem', fontWeight: 600, color: 'var(--color-primary)' }}>
               {projects.length}
             </div>
             <div className="stat-card-sub">Engineering portfolio apps</div>
@@ -162,7 +162,7 @@ export function ProjectsTracker({ data, store }) {
 
           <div className="stat-card">
             <span className="stat-card-label">Live Deployed Demos</span>
-            <div className="stat-card-value" style={{ color: 'var(--color-success)' }}>
+            <div className="stat-card-value" style={{ fontFamily: 'var(--font-heading)', fontSize: '2.0rem', fontWeight: 600, color: 'var(--color-success)' }}>
               {projects.filter(p => p.demoUrl).length}
             </div>
             <div className="stat-card-sub">Hosted on Vercel / Render</div>
@@ -170,7 +170,7 @@ export function ProjectsTracker({ data, store }) {
 
           <div className="stat-card">
             <span className="stat-card-label">Public Repositories</span>
-            <div className="stat-card-value" style={{ color: 'var(--color-accent-violet)' }}>
+            <div className="stat-card-value" style={{ fontFamily: 'var(--font-heading)', fontSize: '2.0rem', fontWeight: 600, color: 'var(--color-accent-violet)' }}>
               {projects.filter(p => p.githubUrl).length}
             </div>
             <div className="stat-card-sub">Verified GitHub source code</div>
@@ -178,7 +178,7 @@ export function ProjectsTracker({ data, store }) {
 
           <div className="stat-card">
             <span className="stat-card-label">Production Ready</span>
-            <div className="stat-card-value">
+            <div className="stat-card-value" style={{ fontFamily: 'var(--font-heading)', fontSize: '2.0rem', fontWeight: 600 }}>
               {projects.filter(p => p.status === 'Completed').length}
             </div>
             <div className="stat-card-sub">Interview discussion ready</div>
@@ -247,7 +247,7 @@ export function ProjectsTracker({ data, store }) {
                     </span>
                   </div>
 
-                  <h3 style={{ fontSize: '1.2rem', fontWeight: 800, margin: '0 0 6px 0', color: 'var(--text-main)' }}>
+                  <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.3rem', fontWeight: 600, margin: '0 0 6px 0', color: 'var(--text-main)', letterSpacing: '-0.01em' }}>
                     {proj.title}
                   </h3>
 

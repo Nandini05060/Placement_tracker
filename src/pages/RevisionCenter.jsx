@@ -114,17 +114,17 @@ export function RevisionCenter({ data }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
       {/* Header Banner */}
-      <div className="card" style={{ padding: '24px', background: 'linear-gradient(135deg, var(--bg-card) 0%, var(--color-lavender-soft) 100%)' }}>
+      <div className="card" style={{ padding: '24px', background: 'var(--bg-card)', border: '1px solid var(--border-soft)' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '16px' }}>
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
               <span className="badge badge-primary">Spaced Repetition System</span>
               <span className="badge badge-lavender">1, 3, 7 & 14 Day Intervals</span>
             </div>
-            <h1 style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--text-main)', margin: '0 0 6px 0' }}>
+            <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.0rem', fontWeight: 600, color: 'var(--text-main)', margin: '0 0 6px 0', letterSpacing: '-0.01em' }}>
               Revision Center & Mistake Journal
             </h1>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', maxWidth: '720px', margin: 0 }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', maxWidth: '720px', margin: 0, lineHeight: 1.55 }}>
               Retain critical algorithms, database concepts, and coding edge cases through evidence-backed spaced intervals and intentional error analysis.
             </p>
           </div>
@@ -141,25 +141,25 @@ export function RevisionCenter({ data }) {
 
         {/* Quick KPI Strip */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '12px', marginTop: '20px' }}>
-          <div style={{ padding: '12px 16px', background: 'var(--bg-card)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-soft)' }}>
-            <div style={{ fontSize: '0.75rem', color: 'var(--color-primary-text)', fontWeight: 600 }}>Due Today</div>
-            <div style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--color-primary-text)' }}>{dueTodayItems.length}</div>
+          <div style={{ padding: '14px 18px', background: 'var(--bg-card-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-soft)' }}>
+            <div style={{ fontSize: '0.75rem', color: 'var(--color-primary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Due Today</div>
+            <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.9rem', fontWeight: 600, color: 'var(--color-primary)', marginTop: '2px' }}>{dueTodayItems.length}</div>
           </div>
-          <div style={{ padding: '12px 16px', background: 'var(--bg-card)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-soft)' }}>
-            <div style={{ fontSize: '0.75rem', color: overdueItems.length > 0 ? 'var(--color-danger)' : 'var(--text-secondary)', fontWeight: 600 }}>
+          <div style={{ padding: '14px 18px', background: 'var(--bg-card-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-soft)' }}>
+            <div style={{ fontSize: '0.75rem', color: overdueItems.length > 0 ? 'var(--color-danger)' : 'var(--text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
               Overdue Backlog
             </div>
-            <div style={{ fontSize: '1.4rem', fontWeight: 800, color: overdueItems.length > 0 ? 'var(--color-danger)' : 'var(--text-main)' }}>
+            <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.9rem', fontWeight: 600, color: overdueItems.length > 0 ? 'var(--color-danger)' : 'var(--text-main)', marginTop: '2px' }}>
               {overdueItems.length}
             </div>
           </div>
-          <div style={{ padding: '12px 16px', background: 'var(--bg-card)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-soft)' }}>
-            <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', fontWeight: 600 }}>Upcoming Scheduled</div>
-            <div style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--text-main)' }}>{upcomingItems.length}</div>
+          <div style={{ padding: '14px 18px', background: 'var(--bg-card-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-soft)' }}>
+            <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Upcoming Scheduled</div>
+            <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.9rem', fontWeight: 600, color: 'var(--text-main)', marginTop: '2px' }}>{upcomingItems.length}</div>
           </div>
-          <div style={{ padding: '12px 16px', background: 'var(--bg-card)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-soft)' }}>
-            <div style={{ fontSize: '0.75rem', color: 'var(--color-warning)', fontWeight: 600 }}>Mistakes Documented</div>
-            <div style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--color-warning)' }}>{mistakes.length}</div>
+          <div style={{ padding: '14px 18px', background: 'var(--bg-card-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-soft)' }}>
+            <div style={{ fontSize: '0.75rem', color: 'var(--color-sage)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Mistakes Documented</div>
+            <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.9rem', fontWeight: 600, color: 'var(--color-sage)', marginTop: '2px' }}>{mistakes.length}</div>
           </div>
         </div>
       </div>

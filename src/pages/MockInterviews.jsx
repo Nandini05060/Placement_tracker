@@ -315,10 +315,10 @@ export function MockInterviews({ data }) {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-              <span className="badge badge-primary">Interactive AI Mock Studio</span>
-              <span className="badge badge-lavender">Speech Recognition & Pronunciation Coach</span>
+              <span className="badge badge-primary">AI Rehearsal Studio</span>
+              <span className="badge badge-success">Speech & Pronunciation Coach</span>
             </div>
-            <h1 style={{ fontSize: '1.65rem', fontWeight: 800, margin: '0 0 4px 0', color: 'var(--text-main)' }}>
+            <h1 style={{ fontSize: '2.0rem', fontWeight: 600, margin: '0 0 4px 0', color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
               Mock Interview Simulator
             </h1>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', margin: 0, maxWidth: '720px' }}>
@@ -334,7 +334,7 @@ export function MockInterviews({ data }) {
         <div className="card" style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '14px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <BookOpen size={18} color="var(--color-primary)" />
-            <h3 style={{ fontSize: '1.02rem', margin: 0, fontWeight: 700 }}>
+            <h3 style={{ fontSize: '1.1rem', margin: 0, fontWeight: 600, fontFamily: 'var(--font-heading)' }}>
               Question Bank ({MOCK_QUESTION_BANK.length})
             </h3>
           </div>
@@ -359,16 +359,16 @@ export function MockInterviews({ data }) {
                   style={{
                     padding: '12px 14px',
                     borderRadius: 'var(--radius-md)',
-                    border: isSelected ? '2px solid var(--color-primary)' : '1px solid var(--border-soft)',
-                    background: isSelected ? 'var(--color-primary-blush)' : 'var(--bg-card-subtle)',
+                    border: isSelected ? '1.5px solid var(--color-primary)' : '1px solid var(--border-soft)',
+                    background: isSelected ? 'var(--color-primary-pale)' : 'var(--bg-card-subtle)',
                     cursor: 'pointer',
                     transition: 'all 0.15s ease'
                   }}
                 >
-                  <span className="badge badge-lavender" style={{ fontSize: '0.68rem', marginBottom: '4px' }}>
+                  <span className="badge badge-primary" style={{ fontSize: '0.68rem', marginBottom: '4px' }}>
                     {q.category}
                   </span>
-                  <div style={{ fontSize: '0.86rem', fontWeight: 700, color: isSelected ? 'var(--color-primary-text)' : 'var(--text-main)', marginTop: '2px' }}>
+                  <div style={{ fontSize: '0.86rem', fontWeight: 600, color: isSelected ? 'var(--color-primary-text)' : 'var(--text-main)', marginTop: '2px' }}>
                     {q.title}
                   </div>
                 </div>
@@ -389,17 +389,18 @@ export function MockInterviews({ data }) {
                     width: '36px',
                     height: '36px',
                     borderRadius: '50%',
-                    background: 'linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent-violet) 100%)',
-                    color: '#FFFFFF',
+                    background: 'var(--color-primary-pale)',
+                    border: '1px solid var(--color-primary-blush)',
+                    color: 'var(--color-primary-text)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center'
                   }}
                 >
-                  <Bot size={20} />
+                  <Bot size={18} />
                 </div>
                 <div>
-                  <div style={{ fontSize: '0.88rem', fontWeight: 800, color: 'var(--text-main)' }}>AI Technical Interviewer</div>
+                  <div style={{ fontSize: '0.92rem', fontWeight: 600, color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>AI Technical Interviewer</div>
                   <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>Listening & Evaluating live responses</div>
                 </div>
               </div>

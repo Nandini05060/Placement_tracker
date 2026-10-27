@@ -264,9 +264,9 @@ export function Roadmap({ data, store, onNavigate }) {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
               <span className="badge badge-primary">Personalized Roadmap</span>
-              <span className="badge badge-lavender">Your Preparation Pathway</span>
+              <span className="badge badge-success">Preparation Journal</span>
             </div>
-            <h1 style={{ fontSize: '1.6rem', fontWeight: 800, margin: '0 0 4px 0', color: 'var(--text-main)' }}>
+            <h1 style={{ fontSize: '2.0rem', fontWeight: 600, margin: '0 0 4px 0', color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
               Placement Roadmap
             </h1>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', margin: 0, maxWidth: '700px' }}>
@@ -292,19 +292,19 @@ export function Roadmap({ data, store, onNavigate }) {
         {/* Live Progress Stats */}
         <div style={{ marginTop: '22px' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', marginBottom: '6px' }}>
-            <span style={{ fontWeight: 600, color: 'var(--text-main)' }}>
+            <span style={{ fontWeight: 500, color: 'var(--text-main)' }}>
               Overall Roadmap Progress
             </span>
-            <span style={{ fontWeight: 700, color: completionPct === 100 ? 'var(--color-success)' : 'var(--color-primary)' }}>
+            <span style={{ fontWeight: 600, color: completionPct === 100 ? 'var(--color-sage)' : 'var(--color-primary-text)' }}>
               {completionPct}% Completed ({completedMilestones} of {milestones.length} milestones finished)
             </span>
           </div>
-          <div className="progress-track" style={{ height: '8px' }}>
+          <div className="progress-track" style={{ height: '6px' }}>
             <div
               className="progress-fill"
               style={{
                 width: `${completionPct}%`,
-                background: completionPct === 100 ? 'var(--color-success)' : 'linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent-violet) 100%)'
+                backgroundColor: completionPct === 100 ? 'var(--color-sage)' : 'var(--color-primary)'
               }}
             />
           </div>
@@ -315,7 +315,7 @@ export function Roadmap({ data, store, onNavigate }) {
       {milestones.length === 0 ? (
         <div className="card" style={{ padding: '60px 20px', textAlign: 'center', color: 'var(--text-secondary)' }}>
           <MapPin size={48} style={{ opacity: 0.35, color: 'var(--color-primary)', marginBottom: '14px' }} />
-          <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--text-main)', margin: '0 0 6px 0' }}>
+          <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-main)', margin: '0 0 6px 0', fontFamily: 'var(--font-heading)' }}>
             Your Roadmap is a Blank Canvas
           </h3>
           <p style={{ fontSize: '0.88rem', maxWidth: '520px', margin: '0 auto 20px auto' }}>
@@ -343,8 +343,8 @@ export function Roadmap({ data, store, onNavigate }) {
                 key={m.id}
                 className="card"
                 style={{
-                  border: isMilestoneDone ? '1px solid var(--color-success-border)' : '1px solid var(--border-soft)',
-                  backgroundColor: isMilestoneDone ? 'rgba(16, 185, 129, 0.03)' : 'var(--bg-card)'
+                  border: isMilestoneDone ? '1px solid var(--color-sage-border)' : '1px solid var(--border-soft)',
+                  backgroundColor: isMilestoneDone ? 'var(--color-sage-bg)' : 'var(--bg-card)'
                 }}
               >
                 {/* Milestone Header */}
@@ -354,11 +354,11 @@ export function Roadmap({ data, store, onNavigate }) {
                     <button
                       onClick={() => handleToggleMilestoneStatus(m)}
                       style={{
-                        background: isMilestoneDone ? 'var(--color-success)' : 'transparent',
-                        border: `2px solid ${isMilestoneDone ? 'var(--color-success)' : 'var(--border-soft)'}`,
-                        borderRadius: '8px',
-                        width: '26px',
-                        height: '26px',
+                        background: isMilestoneDone ? 'var(--color-sage)' : 'transparent',
+                        border: `2px solid ${isMilestoneDone ? 'var(--color-sage)' : 'var(--border-soft)'}`,
+                        borderRadius: '6px',
+                        width: '24px',
+                        height: '24px',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -369,12 +369,12 @@ export function Roadmap({ data, store, onNavigate }) {
                       }}
                       title={isMilestoneDone ? 'Mark as In Progress' : 'Mark as Completed'}
                     >
-                      {isMilestoneDone && <Check size={16} strokeWidth={3} />}
+                      {isMilestoneDone && <Check size={15} strokeWidth={2.5} />}
                     </button>
 
                     <div style={{ flex: 1 }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
-                        <span style={{ fontSize: '0.78rem', fontWeight: 800, color: 'var(--color-primary)', textTransform: 'uppercase' }}>
+                        <span style={{ fontSize: '0.72rem', fontWeight: 600, color: 'var(--color-primary-text)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                           Step {index + 1}
                         </span>
                         <span className="badge badge-primary" style={{ fontSize: '0.72rem' }}>
@@ -394,9 +394,10 @@ export function Roadmap({ data, store, onNavigate }) {
 
                       <h3
                         style={{
-                          fontSize: '1.15rem',
-                          fontWeight: 700,
+                          fontSize: '1.25rem',
+                          fontWeight: 600,
                           margin: '6px 0 4px 0',
+                          fontFamily: 'var(--font-heading)',
                           color: isMilestoneDone ? 'var(--text-muted)' : 'var(--text-main)',
                           textDecoration: isMilestoneDone ? 'line-through' : 'none'
                         }}
@@ -412,7 +413,7 @@ export function Roadmap({ data, store, onNavigate }) {
 
                       {tasks.length > 0 && (
                         <div style={{ fontSize: '0.76rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                          <CheckCircle2 size={13} color="var(--color-success)" />
+                          <CheckCircle2 size={13} color="var(--color-sage)" />
                           <span>{doneTasks} of {tasks.length} checklist items completed</span>
                         </div>
                       )}

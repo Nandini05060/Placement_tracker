@@ -255,17 +255,17 @@ Placement Tracker System`;
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }} className="animate-fade-in">
       {/* Header Banner */}
-      <div className="card" style={{ padding: '24px', background: 'linear-gradient(135deg, var(--bg-card) 0%, rgba(99, 102, 241, 0.08) 100%)', border: '1px solid var(--border-soft)' }}>
+      <div className="card" style={{ padding: '24px', background: 'var(--bg-card)', border: '1px solid var(--border-soft)' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '16px' }}>
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
               <span className="badge badge-primary">Candidate Profile & Config</span>
               <span className="badge badge-lavender">Email Alerts & Safety</span>
             </div>
-            <h1 style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--text-main)', margin: '0 0 6px 0', letterSpacing: '-0.02em' }}>
+            <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.0rem', fontWeight: 600, color: 'var(--text-main)', margin: '0 0 6px 0', letterSpacing: '-0.01em' }}>
               Settings & Profile Hub
             </h1>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', maxWidth: '720px', margin: 0 }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', maxWidth: '720px', margin: 0, lineHeight: 1.55 }}>
               Customize your candidate profile, upload custom avatar, configure email reminders for daily tasks & certifications, and manage your placement goals.
             </p>
           </div>
@@ -288,7 +288,7 @@ Placement Tracker System`;
         <div className="card" style={{ padding: '24px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '18px' }}>
             <User size={20} style={{ color: 'var(--color-primary)' }} />
-            <h3 style={{ fontSize: '1.18rem', fontWeight: 800, margin: 0, color: 'var(--text-main)' }}>
+            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.35rem', fontWeight: 600, margin: 0, color: 'var(--text-main)', letterSpacing: '-0.01em' }}>
               1. Candidate Profile & Picture
             </h3>
           </div>
@@ -300,15 +300,16 @@ Placement Tracker System`;
                 width: '84px',
                 height: '84px',
                 borderRadius: '50%',
-                background: formSettings.profilePic ? 'none' : 'linear-gradient(135deg, var(--color-primary) 0%, #8B5CF6 100%)',
-                color: '#FFFFFF',
+                background: formSettings.profilePic ? 'none' : 'var(--color-primary-blush)',
+                color: 'var(--color-primary)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontWeight: 900,
-                fontSize: '2rem',
-                border: '3px solid var(--color-primary)',
-                boxShadow: '0 4px 20px rgba(99, 102, 241, 0.3)',
+                fontFamily: 'var(--font-heading)',
+                fontWeight: 600,
+                fontSize: '2.2rem',
+                border: '2px solid var(--color-primary-border)',
+                boxShadow: 'var(--shadow-sm)',
                 overflow: 'hidden',
                 flexShrink: 0
               }}
@@ -458,12 +459,12 @@ Placement Tracker System`;
         </div>
 
         {/* SECTION 2: EMAIL NOTIFICATIONS & REMINDERS */}
-        <div className="card" style={{ padding: '24px', borderLeft: '4px solid var(--color-primary)' }}>
+        <div className="card" style={{ padding: '24px', borderLeft: '3px solid var(--color-primary)' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '12px', marginBottom: '16px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Mail size={20} style={{ color: 'var(--color-primary)' }} />
               <div>
-                <h3 style={{ fontSize: '1.18rem', fontWeight: 800, margin: 0, color: 'var(--text-main)' }}>
+                <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.35rem', fontWeight: 600, margin: 0, color: 'var(--text-main)', letterSpacing: '-0.01em' }}>
                   2. Email Notifications & Progress Reminders
                 </h3>
                 <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', margin: '2px 0 0 0' }}>
@@ -569,7 +570,7 @@ Placement Tracker System`;
         <div className="card" style={{ padding: '24px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
             <Target size={20} style={{ color: 'var(--color-primary)' }} />
-            <h3 style={{ fontSize: '1.18rem', fontWeight: 800, margin: 0, color: 'var(--text-main)' }}>
+            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.35rem', fontWeight: 600, margin: 0, color: 'var(--text-main)', letterSpacing: '-0.01em' }}>
               3. Placement Goals & Schedule
             </h3>
           </div>
@@ -636,7 +637,7 @@ Placement Tracker System`;
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Layers size={20} style={{ color: 'var(--color-primary)' }} />
               <div>
-                <h3 style={{ fontSize: '1.18rem', fontWeight: 800, margin: 0, color: 'var(--text-main)' }}>
+                <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.35rem', fontWeight: 600, margin: 0, color: 'var(--text-main)', letterSpacing: '-0.01em' }}>
                   4. Skill Readiness Formula Weights
                 </h3>
                 <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', margin: 0 }}>
@@ -727,7 +728,7 @@ Placement Tracker System`;
 
         {/* SECTION 5: APPEARANCE & SOUND */}
         <div className="card" style={{ padding: '24px' }}>
-          <h3 style={{ fontSize: '1.18rem', fontWeight: 800, margin: '0 0 16px 0', color: 'var(--text-main)' }}>
+          <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.35rem', fontWeight: 600, margin: '0 0 16px 0', color: 'var(--text-main)', letterSpacing: '-0.01em' }}>
             5. Appearance & Sound
           </h3>
 
@@ -777,8 +778,8 @@ Placement Tracker System`;
       </form>
 
       {/* SECTION 6: DATA PERSISTENCE & JSON BACKUP */}
-      <div className="card" style={{ padding: '24px', borderTop: '4px solid var(--color-warning)' }}>
-        <h3 style={{ fontSize: '1.18rem', fontWeight: 800, margin: '0 0 8px 0', color: 'var(--text-main)' }}>
+      <div className="card" style={{ padding: '24px', borderTop: '3px solid var(--color-sage)' }}>
+        <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.35rem', fontWeight: 600, margin: '0 0 8px 0', color: 'var(--text-main)', letterSpacing: '-0.01em' }}>
           6. Data Safety, Backup & Reset
         </h3>
         <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: '0 0 16px 0', lineHeight: 1.5 }}>

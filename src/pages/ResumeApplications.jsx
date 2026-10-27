@@ -194,9 +194,9 @@ export function ResumeApplications({ data }) {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
               <span className="badge badge-primary">ATS Resume Engine</span>
-              <span className="badge badge-lavender">Real-Time Sync</span>
+              <span className="badge badge-success">Application Pipeline</span>
             </div>
-            <h1 style={{ fontSize: '1.65rem', fontWeight: 800, margin: '0 0 4px 0', color: 'var(--text-main)' }}>
+            <h1 style={{ fontSize: '2.0rem', fontWeight: 600, margin: '0 0 4px 0', color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
               Resume Builder & Applications Pipeline
             </h1>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', margin: 0, maxWidth: '720px' }}>
@@ -220,27 +220,27 @@ export function ResumeApplications({ data }) {
         <button
           className={`btn ${activeTab === 'builder' ? 'btn-primary' : 'btn-ghost'}`}
           onClick={() => setActiveTab('builder')}
-          style={{ borderRadius: 'var(--radius-md) var(--radius-md) 0 0', fontWeight: 700 }}
+          style={{ borderRadius: 'var(--radius-md) var(--radius-md) 0 0', fontWeight: 600 }}
         >
-          <FileText size={16} />
+          <FileText size={15} />
           <span>Interactive ATS Resume & Skills Sync</span>
         </button>
 
         <button
           className={`btn ${activeTab === 'applications' ? 'btn-primary' : 'btn-ghost'}`}
           onClick={() => setActiveTab('applications')}
-          style={{ borderRadius: 'var(--radius-md) var(--radius-md) 0 0', fontWeight: 700 }}
+          style={{ borderRadius: 'var(--radius-md) var(--radius-md) 0 0', fontWeight: 600 }}
         >
-          <Briefcase size={16} />
+          <Briefcase size={15} />
           <span>Application Pipeline ({applications.length})</span>
         </button>
 
         <button
           className={`btn ${activeTab === 'checklist' ? 'btn-primary' : 'btn-ghost'}`}
           onClick={() => setActiveTab('checklist')}
-          style={{ borderRadius: 'var(--radius-md) var(--radius-md) 0 0', fontWeight: 700 }}
+          style={{ borderRadius: 'var(--radius-md) var(--radius-md) 0 0', fontWeight: 600 }}
         >
-          <ShieldCheck size={16} />
+          <ShieldCheck size={15} />
           <span>ATS Readiness Audit</span>
         </button>
       </div>

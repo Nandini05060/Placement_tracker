@@ -114,20 +114,20 @@ export function Sidebar({ activeView, setActiveView, isCollapsed, setIsCollapsed
             {/* Custom Monogram N Logo */}
             <div
               style={{
-                width: '38px',
-                height: '38px',
+                width: '36px',
+                height: '36px',
                 borderRadius: 'var(--radius-sm)',
-                background: 'linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent-violet) 100%)',
-                color: '#FFFFFF',
+                backgroundColor: 'var(--color-primary-pale)',
+                border: '1px solid var(--color-primary-blush)',
+                color: 'var(--color-primary-text)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontWeight: 800,
-                fontSize: '1.2rem',
+                fontWeight: 600,
+                fontSize: '1.25rem',
                 fontFamily: 'var(--font-heading)',
-                boxShadow: '0 3px 12px rgba(222, 126, 115, 0.28)',
+                boxShadow: '0 1px 3px rgba(57, 53, 47, 0.04)',
                 flexShrink: 0,
-                letterSpacing: '-0.02em',
                 position: 'relative'
               }}
             >
@@ -137,22 +137,22 @@ export function Sidebar({ activeView, setActiveView, isCollapsed, setIsCollapsed
                   position: 'absolute',
                   top: '-2px',
                   right: '-2px',
-                  width: '7px',
-                  height: '7px',
+                  width: '6px',
+                  height: '6px',
                   borderRadius: '50%',
-                  backgroundColor: 'var(--color-primary)',
+                  backgroundColor: 'var(--color-sage)',
                   border: '2px solid var(--bg-sidebar)'
                 }}
               />
             </div>
 
             {!isCollapsed && (
-              <div style={{ lineHeight: 1.2 }}>
+              <div style={{ lineHeight: 1.15 }}>
                 <div
                   style={{
-                    fontWeight: 800,
-                    fontSize: '1.02rem',
-                    letterSpacing: '-0.02em',
+                    fontWeight: 600,
+                    fontSize: '1.1rem',
+                    letterSpacing: '-0.01em',
                     color: 'var(--text-main)',
                     fontFamily: 'var(--font-heading)'
                   }}
@@ -161,13 +161,14 @@ export function Sidebar({ activeView, setActiveView, isCollapsed, setIsCollapsed
                 </div>
                 <div
                   style={{
-                    fontSize: '0.7rem',
+                    fontSize: '0.68rem',
                     color: 'var(--text-muted)',
                     fontWeight: 500,
-                    letterSpacing: '0.02em'
+                    letterSpacing: '0.04em',
+                    textTransform: 'uppercase'
                   }}
                 >
-                  Placement Journey
+                  Placement Journal
                 </div>
               </div>
             )}
@@ -258,14 +259,14 @@ export function Sidebar({ activeView, setActiveView, isCollapsed, setIsCollapsed
                         display: 'flex',
                         alignItems: 'center',
                         gap: '11px',
-                        padding: isCollapsed ? '9px 0' : '8px 11px',
+                        padding: isCollapsed ? '9px 0' : '8px 12px',
                         justifyContent: isCollapsed ? 'center' : 'flex-start',
                         borderRadius: 'var(--radius-sm)',
                         border: '1px solid',
-                        borderColor: isActive ? 'rgba(222, 126, 115, 0.28)' : 'transparent',
-                        backgroundColor: isActive ? 'var(--bg-hover-subtle)' : 'transparent',
-                        color: isActive ? 'var(--text-main)' : 'var(--text-secondary)',
-                        fontWeight: isActive ? 700 : 500,
+                        borderColor: isActive ? 'var(--color-primary-blush)' : 'transparent',
+                        backgroundColor: isActive ? 'var(--color-primary-pale)' : 'transparent',
+                        color: isActive ? 'var(--color-primary-text)' : 'var(--text-secondary)',
+                        fontWeight: isActive ? 600 : 400,
                         cursor: 'pointer',
                         fontSize: '0.84rem',
                         width: '100%',
@@ -292,16 +293,16 @@ export function Sidebar({ activeView, setActiveView, isCollapsed, setIsCollapsed
                           style={{
                             position: 'absolute',
                             left: 0,
-                            top: '18%',
-                            bottom: '18%',
+                            top: '22%',
+                            bottom: '22%',
                             width: '3px',
                             backgroundColor: 'var(--color-primary)',
-                            borderRadius: '0 4px 4px 0'
+                            borderRadius: '0 3px 3px 0'
                           }}
                         />
                       )}
                       <Icon
-                        size={17}
+                        size={16}
                         style={{
                           color: isActive ? 'var(--color-primary)' : 'currentColor',
                           flexShrink: 0

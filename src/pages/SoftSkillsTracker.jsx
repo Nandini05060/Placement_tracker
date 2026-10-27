@@ -244,14 +244,14 @@ export function SoftSkillsTracker({ data, store }) {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-              <span className="badge badge-primary">AI Communication Studio</span>
-              <span className="badge badge-lavender">HR & Behavioral Practice</span>
+              <span className="badge badge-primary">Communication Journal</span>
+              <span className="badge badge-success">AI Behavioral Coach</span>
             </div>
-            <h1 style={{ fontSize: '1.65rem', fontWeight: 800, margin: '0 0 6px 0', color: 'var(--text-main)' }}>
+            <h1 style={{ fontSize: '2.0rem', fontWeight: 600, margin: '0 0 6px 0', color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
               Soft Skills & AI Interview Coach
             </h1>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', margin: 0, maxWidth: '720px' }}>
-              Interactive AI chatbot to practice HR & behavioral questions, clear placement doubts, and receive instant feedback on your communication skills.
+              Interactive AI coach to practice HR & behavioral questions, clear placement doubts, and receive instant feedback on your communication skills.
             </p>
           </div>
 
@@ -279,27 +279,27 @@ export function SoftSkillsTracker({ data, store }) {
         <button
           className={`btn ${activeTab === 'chatbot' ? 'btn-primary' : 'btn-ghost'}`}
           onClick={() => setActiveTab('chatbot')}
-          style={{ borderRadius: 'var(--radius-md) var(--radius-md) 0 0', fontWeight: 700 }}
+          style={{ borderRadius: 'var(--radius-md) var(--radius-md) 0 0', fontWeight: 600 }}
         >
-          <Bot size={16} />
+          <Bot size={15} />
           <span>AI Interview Chatbot & Coach</span>
         </button>
 
         <button
           className={`btn ${activeTab === 'star-bank' ? 'btn-primary' : 'btn-ghost'}`}
           onClick={() => setActiveTab('star-bank')}
-          style={{ borderRadius: 'var(--radius-md) var(--radius-md) 0 0', fontWeight: 700 }}
+          style={{ borderRadius: 'var(--radius-md) var(--radius-md) 0 0', fontWeight: 600 }}
         >
-          <Bookmark size={16} />
+          <Bookmark size={15} />
           <span>My STAR Responses Bank ({starAnswers.length})</span>
         </button>
 
         <button
           className={`btn ${activeTab === 'competencies' ? 'btn-primary' : 'btn-ghost'}`}
           onClick={() => setActiveTab('competencies')}
-          style={{ borderRadius: 'var(--radius-md) var(--radius-md) 0 0', fontWeight: 700 }}
+          style={{ borderRadius: 'var(--radius-md) var(--radius-md) 0 0', fontWeight: 600 }}
         >
-          <Star size={16} />
+          <Star size={15} />
           <span>Core Competencies Checklist</span>
         </button>
       </div>

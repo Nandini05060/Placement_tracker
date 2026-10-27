@@ -192,13 +192,13 @@ export function DailyPlanner({ data, store, onNavigate }) {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
               <span className="badge badge-primary">Daily Execution</span>
-              <span className="badge badge-lavender">Task & Time Engine</span>
+              <span className="badge badge-success">Task & Time Studio</span>
             </div>
-            <h1 style={{ fontSize: '1.6rem', fontWeight: 800, margin: '0 0 4px 0', color: 'var(--text-main)' }}>
+            <h1 style={{ fontSize: '2.0rem', fontWeight: 600, margin: '0 0 4px 0', color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
               Daily Planner & Tasks
             </h1>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', margin: 0 }}>
-              Add, prioritize, and check off placement preparation tasks. Stay on track for your target companies.
+              Add, prioritize, and check off placement preparation tasks. Gentle consistency builds lasting confidence.
             </p>
           </div>
 
@@ -206,7 +206,7 @@ export function DailyPlanner({ data, store, onNavigate }) {
             <button
               className="btn btn-secondary btn-sm"
               onClick={() => setSelectedDate(getTodayString())}
-              style={{ fontWeight: 700 }}
+              style={{ fontWeight: 600 }}
             >
               Today ({getTodayString()})
             </button>
@@ -231,8 +231,8 @@ export function DailyPlanner({ data, store, onNavigate }) {
                 minWidth: '85px',
                 padding: '10px 8px',
                 borderRadius: 'var(--radius-md)',
-                border: cd.isSelected ? '2px solid var(--color-primary)' : '1px solid var(--border-soft)',
-                background: cd.isSelected ? 'var(--color-primary-blush)' : 'var(--bg-card-subtle)',
+                border: cd.isSelected ? '1.5px solid var(--color-primary)' : '1px solid var(--border-soft)',
+                background: cd.isSelected ? 'var(--color-primary-pale)' : 'var(--bg-card-subtle)',
                 color: cd.isSelected ? 'var(--color-primary-text)' : 'var(--text-main)',
                 display: 'flex',
                 flexDirection: 'column',
@@ -242,10 +242,10 @@ export function DailyPlanner({ data, store, onNavigate }) {
                 transition: 'all 0.18s ease'
               }}
             >
-              <span style={{ fontSize: '0.72rem', fontWeight: 600, textTransform: 'uppercase', color: 'var(--text-muted)' }}>
+              <span style={{ fontSize: '0.72rem', fontWeight: 600, textTransform: 'uppercase', color: 'var(--text-muted)', letterSpacing: '0.04em' }}>
                 {cd.dayName} {cd.isToday && '•'}
               </span>
-              <span style={{ fontSize: '1.15rem', fontWeight: 800 }}>
+              <span style={{ fontSize: '1.25rem', fontWeight: 600, fontFamily: 'var(--font-heading)' }}>
                 {cd.dayNum}
               </span>
             </button>
@@ -256,17 +256,17 @@ export function DailyPlanner({ data, store, onNavigate }) {
         <div className="stat-grid-4" style={{ marginTop: '20px', marginBottom: 0 }}>
           <div className="stat-card">
             <span className="stat-card-label">Completion Velocity</span>
-            <div className="stat-card-value" style={{ color: dayPct === 100 && dayTasks.length > 0 ? 'var(--color-success)' : 'var(--color-primary)' }}>
+            <div className="stat-card-value" style={{ color: dayPct === 100 && dayTasks.length > 0 ? 'var(--color-sage)' : 'var(--color-primary-text)' }}>
               {dayPct}%
             </div>
-            <div className="progress-track" style={{ height: '6px', marginTop: '6px' }}>
-              <div className="progress-fill" style={{ width: `${dayPct}%` }} />
+            <div className="progress-track" style={{ height: '4px', marginTop: '6px' }}>
+              <div className="progress-fill" style={{ width: `${dayPct}%`, backgroundColor: dayPct === 100 ? 'var(--color-sage)' : 'var(--color-primary)' }} />
             </div>
           </div>
 
           <div className="stat-card">
             <span className="stat-card-label">Tasks Finished</span>
-            <div className="stat-card-value" style={{ color: 'var(--color-success)' }}>
+            <div className="stat-card-value" style={{ color: 'var(--color-sage)' }}>
               {completedTasks.length} <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>/ {dayTasks.length}</span>
             </div>
             <div className="stat-card-sub">{pendingTasks.length} pending execution</div>
@@ -280,7 +280,7 @@ export function DailyPlanner({ data, store, onNavigate }) {
 
           <div className="stat-card">
             <span className="stat-card-label">Timer Studied</span>
-            <div className="stat-card-value" style={{ color: 'var(--color-accent-violet)' }}>
+            <div className="stat-card-value" style={{ color: 'var(--color-primary-text)' }}>
               {todayStudiedMinutes}m
             </div>
             <div className="stat-card-sub">Recorded deep study time</div>
@@ -292,7 +292,7 @@ export function DailyPlanner({ data, store, onNavigate }) {
       <div className="card" style={{ padding: '20px 24px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '14px' }}>
           <Plus size={18} color="var(--color-primary)" />
-          <h2 style={{ fontSize: '1.05rem', margin: 0, fontWeight: 700 }}>
+          <h2 style={{ fontSize: '1.18rem', margin: 0, fontWeight: 600, fontFamily: 'var(--font-heading)' }}>
             Quick Add Task for {selectedDate}
           </h2>
         </div>

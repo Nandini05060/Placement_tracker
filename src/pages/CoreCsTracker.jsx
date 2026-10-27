@@ -281,7 +281,7 @@ export function CoreCsTracker({ data, store }) {
               </div>
 
               <div style={{ flex: 1 }}>
-                <h1 style={{ fontSize: '1.65rem', fontWeight: 800, margin: '0 0 4px 0', color: 'var(--text-main)' }}>
+                <h1 style={{ fontSize: '2.0rem', fontWeight: 600, margin: '0 0 4px 0', color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
                   {currentSubject.name} Dashboard
                 </h1>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.86rem', margin: 0 }}>
@@ -293,17 +293,17 @@ export function CoreCsTracker({ data, store }) {
             {/* Progress Bar */}
             <div style={{ marginTop: '20px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', marginBottom: '6px' }}>
-                <span style={{ fontWeight: 600, color: 'var(--text-main)' }}>Interview Readiness</span>
-                <span style={{ fontWeight: 700, color: subjectProgressPct === 100 ? 'var(--color-success)' : 'var(--color-primary)' }}>
+                <span style={{ fontWeight: 500, color: 'var(--text-main)' }}>Interview Readiness</span>
+                <span style={{ fontWeight: 600, color: subjectProgressPct === 100 ? 'var(--color-sage)' : 'var(--color-primary-text)' }}>
                   {subjectProgressPct}% Completed
                 </span>
               </div>
-              <div className="progress-track" style={{ height: '8px' }}>
+              <div className="progress-track" style={{ height: '6px' }}>
                 <div
                   className="progress-fill"
                   style={{
                     width: `${subjectProgressPct}%`,
-                    background: subjectProgressPct === 100 ? 'var(--color-success)' : 'linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent-violet) 100%)'
+                    backgroundColor: subjectProgressPct === 100 ? 'var(--color-sage)' : 'var(--color-primary)'
                   }}
                 />
               </div>
@@ -320,10 +320,12 @@ export function CoreCsTracker({ data, store }) {
 
               <div
                 style={{
-                  fontSize: '3.2rem',
-                  fontWeight: 800,
+                  fontSize: '3.4rem',
+                  fontWeight: 600,
                   fontFamily: 'var(--font-heading)',
-                  color: isTimerRunning ? 'var(--color-primary)' : 'var(--text-main)',
+                  letterSpacing: '-0.02em',
+                  fontVariantNumeric: 'tabular-nums',
+                  color: isTimerRunning ? 'var(--color-primary-text)' : 'var(--text-main)',
                   margin: '8px 0'
                 }}
               >
@@ -533,9 +535,9 @@ export function CoreCsTracker({ data, store }) {
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
                   <span className="badge badge-primary">Technical Fundamentals</span>
-                  <span className="badge badge-lavender">Custom Curriculum</span>
+                  <span className="badge badge-success">CS Curriculum</span>
                 </div>
-                <h1 style={{ fontSize: '1.65rem', fontWeight: 800, margin: '0 0 6px 0', color: 'var(--text-main)' }}>
+                <h1 style={{ fontSize: '2.0rem', fontWeight: 600, margin: '0 0 6px 0', color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
                   Core Computer Science Subjects
                 </h1>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', margin: 0, maxWidth: '720px' }}>
@@ -575,7 +577,7 @@ export function CoreCsTracker({ data, store }) {
                     flexDirection: 'column',
                     justifyContent: 'space-between',
                     gap: '16px',
-                    transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                    transition: 'transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease',
                     cursor: 'pointer'
                   }}
                   onClick={() => handleOpenSubjectDashboard(key)}
@@ -587,24 +589,25 @@ export function CoreCsTracker({ data, store }) {
                           width: '42px',
                           height: '42px',
                           borderRadius: 'var(--radius-md)',
-                          background: sub.color || 'var(--color-primary)',
-                          color: '#FFFFFF',
+                          background: 'var(--color-primary-pale)',
+                          border: '1px solid var(--color-primary-blush)',
+                          color: 'var(--color-primary-text)',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
-                          fontWeight: 800,
+                          fontWeight: 600,
                           fontSize: '1.1rem'
                         }}
                       >
                         <BookOpen size={20} />
                       </div>
 
-                      <span className={`badge ${pct === 100 ? 'badge-success' : pct > 0 ? 'badge-warning' : 'badge-lavender'}`}>
+                      <span className={`badge ${pct === 100 ? 'badge-success' : pct > 0 ? 'badge-primary' : 'badge-lavender'}`}>
                         {pct === 100 ? 'Ready' : pct > 0 ? `${pct}% Ready` : 'Not Started'}
                       </span>
                     </div>
 
-                    <h3 style={{ fontSize: '1.2rem', fontWeight: 800, margin: '0 0 6px 0', color: 'var(--text-main)' }}>
+                    <h3 style={{ fontSize: '1.25rem', fontWeight: 600, margin: '0 0 6px 0', color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
                       {sub.name || key}
                     </h3>
 
@@ -617,12 +620,12 @@ export function CoreCsTracker({ data, store }) {
                       <span>{sub.studyHours || 0} hrs studied</span>
                     </div>
 
-                    <div className="progress-track" style={{ height: '6px', marginTop: '8px' }}>
+                    <div className="progress-track" style={{ height: '5px', marginTop: '8px' }}>
                       <div
                         className="progress-fill"
                         style={{
                           width: `${pct}%`,
-                          background: pct === 100 ? 'var(--color-success)' : sub.color || 'var(--color-primary)'
+                          backgroundColor: pct === 100 ? 'var(--color-sage)' : 'var(--color-primary)'
                         }}
                       />
                     </div>
