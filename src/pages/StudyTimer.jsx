@@ -292,7 +292,7 @@ export function StudyTimer({ data, store }) {
       {/* 1. Header Overview */}
       <div className="card" style={{ padding: '24px', background: 'var(--bg-card)' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
-          <div>
+          <div style={{ flex: '1 1 340px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
               <span className="badge badge-primary">Focus Studio</span>
               <span className="badge badge-lavender">Deep Work Timer</span>
@@ -305,7 +305,27 @@ export function StudyTimer({ data, store }) {
             </p>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+            {/* Quiet Study Vignette */}
+            <div
+              style={{
+                width: '120px',
+                height: '76px',
+                borderRadius: 'var(--radius-md)',
+                overflow: 'hidden',
+                border: '1px solid var(--border-soft)',
+                boxShadow: 'var(--shadow-sm)',
+                flexShrink: 0
+              }}
+            >
+              <img
+                src="/images/study_timer_vignette.jpg"
+                alt="Quiet study corner with books and warm light"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                loading="lazy"
+              />
+            </div>
+
             <button
               className="btn btn-secondary btn-sm"
               onClick={() => setIsLogModalOpen(true)}

@@ -189,7 +189,7 @@ export function DailyPlanner({ data, store, onNavigate }) {
       {/* 1. Header & Progress Overview */}
       <div className="card" style={{ padding: '24px', background: 'var(--bg-card)' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
-          <div>
+          <div style={{ flex: '1 1 320px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
               <span className="badge badge-primary">Daily Execution</span>
               <span className="badge badge-success">Task & Time Studio</span>
@@ -202,21 +202,43 @@ export function DailyPlanner({ data, store, onNavigate }) {
             </p>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <button
-              className="btn btn-secondary btn-sm"
-              onClick={() => setSelectedDate(getTodayString())}
-              style={{ fontWeight: 600 }}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+            {/* Small Tasteful Journal Photograph */}
+            <div
+              style={{
+                width: '120px',
+                height: '76px',
+                borderRadius: 'var(--radius-md)',
+                overflow: 'hidden',
+                border: '1px solid var(--border-soft)',
+                boxShadow: 'var(--shadow-sm)',
+                flexShrink: 0
+              }}
             >
-              Today ({getTodayString()})
-            </button>
-            <input
-              type="date"
-              className="form-input"
-              value={selectedDate}
-              onChange={(e) => setSelectedDate(e.target.value)}
-              style={{ width: 'auto', padding: '6px 10px', fontSize: '0.82rem' }}
-            />
+              <img
+                src="/images/planner_journal_pen.jpg"
+                alt="Open linen journal with handwritten notes and fountain pen"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                loading="lazy"
+              />
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <button
+                className="btn btn-secondary btn-sm"
+                onClick={() => setSelectedDate(getTodayString())}
+                style={{ fontWeight: 600 }}
+              >
+                Today ({getTodayString()})
+              </button>
+              <input
+                type="date"
+                className="form-input"
+                value={selectedDate}
+                onChange={(e) => setSelectedDate(e.target.value)}
+                style={{ width: 'auto', padding: '6px 10px', fontSize: '0.82rem' }}
+              />
+            </div>
           </div>
         </div>
 
@@ -399,9 +421,25 @@ export function DailyPlanner({ data, store, onNavigate }) {
 
         {/* Task Cards */}
         {displayedTasks.length === 0 ? (
-          <div style={{ padding: '40px 20px', textAlign: 'center', color: 'var(--text-secondary)' }}>
-            <CheckSquare size={36} style={{ opacity: 0.35, marginBottom: '10px' }} />
-            <div style={{ fontWeight: 700, fontSize: '0.98rem', color: 'var(--text-main)' }}>
+          <div style={{ padding: '36px 20px', textAlign: 'center', color: 'var(--text-secondary)' }}>
+            <div
+              style={{
+                width: '60px',
+                height: '60px',
+                borderRadius: '50%',
+                overflow: 'hidden',
+                margin: '0 auto 12px auto',
+                border: '2px solid var(--border-soft)',
+                boxShadow: 'var(--shadow-sm)'
+              }}
+            >
+              <img
+                src="/images/planner_journal_pen.jpg"
+                alt="Open planner journal"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
+            </div>
+            <div style={{ fontWeight: 600, fontSize: '1.05rem', color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
               {filterStatus === 'Completed' ? 'No tasks completed yet for this day' : 'No tasks scheduled for this day'}
             </div>
             <div style={{ fontSize: '0.82rem', marginTop: '4px' }}>

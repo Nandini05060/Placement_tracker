@@ -177,7 +177,7 @@ export function Dashboard({ data, store = placementStore, onNavigate, setActiveV
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }} className="animate-fade-in">
-      {/* 1. CLEAN TOP HEADER */}
+      {/* 1. EDITORIAL WELCOME CARD WITH PHOTOGRAPHY */}
       <div
         className="card"
         style={{
@@ -186,47 +186,107 @@ export function Dashboard({ data, store = placementStore, onNavigate, setActiveV
           justifyContent: 'space-between',
           alignItems: 'center',
           flexWrap: 'wrap',
-          gap: '16px'
+          gap: '24px',
+          background: 'var(--bg-card)'
         }}
       >
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px', flexWrap: 'wrap' }}>
-            <span style={{ fontSize: '0.7rem', fontWeight: 600, color: 'var(--color-primary-text)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+        <div style={{ flex: '1 1 340px', minWidth: '280px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', flexWrap: 'wrap' }}>
+            <span style={{ fontSize: '0.72rem', fontWeight: 600, color: 'var(--color-primary)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
               {studentName} • Placement Journal
             </span>
             <span style={{ color: 'var(--border-soft)' }}>•</span>
             <span style={{ fontSize: '0.76rem', color: 'var(--text-secondary)' }}>{todayDateFormatted}</span>
-            <span className="badge badge-lavender" style={{ fontSize: '0.72rem', fontStyle: 'italic', marginLeft: '4px' }}>
+            <span className="badge badge-lavender" style={{ fontSize: '0.72rem', fontStyle: 'italic' }}>
               🌿 small steps, meaningful progress • go at your own pace
             </span>
           </div>
-          <h1 style={{ fontSize: '2.1rem', fontWeight: 600, color: 'var(--text-main)', margin: '0 0 4px 0', letterSpacing: '-0.015em', fontFamily: 'var(--font-heading)' }}>
+
+          <h1 style={{ fontSize: '2.15rem', fontWeight: 600, color: 'var(--text-main)', margin: '0 0 6px 0', letterSpacing: '-0.015em', fontFamily: 'var(--font-heading)', lineHeight: 1.15 }}>
             {greeting}, {studentName}.
           </h1>
-          <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', margin: 0, fontWeight: 400 }}>
+
+          <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', margin: '0 0 16px 0', fontWeight: 400, maxWidth: '580px', lineHeight: 1.55 }}>
             Here is your daily preparation overview. Consistent, gentle practice is the foundation of placement success.
           </p>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+            <div
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '12px',
+                padding: '8px 16px',
+                backgroundColor: 'var(--bg-card-subtle)',
+                borderRadius: 'var(--radius-md)',
+                border: '1px solid var(--border-soft)'
+              }}
+            >
+              <div>
+                <div style={{ fontSize: '0.66rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600, letterSpacing: '0.06em' }}>
+                  Target Placement Window
+                </div>
+                <div style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-primary)', fontFamily: 'var(--font-heading)', lineHeight: 1.2 }}>
+                  {daysRemaining} Days
+                </div>
+              </div>
+              <div style={{ borderLeft: '1px solid var(--border-soft)', paddingLeft: '12px', fontSize: '0.72rem', color: 'var(--text-secondary)' }}>
+                Target: {data.settings?.targetDeadline || '2026-12-31'}
+              </div>
+            </div>
+
+            <button
+              className="btn btn-secondary btn-sm"
+              onClick={() => navigate('planner')}
+              style={{ fontSize: '0.78rem' }}
+            >
+              <Calendar size={13} />
+              <span>Today's Journal</span>
+            </button>
+          </div>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        {/* Sunlit Study Desk Photograph Frame */}
+        <div
+          style={{
+            position: 'relative',
+            width: '280px',
+            maxWidth: '100%',
+            height: '155px',
+            borderRadius: 'var(--radius-md)',
+            overflow: 'hidden',
+            border: '1px solid var(--border-soft)',
+            boxShadow: 'var(--shadow-sm)',
+            flexShrink: 0
+          }}
+        >
+          <img
+            src="/images/dashboard_study_desk.jpg"
+            alt="Sunlit study desk with open notebook, flowers, coffee, and morning light"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              display: 'block'
+            }}
+            loading="eager"
+          />
           <div
             style={{
-              padding: '12px 18px',
-              backgroundColor: 'var(--bg-main)',
-              borderRadius: 'var(--radius-md)',
-              border: '1px solid var(--border-soft)',
-              textAlign: 'right'
+              position: 'absolute',
+              bottom: '8px',
+              right: '8px',
+              background: 'rgba(255, 252, 248, 0.88)',
+              backdropFilter: 'blur(6px)',
+              padding: '3px 9px',
+              borderRadius: 'var(--radius-sm)',
+              fontSize: '0.68rem',
+              color: 'var(--text-secondary)',
+              fontStyle: 'italic',
+              border: '1px solid rgba(232, 222, 212, 0.7)'
             }}
           >
-            <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600, letterSpacing: '0.06em' }}>
-              Target Window
-            </div>
-            <div style={{ fontSize: '1.45rem', fontWeight: 600, color: 'var(--color-primary-text)', fontFamily: 'var(--font-heading)', lineHeight: 1.2 }}>
-              {daysRemaining} Days
-            </div>
-            <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)' }}>
-              Until {data.settings?.targetDeadline || '2026-12-31'}
-            </div>
+            ☕ Morning focus
           </div>
         </div>
       </div>

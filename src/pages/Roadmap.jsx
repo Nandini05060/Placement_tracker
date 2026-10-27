@@ -261,7 +261,7 @@ export function Roadmap({ data, store, onNavigate }) {
       {/* 1. Header & Roadmap Progress */}
       <div className="card" style={{ padding: '24px', background: 'var(--bg-card)' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
-          <div>
+          <div style={{ flex: '1 1 340px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
               <span className="badge badge-primary">Personalized Roadmap</span>
               <span className="badge badge-success">Preparation Journal</span>
@@ -274,18 +274,40 @@ export function Roadmap({ data, store, onNavigate }) {
             </p>
           </div>
 
-          <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-            <button className="btn btn-secondary btn-sm" onClick={handleLoadTemplate}>
-              <Sparkles size={14} /> Load Suggested Template
-            </button>
-            {milestones.length > 0 && (
-              <button className="btn btn-ghost btn-sm" onClick={handleClearAll} style={{ color: 'var(--color-danger)' }}>
-                <Trash2 size={14} /> Clear All
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+            {/* Subtle Botanical Growth Photograph Vignette */}
+            <div
+              style={{
+                width: '120px',
+                height: '76px',
+                borderRadius: 'var(--radius-md)',
+                overflow: 'hidden',
+                border: '1px solid var(--border-soft)',
+                boxShadow: 'var(--shadow-sm)',
+                flexShrink: 0
+              }}
+            >
+              <img
+                src="/images/roadmap_botanical_growth.jpg"
+                alt="Sunlit botanical conservatory with lush plants representing growth"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                loading="lazy"
+              />
+            </div>
+
+            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+              <button className="btn btn-secondary btn-sm" onClick={handleLoadTemplate}>
+                <Sparkles size={14} /> Load Suggested Template
               </button>
-            )}
-            <button className="btn btn-primary" onClick={handleOpenAdd}>
-              <Plus size={16} /> Add Milestone
-            </button>
+              {milestones.length > 0 && (
+                <button className="btn btn-ghost btn-sm" onClick={handleClearAll} style={{ color: 'var(--color-danger)' }}>
+                  <Trash2 size={14} /> Clear All
+                </button>
+              )}
+              <button className="btn btn-primary" onClick={handleOpenAdd}>
+                <Plus size={16} /> Add Milestone
+              </button>
+            </div>
           </div>
         </div>
 
@@ -313,8 +335,24 @@ export function Roadmap({ data, store, onNavigate }) {
 
       {/* 2. User Roadmap Milestones List */}
       {milestones.length === 0 ? (
-        <div className="card" style={{ padding: '60px 20px', textAlign: 'center', color: 'var(--text-secondary)' }}>
-          <MapPin size={48} style={{ opacity: 0.35, color: 'var(--color-primary)', marginBottom: '14px' }} />
+        <div className="card" style={{ padding: '50px 20px', textAlign: 'center', color: 'var(--text-secondary)' }}>
+          <div
+            style={{
+              width: '64px',
+              height: '64px',
+              borderRadius: '50%',
+              overflow: 'hidden',
+              margin: '0 auto 12px auto',
+              border: '2px solid var(--border-soft)',
+              boxShadow: 'var(--shadow-sm)'
+            }}
+          >
+            <img
+              src="/images/roadmap_botanical_growth.jpg"
+              alt="Botanical plant seedling"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            />
+          </div>
           <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-main)', margin: '0 0 6px 0', fontFamily: 'var(--font-heading)' }}>
             Your Roadmap is a Blank Canvas
           </h3>

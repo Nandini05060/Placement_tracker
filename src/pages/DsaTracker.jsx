@@ -218,8 +218,8 @@ export function DsaTracker({ data, store }) {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '22px' }} className="animate-fade-in">
       {/* 1. Header & TakeUForward Hero Banner */}
       <div className="card" style={{ padding: '24px', background: 'var(--bg-card)' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '16px' }}>
-          <div>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
+          <div style={{ flex: '1 1 340px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
               <span className="badge badge-primary">DSA Practice Journal</span>
               <span className="badge badge-success">Striver's A2Z Sheet</span>
@@ -232,16 +232,38 @@ export function DsaTracker({ data, store }) {
             </p>
           </div>
 
-          <a
-            href="https://takeuforward.org/prep-hub/strivers-a2z-dsa-sheet"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary"
-            style={{ textDecoration: 'none' }}
-          >
-            <span>Visit Striver's Official Sheet</span>
-            <ExternalLink size={15} />
-          </a>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+            {/* Minimal Study Desk Photograph Vignette */}
+            <div
+              style={{
+                width: '120px',
+                height: '76px',
+                borderRadius: 'var(--radius-md)',
+                overflow: 'hidden',
+                border: '1px solid var(--border-soft)',
+                boxShadow: 'var(--shadow-sm)',
+                flexShrink: 0
+              }}
+            >
+              <img
+                src="/images/dsa_minimal_desk.jpg"
+                alt="Minimalist laptop and notebook desk setup"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                loading="lazy"
+              />
+            </div>
+
+            <a
+              href="https://takeuforward.org/prep-hub/strivers-a2z-dsa-sheet"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+              style={{ textDecoration: 'none' }}
+            >
+              <span>Visit Striver's Official Sheet</span>
+              <ExternalLink size={15} />
+            </a>
+          </div>
         </div>
 
         {/* Overall DSA Metrics Grid */}
