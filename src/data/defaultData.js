@@ -786,6 +786,16 @@ export function getDefaultData() {
     weeklyReviews: [],
 
     // 15. Company-wise LeetCode Questions Progress (Personal user practice records)
-    companyQuestionProgress: {}
+    companyQuestionProgress: {},
+
+    // 16. Term End (Semester V) Examination Prep & Timetable
+    termEndPrep: {
+      completedExams: {},
+      completedTopics: {},
+      completedUnits: {},
+      unitConfidence: {},
+      subjectNotes: {},
+      examTargetNotes: {}
+    }
   };
 }

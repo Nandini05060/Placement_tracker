@@ -40,6 +40,7 @@ export function Topbar({
     dashboard: { title: 'Overview', breadcrumb: 'Career Launchpad' },
     planner: { title: 'Daily Planner', breadcrumb: 'Daily Execution' },
     timer: { title: 'Study Timer', breadcrumb: 'Focus Studio' },
+    'term-end': { title: 'Term End Preparation', breadcrumb: 'Semester V • End-Sem War Room 🌸' },
     roadmap: { title: 'Placement Roadmap', breadcrumb: '24-Week Curriculum' },
     dsa: { title: 'DSA Practice', breadcrumb: 'Problem Solving' },
     aptitude: { title: 'Aptitude & Reasoning', breadcrumb: 'Speed Drills' },

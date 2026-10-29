@@ -95,7 +95,16 @@ class PlacementStore {
       companyQuestionProgress: loaded.companyQuestionProgress || {},
       striversProgress: loaded.striversProgress || {},
       aptitudeChapterProgress: loaded.aptitudeChapterProgress || {},
-      resumeSkills: loaded.resumeSkills || defaultData.resumeSkills
+      resumeSkills: loaded.resumeSkills || defaultData.resumeSkills,
+      termEndPrep: {
+        completedExams: {},
+        completedTopics: {},
+        completedUnits: {},
+        unitConfidence: {},
+        subjectNotes: {},
+        examTargetNotes: {},
+        ...(loaded.termEndPrep || {})
+      }
     };
   }
 
@@ -1062,6 +1071,89 @@ class PlacementStore {
     this.saveData();
     this.notify('COMPANY_QUESTION_UPDATED', { companySlug, questionId, updated });
     return updated;
+  }
+
+  // --- TERM END (SEMESTER V) PREPARATION METHODS ---
+
+  getTermEndPrep() {
+    if (!this.data.termEndPrep) {
+      this.data.termEndPrep = {
+        completedExams: {},
+        completedTopics: {},
+        completedUnits: {},
+        unitConfidence: {},
+        subjectNotes: {},
+        examTargetNotes: {}
+      };
+    }
+    return this.data.termEndPrep;
+  }
+
+  toggleTermEndExamCompleted(subjectId) {
+    const prep = this.getTermEndPrep();
+    prep.completedExams = prep.completedExams || {};
+    prep.completedExams[subjectId] = !prep.completedExams[subjectId];
+    this.saveData();
+    this.notify('TERM_END_EXAM_TOGGLED', { subjectId, completed: prep.completedExams[subjectId] });
+    return prep.completedExams[subjectId];
+  }
+
+  toggleTermEndTopic(topicKey) {
+    const prep = this.getTermEndPrep();
+    prep.completedTopics = prep.completedTopics || {};
+    prep.completedTopics[topicKey] = !prep.completedTopics[topicKey];
+    this.saveData();
+    this.notify('TERM_END_TOPIC_TOGGLED', { topicKey, completed: prep.completedTopics[topicKey] });
+    return prep.completedTopics[topicKey];
+  }
+
+  toggleTermEndUnit(unitId, topicKeys = [], forceState = null) {
+    const prep = this.getTermEndPrep();
+    prep.completedUnits = prep.completedUnits || {};
+    prep.completedTopics = prep.completedTopics || {};
+
+    const newState = forceState !== null ? forceState : !prep.completedUnits[unitId];
+    prep.completedUnits[unitId] = newState;
+
+    topicKeys.forEach(tKey => {
+      prep.completedTopics[tKey] = newState;
+    });
+
+    this.saveData();
+    this.notify('TERM_END_UNIT_TOGGLED', { unitId, completed: newState });
+    return newState;
+  }
+
+  setTermEndUnitConfidence(unitId, level) {
+    const prep = this.getTermEndPrep();
+    prep.unitConfidence = prep.unitConfidence || {};
+    prep.unitConfidence[unitId] = level;
+    this.saveData();
+    this.notify('TERM_END_UNIT_CONFIDENCE', { unitId, level });
+    return level;
+  }
+
+  updateTermEndSubjectNotes(subjectId, notes) {
+    const prep = this.getTermEndPrep();
+    prep.subjectNotes = prep.subjectNotes || {};
+    prep.subjectNotes[subjectId] = notes;
+    this.saveData();
+    this.notify('TERM_END_NOTES_UPDATED', { subjectId, notes });
+    return notes;
+  }
+
+  resetTermEndSubject(subjectId, topicKeys = [], unitIds = []) {
+    const prep = this.getTermEndPrep();
+    prep.completedExams = prep.completedExams || {};
+    prep.completedTopics = prep.completedTopics || {};
+    prep.completedUnits = prep.completedUnits || {};
+
+    prep.completedExams[subjectId] = false;
+    unitIds.forEach(uId => { prep.completedUnits[uId] = false; });
+    topicKeys.forEach(tKey => { prep.completedTopics[tKey] = false; });
+
+    this.saveData();
+    this.notify('TERM_END_SUBJECT_RESET', { subjectId });
   }
 
   resetAllData() {

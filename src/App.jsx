@@ -22,6 +22,7 @@ import { MockInterviews } from './pages/MockInterviews.jsx';
 import { RevisionCenter } from './pages/RevisionCenter.jsx';
 import { AnalyticsReports } from './pages/AnalyticsReports.jsx';
 import { SettingsPage } from './pages/SettingsPage.jsx';
+import { TermEndPrep } from './pages/TermEndPrep.jsx';
 
 export default function App() {
   const { data, loading } = usePlacementData();
@@ -30,7 +31,7 @@ export default function App() {
   const getInitialView = () => {
     const hash = window.location.hash.replace('#view-', '').replace('#', '');
     const validViews = [
-      'dashboard', 'planner', 'timer', 'roadmap', 'dsa', 'aptitude',
+      'dashboard', 'planner', 'timer', 'term-end', 'roadmap', 'dsa', 'aptitude',
       'core-cs', 'soft-skills', 'certifications', 'projects', 'companies',
       'resumes', 'mock-interviews', 'revision', 'analytics', 'settings'
     ];
@@ -108,6 +109,8 @@ export default function App() {
         return <DailyPlanner {...commonProps} />;
       case 'timer':
         return <StudyTimer {...commonProps} />;
+      case 'term-end':
+        return <TermEndPrep {...commonProps} />;
       case 'roadmap':
         return <Roadmap {...commonProps} />;
       case 'dsa':

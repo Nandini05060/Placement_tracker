@@ -291,6 +291,82 @@ export function Dashboard({ data, store = placementStore, onNavigate, setActiveV
         </div>
       </div>
 
+      {/* CUTE SEMESTER V TERM END EXAMS STRIP */}
+      <div
+        onClick={() => navigate('term-end')}
+        style={{
+          background: 'linear-gradient(135deg, rgba(201, 143, 136, 0.12) 0%, rgba(139, 150, 124, 0.12) 100%)',
+          border: '1px solid var(--border-soft)',
+          borderRadius: 'var(--radius-lg)',
+          padding: '16px 22px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          gap: '14px',
+          cursor: 'pointer',
+          boxShadow: 'var(--shadow-xs)'
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+          <div
+            style={{
+              width: '42px',
+              height: '42px',
+              borderRadius: 'var(--radius-md)',
+              backgroundColor: 'var(--color-primary-pale)',
+              color: 'var(--color-primary-text)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '1.3rem'
+            }}
+          >
+            🌸
+          </div>
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <span style={{ fontWeight: 700, fontSize: '1rem', color: 'var(--text-main)' }}>
+                Term End (Semester V) Examination Hub
+              </span>
+              <span
+                style={{
+                  fontSize: '0.72rem',
+                  fontWeight: 700,
+                  padding: '2px 8px',
+                  borderRadius: 'var(--radius-full)',
+                  backgroundColor: 'var(--color-primary-pale)',
+                  color: 'var(--color-primary-text)'
+                }}
+              >
+                19 Nov – 3 Dec
+              </span>
+            </div>
+            <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', marginTop: '2px' }}>
+              6 Papers Scheduled • AI, SE, OS, IVP (Marks ±5), SET & Life Skills • Click to view Timetable & Syllabus Tracker
+            </div>
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <div style={{ textAlign: 'right' }}>
+            <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600 }}>
+              First Paper in
+            </div>
+            <div style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--color-primary-text)' }}>
+              {Math.max(0, Math.ceil((new Date('2026-11-19T00:00:00') - new Date(todayStr + 'T00:00:00')) / (1000 * 60 * 60 * 24)))} Days (19 Nov)
+            </div>
+          </div>
+          <button
+            className="btn btn-primary btn-sm"
+            style={{ fontSize: '0.8rem', padding: '7px 14px', borderRadius: 'var(--radius-full)' }}
+          >
+            <span>Open Timetable</span>
+            <ArrowRight size={14} />
+          </button>
+        </div>
+      </div>
+
       {/* 2. FIVE ESSENTIAL KPIS */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '14px' }}>
         {/* KPI 1: Roadmap Completion */}

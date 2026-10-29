@@ -18,6 +18,7 @@ import {
   Settings,
   ChevronLeft,
   ChevronRight,
+  GraduationCap,
   X
 } from 'lucide-react';
 
@@ -38,6 +39,7 @@ const NAV_GROUPS = [
   {
     title: 'PREPARATION',
     items: [
+      { id: 'term-end', label: 'Term End Prep', icon: GraduationCap, badge: 'Sem V' },
       { id: 'roadmap', label: 'Placement Roadmap', icon: Map },
       { id: 'dsa', label: 'DSA Practice', icon: Code2 },
       { id: 'aptitude', label: 'Aptitude', icon: Brain },
@@ -308,7 +310,27 @@ export function Sidebar({ activeView, setActiveView, isCollapsed, setIsCollapsed
                           flexShrink: 0
                         }}
                       />
-                      {!isCollapsed && <span>{item.label}</span>}
+                      {!isCollapsed && (
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', minWidth: 0 }}>
+                          <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{item.label}</span>
+                          {item.badge && (
+                            <span
+                              style={{
+                                fontSize: '0.68rem',
+                                fontWeight: 700,
+                                padding: '1px 6px',
+                                borderRadius: 'var(--radius-full)',
+                                backgroundColor: isActive ? 'var(--color-primary)' : 'var(--color-primary-pale)',
+                                color: isActive ? '#FFFFFF' : 'var(--color-primary-text)',
+                                flexShrink: 0,
+                                marginLeft: '6px'
+                              }}
+                            >
+                              {item.badge}
+                            </span>
+                          )}
+                        </div>
+                      )}
                     </button>
                   );
                 })}
