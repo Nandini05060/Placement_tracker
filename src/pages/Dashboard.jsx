@@ -295,7 +295,7 @@ export function Dashboard({ data, store = placementStore, onNavigate, setActiveV
       <div
         onClick={() => navigate('term-end')}
         style={{
-          background: 'linear-gradient(135deg, rgba(201, 143, 136, 0.12) 0%, rgba(139, 150, 124, 0.12) 100%)',
+          background: 'linear-gradient(135deg, var(--color-primary-pale) 0%, var(--color-sage-bg) 100%)',
           border: '1px solid var(--border-soft)',
           borderRadius: 'var(--radius-lg)',
           padding: '16px 22px',
@@ -315,7 +315,7 @@ export function Dashboard({ data, store = placementStore, onNavigate, setActiveV
               height: '42px',
               borderRadius: 'var(--radius-md)',
               backgroundColor: 'var(--color-primary-pale)',
-              color: 'var(--color-primary-text)',
+              color: 'var(--color-primary)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',

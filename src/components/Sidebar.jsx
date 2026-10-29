@@ -121,14 +121,14 @@ export function Sidebar({ activeView, setActiveView, isCollapsed, setIsCollapsed
                 borderRadius: 'var(--radius-sm)',
                 backgroundColor: 'var(--color-primary-pale)',
                 border: '1px solid var(--color-primary-blush)',
-                color: 'var(--color-primary-text)',
+                color: 'var(--color-primary)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontWeight: 600,
+                fontWeight: 700,
                 fontSize: '1.25rem',
                 fontFamily: 'var(--font-heading)',
-                boxShadow: '0 1px 3px rgba(57, 53, 47, 0.04)',
+                boxShadow: 'var(--shadow-xs)',
                 flexShrink: 0,
                 position: 'relative'
               }}
@@ -267,7 +267,7 @@ export function Sidebar({ activeView, setActiveView, isCollapsed, setIsCollapsed
                         border: '1px solid',
                         borderColor: isActive ? 'var(--color-primary-blush)' : 'transparent',
                         backgroundColor: isActive ? 'var(--color-primary-pale)' : 'transparent',
-                        color: isActive ? 'var(--color-primary-text)' : 'var(--text-secondary)',
+                        color: isActive ? 'var(--text-main)' : 'var(--text-secondary)',
                         fontWeight: isActive ? 600 : 400,
                         cursor: 'pointer',
                         fontSize: '0.84rem',
@@ -318,10 +318,11 @@ export function Sidebar({ activeView, setActiveView, isCollapsed, setIsCollapsed
                               style={{
                                 fontSize: '0.68rem',
                                 fontWeight: 700,
-                                padding: '1px 6px',
+                                padding: '2px 7px',
                                 borderRadius: 'var(--radius-full)',
                                 backgroundColor: isActive ? 'var(--color-primary)' : 'var(--color-primary-pale)',
                                 color: isActive ? '#FFFFFF' : 'var(--color-primary-text)',
+                                border: isActive ? 'none' : '1px solid var(--color-primary-blush)',
                                 flexShrink: 0,
                                 marginLeft: '6px'
                               }}

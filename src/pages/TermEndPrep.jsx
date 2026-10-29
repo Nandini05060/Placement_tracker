@@ -314,7 +314,7 @@ export function TermEndPrep({ data, store, onNavigate }) {
       {/* Hero Banner with Soft Botanical Aesthetic */}
       <div
         style={{
-          background: 'linear-gradient(135deg, rgba(201, 143, 136, 0.14) 0%, rgba(139, 150, 124, 0.12) 100%)',
+          background: 'linear-gradient(135deg, var(--color-primary-pale) 0%, var(--color-sage-bg) 100%)',
           border: '1px solid var(--border-soft)',
           borderRadius: 'var(--radius-lg)',
           padding: '24px 28px',
@@ -510,10 +510,10 @@ export function TermEndPrep({ data, store, onNavigate }) {
                 fontSize: '0.82rem',
                 fontWeight: 600,
                 borderRadius: 'var(--radius-sm)',
-                border: '1px solid var(--border-soft)',
+                border: timetableView === 'cards' ? '1px solid var(--color-primary-blush)' : '1px solid var(--border-soft)',
                 cursor: 'pointer',
                 backgroundColor: timetableView === 'cards' ? 'var(--color-primary-pale)' : 'transparent',
-                color: timetableView === 'cards' ? 'var(--color-primary-text)' : 'var(--text-secondary)'
+                color: timetableView === 'cards' ? 'var(--color-primary)' : 'var(--text-secondary)'
               }}
             >
               Cute Cards 🌸
@@ -528,10 +528,10 @@ export function TermEndPrep({ data, store, onNavigate }) {
                 fontSize: '0.82rem',
                 fontWeight: 600,
                 borderRadius: 'var(--radius-sm)',
-                border: '1px solid var(--border-soft)',
+                border: timetableView === 'compact-table' ? '1px solid var(--color-primary-blush)' : '1px solid var(--border-soft)',
                 cursor: 'pointer',
                 backgroundColor: timetableView === 'compact-table' ? 'var(--color-primary-pale)' : 'transparent',
-                color: timetableView === 'compact-table' ? 'var(--color-primary-text)' : 'var(--text-secondary)'
+                color: timetableView === 'compact-table' ? 'var(--color-primary)' : 'var(--text-secondary)'
               }}
             >
               Table View 📋
@@ -1239,10 +1239,10 @@ export function TermEndPrep({ data, store, onNavigate }) {
                   fontSize: '0.82rem',
                   fontWeight: 600,
                   borderRadius: 'var(--radius-sm)',
-                  border: '1px solid var(--border-soft)',
+                  border: activeTab === 'syllabus' ? '1px solid var(--color-primary-blush)' : '1px solid var(--border-soft)',
                   cursor: 'pointer',
                   backgroundColor: activeTab === 'syllabus' ? 'var(--color-primary-pale)' : 'transparent',
-                  color: activeTab === 'syllabus' ? 'var(--color-primary-text)' : 'var(--text-secondary)'
+                  color: activeTab === 'syllabus' ? 'var(--color-primary)' : 'var(--text-secondary)'
                 }}
               >
                 Units & Topics 📚
@@ -1257,10 +1257,10 @@ export function TermEndPrep({ data, store, onNavigate }) {
                   fontSize: '0.82rem',
                   fontWeight: 600,
                   borderRadius: 'var(--radius-sm)',
-                  border: '1px solid var(--border-soft)',
+                  border: activeTab === 'blueprint' ? '1px solid var(--color-primary-blush)' : '1px solid var(--border-soft)',
                   cursor: 'pointer',
                   backgroundColor: activeTab === 'blueprint' ? 'var(--color-primary-pale)' : 'transparent',
-                  color: activeTab === 'blueprint' ? 'var(--color-primary-text)' : 'var(--text-secondary)'
+                  color: activeTab === 'blueprint' ? 'var(--color-primary)' : 'var(--text-secondary)'
                 }}
               >
                 Weightage & Strategy 🎯
@@ -1275,10 +1275,10 @@ export function TermEndPrep({ data, store, onNavigate }) {
                   fontSize: '0.82rem',
                   fontWeight: 600,
                   borderRadius: 'var(--radius-sm)',
-                  border: '1px solid var(--border-soft)',
+                  border: activeTab === 'notepad' ? '1px solid var(--color-primary-blush)' : '1px solid var(--border-soft)',
                   cursor: 'pointer',
                   backgroundColor: activeTab === 'notepad' ? 'var(--color-primary-pale)' : 'transparent',
-                  color: activeTab === 'notepad' ? 'var(--color-primary-text)' : 'var(--text-secondary)'
+                  color: activeTab === 'notepad' ? 'var(--color-primary)' : 'var(--text-secondary)'
                 }}
               >
                 My Exam Notes 📝
@@ -1293,10 +1293,10 @@ export function TermEndPrep({ data, store, onNavigate }) {
                   fontSize: '0.82rem',
                   fontWeight: 600,
                   borderRadius: 'var(--radius-sm)',
-                  border: '1px solid var(--border-soft)',
+                  border: activeTab === 'checklist' ? '1px solid var(--color-primary-blush)' : '1px solid var(--border-soft)',
                   cursor: 'pointer',
                   backgroundColor: activeTab === 'checklist' ? 'var(--color-primary-pale)' : 'transparent',
-                  color: activeTab === 'checklist' ? 'var(--color-primary-text)' : 'var(--text-secondary)'
+                  color: activeTab === 'checklist' ? 'var(--color-primary)' : 'var(--text-secondary)'
                 }}
               >
                 Exam Day Prep 🎒

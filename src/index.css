@@ -23,18 +23,18 @@
   --bg-hover: #F2EAE3;
   --bg-hover-subtle: rgba(201, 143, 136, 0.08);
 
-  /* 10% Dusty Rose & Soft Blush Accents */
-  --color-primary: #C98F88;
-  --color-primary-hover: #B87973;
-  --color-primary-blush: #E8C2BA;
-  --color-primary-pale: #F3DFD9;
-  --color-primary-text: #A8655E;
-  --color-accent-violet: #D4A39D;
-  --color-pale-rose: #FBF4F2;
-  --color-light-pink: #F7EAE6;
-  --color-lavender: #F4EAE6;
-  --color-lavender-accent: #B87973;
-  --color-lavender-text: #96534C;
+  /* 10% Dusty Rose & Soft Blush Accents — High Contrast & Clear Visibility */
+  --color-primary: #B7665E;
+  --color-primary-hover: #9E524B;
+  --color-primary-blush: rgba(183, 102, 94, 0.28);
+  --color-primary-pale: rgba(183, 102, 94, 0.12);
+  --color-primary-text: #8E362E;
+  --color-accent-violet: #C98F88;
+  --color-pale-rose: #FDF6F4;
+  --color-light-pink: #F8EBE7;
+  --color-lavender: #F6EFF2;
+  --color-lavender-accent: #9A5049;
+  --color-lavender-text: #7A332C;
   --color-lavender-soft: #FDF9F7;
 
   /* 15% Muted Sage & Botanical Olive Accents */
@@ -98,71 +98,76 @@
   --topbar-height: 64px;
 }
 
-/* Cozy Candlelit Mocha Night (Refined Muted Dark Mode) */
+/* True Sleek Black Dark Theme (OLED / Pitch Black / Modern Obsidian) */
 html[data-theme="dark"],
 body[data-theme="dark"],
 .theme-dark {
-  --bg-app: #1D1A18;
-  --bg-main: #1D1A18;
-  --bg-sidebar: #24201E;
-  --bg-card: #272320;
-  --bg-card-elevated: #302B27;
-  --bg-card-subtle: #221E1C;
-  --bg-topbar: rgba(29, 26, 24, 0.92);
-  --bg-input: #231F1D;
-  --bg-hover: #322C28;
-  --bg-hover-subtle: rgba(201, 143, 136, 0.12);
+  --bg-app: #09090B;
+  --bg-main: #09090B;
+  --bg-sidebar: #0C0C0E;
+  --bg-card: #131316;
+  --bg-card-elevated: #1B1B20;
+  --bg-card-subtle: #101013;
+  --bg-topbar: rgba(9, 9, 11, 0.92);
+  --bg-input: #131316;
+  --bg-hover: #1F1F27;
+  --bg-hover-subtle: rgba(251, 113, 133, 0.12);
 
-  --color-primary: #D49B94;
-  --color-primary-hover: #E0ADA7;
-  --color-primary-blush: rgba(212, 155, 148, 0.18);
-  --color-primary-text: #E8B6B1;
-  --color-accent-violet: #DEACA6;
-  --color-pale-rose: #2C2624;
-  --color-light-pink: #342C2A;
-  --color-lavender: #2E2726;
-  --color-lavender-accent: #E2ADA8;
-  --color-lavender-text: #F0CBC7;
-  --color-lavender-soft: #231C1B;
+  /* High-Contrast Rose & Radiant Accents — Fully Legible Against Pitch Black */
+  --color-primary: #FB7185;
+  --color-primary-hover: #FDA4AF;
+  --color-primary-blush: rgba(251, 113, 133, 0.35);
+  --color-primary-pale: rgba(251, 113, 133, 0.16);
+  --color-primary-text: #FFA4A4;
+  --color-accent-violet: #E879F9;
+  --color-pale-rose: #191214;
+  --color-light-pink: #201518;
+  --color-lavender: #18141F;
+  --color-lavender-accent: #E9D5FF;
+  --color-lavender-text: #F3E8FF;
+  --color-lavender-soft: #121016;
 
-  --color-sage: #9BAA8B;
-  --color-sage-bg: rgba(155, 170, 139, 0.15);
-  --color-sage-border: rgba(155, 170, 139, 0.32);
-  --color-olive: #B4B499;
-  --color-olive-bg: rgba(180, 180, 153, 0.14);
-  --color-olive-border: rgba(180, 180, 153, 0.3);
-  --color-botanical-dark: #A5BA95;
-  --color-accent-cyan: #9BAA8B;
+  /* Botanical Emerald & Mint Accents for Dark Mode */
+  --color-sage: #4ADE80;
+  --color-sage-bg: rgba(74, 222, 128, 0.14);
+  --color-sage-border: rgba(74, 222, 128, 0.32);
+  --color-olive: #A3E635;
+  --color-olive-bg: rgba(163, 230, 53, 0.14);
+  --color-olive-border: rgba(163, 230, 53, 0.32);
+  --color-botanical-dark: #86EFAC;
+  --color-accent-cyan: #38BDF8;
 
-  --text-main: #F5EFEB;
-  --text-secondary: #C4BBB3;
-  --text-muted: #8E847C;
+  /* Crisp Typography for Black Dark Mode */
+  --text-main: #FAFAFA;
+  --text-secondary: #A1A1AA;
+  --text-muted: #71717A;
 
-  --border-soft: #3D3631;
-  --border-subtle: #2C2622;
-  --border-focus: #D49B94;
+  /* Sleek Graphite Borders */
+  --border-soft: #27272F;
+  --border-subtle: #1C1C22;
+  --border-focus: #FB7185;
 
-  --color-success: #9BAA8B;
-  --color-success-bg: rgba(155, 170, 139, 0.15);
-  --color-success-border: rgba(155, 170, 139, 0.32);
+  --color-success: #4ADE80;
+  --color-success-bg: rgba(74, 222, 128, 0.14);
+  --color-success-border: rgba(74, 222, 128, 0.32);
 
-  --color-warning: #D9A564;
-  --color-warning-bg: rgba(217, 165, 100, 0.14);
-  --color-warning-border: rgba(217, 165, 100, 0.3);
+  --color-warning: #FBBF24;
+  --color-warning-bg: rgba(251, 191, 36, 0.14);
+  --color-warning-border: rgba(251, 191, 36, 0.32);
 
-  --color-danger: #DD7878;
-  --color-danger-bg: rgba(221, 120, 120, 0.14);
-  --color-danger-border: rgba(221, 120, 120, 0.3);
+  --color-danger: #F87171;
+  --color-danger-bg: rgba(248, 113, 113, 0.14);
+  --color-danger-border: rgba(248, 113, 113, 0.32);
 
-  --color-info: #8FA2B5;
-  --color-info-bg: rgba(143, 162, 181, 0.14);
-  --color-info-border: rgba(143, 162, 181, 0.3);
+  --color-info: #60A5FA;
+  --color-info-bg: rgba(96, 165, 250, 0.14);
+  --color-info-border: rgba(96, 165, 250, 0.32);
 
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.35);
-  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.45);
-  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.55);
-  --shadow-lg: 0 14px 30px rgba(0, 0, 0, 0.65);
-  --shadow-glow: 0 0 22px -2px rgba(212, 155, 148, 0.22);
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.6);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.75);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.88);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.95);
+  --shadow-glow: 0 0 24px -2px rgba(251, 113, 133, 0.35);
 }
 
 /* Base Styles & Typography */
@@ -185,6 +190,14 @@ body {
     radial-gradient(ellipse at 85% 0%, rgba(201, 143, 136, 0.05) 0%, transparent 55%),
     radial-gradient(ellipse at 15% 100%, rgba(139, 150, 124, 0.06) 0%, transparent 50%);
   background-attachment: fixed;
+}
+
+html[data-theme="dark"] body,
+body[data-theme="dark"] {
+  background-color: #09090B;
+  background-image: 
+    radial-gradient(ellipse at 85% 0%, rgba(251, 113, 133, 0.04) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 100%, rgba(74, 222, 128, 0.03) 0%, transparent 50%);
 }
 
 /* Editorial Serif Headings */
@@ -406,13 +419,13 @@ a:hover {
   border-radius: var(--radius-md);
 }
 
-/* Badges & Tags — Muted Sage & Soft Rose */
+/* Badges & Tags — High Contrast, Fully Legible in Light & Dark Mode */
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 5px;
   font-size: 0.74rem;
-  font-weight: 500;
+  font-weight: 600;
   padding: 3px 10px;
   border-radius: var(--radius-full);
   line-height: 1.4;
@@ -422,44 +435,51 @@ a:hover {
 .badge-primary {
   background-color: var(--color-primary-pale);
   color: var(--color-primary-text);
-  border: 1px solid rgba(201, 143, 136, 0.28);
+  border: 1px solid var(--color-primary-blush);
+  font-weight: 600;
 }
 
 .badge-lavender {
   background-color: var(--color-lavender);
   color: var(--color-lavender-accent);
-  border: 1px solid rgba(201, 143, 136, 0.24);
+  border: 1px solid var(--border-soft);
+  font-weight: 600;
 }
 
-/* 15% Muted Sage for Success & Completed */
+/* Botanical Sage for Success & Completed */
 .badge-success, .badge-sage {
   background-color: var(--color-sage-bg);
   color: var(--color-botanical-dark);
   border: 1px solid var(--color-sage-border);
+  font-weight: 600;
 }
 
 .badge-olive {
   background-color: var(--color-olive-bg);
   color: var(--color-botanical-dark);
   border: 1px solid var(--color-olive-border);
+  font-weight: 600;
 }
 
 .badge-warning {
   background-color: var(--color-warning-bg);
   color: var(--color-warning);
   border: 1px solid var(--color-warning-border);
+  font-weight: 600;
 }
 
 .badge-danger {
   background-color: var(--color-danger-bg);
   color: var(--color-danger);
   border: 1px solid var(--color-danger-border);
+  font-weight: 600;
 }
 
 .badge-info {
   background-color: var(--color-info-bg);
   color: var(--color-info);
   border: 1px solid var(--color-info-border);
+  font-weight: 600;
 }
 
 /* Form Controls — Clean, Warm Linen with Rose Focus Ring */
