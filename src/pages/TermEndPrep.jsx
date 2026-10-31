@@ -189,7 +189,7 @@ export function TermEndPrep({ data, store, onNavigate }) {
     const elapsedSeconds = Math.max(0, timerDuration - timerRemaining);
     const sessionMinutes = Math.max(1, Math.round(elapsedSeconds / 60));
 
-    if (elapsedSeconds >= 10) {
+    if (elapsedSeconds >= 5) {
       const subjectObj = TERM_END_SUBJECTS.find(s => s.id === timerSubjectId) || currentSubject;
       const unitObj = subjectObj.units.find(u => u.id === timerUnitId);
 
@@ -203,7 +203,10 @@ export function TermEndPrep({ data, store, onNavigate }) {
 
       setSessionsCompletedToday(prev => prev + 1);
       setTimerSaveToast(`🎉 Recorded ${sessionMinutes}m to your study tracker!`);
-      setTimeout(() => setTimerSaveToast(''), 4000);
+      setTimeout(() => setTimerSaveToast(''), 4500);
+    } else {
+      setTimerSaveToast('Focus session stopped.');
+      setTimeout(() => setTimerSaveToast(''), 2500);
     }
 
     setTimerRemaining(timerDuration);
@@ -1088,7 +1091,7 @@ export function TermEndPrep({ data, store, onNavigate }) {
                     }}
                   >
                     <Play size={18} fill="#FFFFFF" />
-                    <span>{Math.max(0, timerDuration - timerRemaining) >= 10 && !isBreakMode ? 'Resume Focus' : 'Start Focus'}</span>
+                    <span>{Math.max(0, timerDuration - timerRemaining) > 0 && !isBreakMode ? 'Resume Focus' : 'Start Focus'}</span>
                   </button>
                 ) : (
                   <button
@@ -1113,28 +1116,34 @@ export function TermEndPrep({ data, store, onNavigate }) {
                   </button>
                 )}
 
-                {/* Stop & Save Button */}
-                {Math.max(0, timerDuration - timerRemaining) >= 10 && !isBreakMode && (
+                {/* VIBRANT GREEN STOP & SAVE BUTTON — ALWAYS VISIBLE */}
+                {(isTimerRunning || Math.max(0, timerDuration - timerRemaining) > 0) && !isBreakMode ? (
                   <button
+                    className="btn-stop-green"
                     onClick={stopAndSaveTimer}
                     title={`Stop early and record ${Math.max(1, Math.round(Math.max(0, timerDuration - timerRemaining) / 60))}m to your study tracker`}
                     style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '6px',
-                      padding: '10px 18px',
+                      padding: '10px 20px',
                       borderRadius: 'var(--radius-full)',
-                      backgroundColor: 'var(--color-sage)',
-                      color: '#FFFFFF',
-                      border: 'none',
-                      fontWeight: 700,
-                      fontSize: '0.9rem',
-                      cursor: 'pointer',
-                      boxShadow: 'var(--shadow-sm)'
+                      fontSize: '0.92rem'
                     }}
                   >
                     <Square size={14} fill="#FFFFFF" />
                     <span>Stop & Save ({Math.max(1, Math.round(Math.max(0, timerDuration - timerRemaining) / 60))}m)</span>
+                  </button>
+                ) : (
+                  <button
+                    className="btn-stop-green"
+                    disabled={true}
+                    title="Start timer to log study minutes"
+                    style={{
+                      padding: '10px 20px',
+                      borderRadius: 'var(--radius-full)',
+                      fontSize: '0.92rem'
+                    }}
+                  >
+                    <Square size={14} fill="#FFFFFF" />
+                    <span>Stop & Save</span>
                   </button>
                 )}
 

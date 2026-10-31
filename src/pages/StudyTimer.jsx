@@ -39,7 +39,7 @@ export function StudyTimer({ data, store }) {
   const [isBreak, setIsBreak] = useState(false);
   const [isRunning, setIsRunning] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
-  
+
   // Timer durations in seconds
   const [durationSeconds, setDurationSeconds] = useState(25 * 60);
   const [secondsRemaining, setSecondsRemaining] = useState(25 * 60);
@@ -110,7 +110,7 @@ export function StudyTimer({ data, store }) {
   useEffect(() => {
     if (ambientSound === 'off' || !isRunning) {
       if (noiseNodeRef.current) {
-        try { noiseNodeRef.current.stop(); } catch (e) {}
+        try { noiseNodeRef.current.stop(); } catch (e) { }
         noiseNodeRef.current = null;
       }
       return;
@@ -151,7 +151,7 @@ export function StudyTimer({ data, store }) {
 
     return () => {
       if (noiseNodeRef.current) {
-        try { noiseNodeRef.current.stop(); } catch (e) {}
+        try { noiseNodeRef.current.stop(); } catch (e) { }
         noiseNodeRef.current = null;
       }
     };
@@ -232,7 +232,7 @@ export function StudyTimer({ data, store }) {
     const sessionMinutes = Math.max(1, Math.round(elapsedSeconds / 60));
     const linkedTask = todayTasks.find(t => t.id === selectedTaskId);
 
-    if (elapsedSeconds >= 10) {
+    if (elapsedSeconds >= 5) {
       store.addTimerSession({
         subject: selectedSubject,
         taskName: linkedTask ? linkedTask.text : `${mode.toUpperCase()} focus session (${sessionMinutes}m saved)`,
@@ -248,7 +248,10 @@ export function StudyTimer({ data, store }) {
       }
 
       setSaveToast(`🎉 Recorded ${sessionMinutes} minute${sessionMinutes > 1 ? 's' : ''} to your study tracker!`);
-      setTimeout(() => setSaveToast(''), 4000);
+      setTimeout(() => setSaveToast(''), 4500);
+    } else {
+      setSaveToast('Session stopped.');
+      setTimeout(() => setSaveToast(''), 2500);
     }
 
     if (mode === 'stopwatch') {
@@ -672,22 +675,22 @@ export function StudyTimer({ data, store }) {
               className="btn btn-primary btn-lg"
               onClick={handleStart}
               style={{
-                padding: '12px 36px',
-                fontSize: '1.05rem',
+                padding: '12px 34px',
+                fontSize: '1.02rem',
                 fontWeight: 700,
                 borderRadius: 'var(--radius-lg)'
               }}
             >
               <Play size={18} fill="currentColor" />
-              <span>{hasElapsedStudyTime ? 'Resume Session' : 'Start Session'}</span>
+              <span>{elapsedSeconds > 0 && !isBreak ? 'Resume Session' : 'Start Session'}</span>
             </button>
           ) : (
             <button
               className="btn btn-secondary btn-lg"
               onClick={handlePause}
               style={{
-                padding: '12px 36px',
-                fontSize: '1.05rem',
+                padding: '12px 34px',
+                fontSize: '1.02rem',
                 fontWeight: 700,
                 borderRadius: 'var(--radius-lg)'
               }}
@@ -697,28 +700,34 @@ export function StudyTimer({ data, store }) {
             </button>
           )}
 
-          {/* Stop & Save Button */}
-          {hasElapsedStudyTime && (
+          {/* VIBRANT GREEN STOP & SAVE BUTTON — ALWAYS VISIBLE */}
+          {(isRunning || elapsedSeconds > 0) && !isBreak ? (
             <button
-              className="btn btn-primary btn-lg"
+              className="btn-stop-green btn-lg"
               onClick={handleStopAndSave}
-              title={`Stop and record ${elapsedMins} minute${elapsedMins > 1 ? 's' : ''} to your tracker`}
+              title={`Stop now and record ${Math.max(1, Math.round(elapsedSeconds / 60))} minute(s) to your study tracker`}
               style={{
                 padding: '12px 28px',
-                fontSize: '1rem',
-                fontWeight: 700,
-                borderRadius: 'var(--radius-lg)',
-                backgroundColor: 'var(--color-sage)',
-                borderColor: 'var(--color-sage-border)',
-                color: '#FFFFFF',
-                boxShadow: 'var(--shadow-sm)',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px'
+                fontSize: '1.02rem',
+                borderRadius: 'var(--radius-lg)'
               }}
             >
               <Square size={16} fill="#FFFFFF" />
-              <span>Stop & Save ({elapsedMins}m)</span>
+              <span>Stop & Save {elapsedSeconds > 0 ? `(${Math.max(1, Math.round(elapsedSeconds / 60))}m)` : ''}</span>
+            </button>
+          ) : (
+            <button
+              className="btn-stop-green btn-lg"
+              disabled={true}
+              title="Start timer first to log study minutes"
+              style={{
+                padding: '12px 28px',
+                fontSize: '1.02rem',
+                borderRadius: 'var(--radius-lg)'
+              }}
+            >
+              <Square size={16} fill="#FFFFFF" />
+              <span>Stop & Save</span>
             </button>
           )}
 

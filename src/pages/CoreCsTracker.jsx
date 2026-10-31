@@ -361,7 +361,7 @@ export function CoreCsTracker({ data, store }) {
               <div style={{ display: 'flex', gap: '8px', marginTop: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
                 {!isTimerRunning ? (
                   <button className="btn btn-primary" onClick={() => setIsTimerRunning(true)}>
-                    <Play size={16} fill="currentColor" /> {25 * 60 - timerSeconds >= 10 ? 'Resume Focus' : 'Start Focus (25m)'}
+                    <Play size={16} fill="currentColor" /> {25 * 60 - timerSeconds > 0 ? 'Resume Focus' : 'Start Focus (25m)'}
                   </button>
                 ) : (
                   <button className="btn btn-secondary" onClick={() => setIsTimerRunning(false)}>
@@ -369,14 +369,22 @@ export function CoreCsTracker({ data, store }) {
                   </button>
                 )}
 
-                {25 * 60 - timerSeconds >= 10 && (
+                {(isTimerRunning || 25 * 60 - timerSeconds > 0) ? (
                   <button
-                    className="btn btn-primary"
-                    style={{ backgroundColor: 'var(--color-sage)', borderColor: 'var(--color-sage-border)', color: '#FFFFFF' }}
+                    className="btn-stop-green"
                     onClick={handleStopAndSaveTimer}
                     title="Stop early and record studied minutes"
+                    style={{ padding: '8px 16px', borderRadius: 'var(--radius-md)' }}
                   >
                     <Square size={14} fill="#FFFFFF" /> Stop & Save ({Math.max(1, Math.round((25 * 60 - timerSeconds) / 60))}m)
+                  </button>
+                ) : (
+                  <button
+                    className="btn-stop-green"
+                    disabled={true}
+                    style={{ padding: '8px 16px', borderRadius: 'var(--radius-md)' }}
+                  >
+                    <Square size={14} fill="#FFFFFF" /> Stop & Save
                   </button>
                 )}
 

@@ -351,7 +351,7 @@ export function AptitudeTracker({ data, store }) {
                   onClick={handleStartTimer}
                   style={{ padding: '8px 20px', fontWeight: 700 }}
                 >
-                  <Play size={15} fill="currentColor" /> {30 * 60 - timerSeconds >= 10 ? 'Resume Sprint' : 'Start 30m Sprint'}
+                  <Play size={15} fill="currentColor" /> {30 * 60 - timerSeconds > 0 ? 'Resume Sprint' : 'Start 30m Sprint'}
                 </button>
               ) : (
                 <button
@@ -363,14 +363,22 @@ export function AptitudeTracker({ data, store }) {
                 </button>
               )}
 
-              {30 * 60 - timerSeconds >= 10 && (
+              {(isTimerRunning || 30 * 60 - timerSeconds > 0) ? (
                 <button
-                  className="btn btn-primary"
-                  style={{ backgroundColor: 'var(--color-sage)', borderColor: 'var(--color-sage-border)', color: '#FFFFFF', padding: '8px 16px', fontWeight: 700 }}
+                  className="btn-stop-green"
+                  style={{ padding: '8px 16px', borderRadius: 'var(--radius-md)' }}
                   onClick={handleStopAndSaveTimer}
                   title="Stop early and log your studied minutes"
                 >
                   <Square size={13} fill="#FFFFFF" /> Stop & Save ({Math.max(1, Math.round((30 * 60 - timerSeconds) / 60))}m)
+                </button>
+              ) : (
+                <button
+                  className="btn-stop-green"
+                  disabled={true}
+                  style={{ padding: '8px 16px', borderRadius: 'var(--radius-md)' }}
+                >
+                  <Square size={13} fill="#FFFFFF" /> Stop & Save
                 </button>
               )}
 
@@ -586,9 +594,8 @@ export function AptitudeTracker({ data, store }) {
                           <td style={{ padding: '12px 14px' }}>
                             <button
                               onClick={() => handleToggleChapterStatus(ch.id, prog.status)}
-                              className={`badge ${
-                                isMastered ? 'badge-success' : isPracticing ? 'badge-warning' : 'badge-lavender'
-                              }`}
+                              className={`badge ${isMastered ? 'badge-success' : isPracticing ? 'badge-warning' : 'badge-lavender'
+                                }`}
                               style={{ cursor: 'pointer', border: 'none' }}
                               title="Click to cycle status"
                             >
