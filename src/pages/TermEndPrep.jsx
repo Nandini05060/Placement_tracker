@@ -88,6 +88,7 @@ export function TermEndPrep({ data, store, onNavigate }) {
   const [isTimerRunning, setIsTimerRunning] = useState(false);
   const [isBreakMode, setIsBreakMode] = useState(false);
   const [sessionsCompletedToday, setSessionsCompletedToday] = useState(0);
+  const [timerSaveToast, setTimerSaveToast] = useState('');
   const timerAnchorRef = useRef(null);
 
   // Subject Notes State
@@ -177,6 +178,34 @@ export function TermEndPrep({ data, store, onNavigate }) {
     audioService.playClick();
     setIsTimerRunning(false);
     timerAnchorRef.current = null;
+    setTimerRemaining(timerDuration);
+  }
+
+  function stopAndSaveTimer() {
+    audioService.playSuccess();
+    setIsTimerRunning(false);
+    timerAnchorRef.current = null;
+
+    const elapsedSeconds = Math.max(0, timerDuration - timerRemaining);
+    const sessionMinutes = Math.max(1, Math.round(elapsedSeconds / 60));
+
+    if (elapsedSeconds >= 10) {
+      const subjectObj = TERM_END_SUBJECTS.find(s => s.id === timerSubjectId) || currentSubject;
+      const unitObj = subjectObj.units.find(u => u.id === timerUnitId);
+
+      store.addTimerSession({
+        subject: `Semester V: ${subjectObj.name}`,
+        taskName: unitObj ? `${unitObj.title} (${sessionMinutes}m saved)` : `Exam Prep: ${subjectObj.name} (${sessionMinutes}m saved)`,
+        durationMinutes: sessionMinutes,
+        durationSeconds: elapsedSeconds,
+        dateStr: getTodayString()
+      });
+
+      setSessionsCompletedToday(prev => prev + 1);
+      setTimerSaveToast(`🎉 Recorded ${sessionMinutes}m to your study tracker!`);
+      setTimeout(() => setTimerSaveToast(''), 4000);
+    }
+
     setTimerRemaining(timerDuration);
   }
 
@@ -1015,8 +1044,31 @@ export function TermEndPrep({ data, store, onNavigate }) {
                   : `Currently Studying: ${TERM_END_SUBJECTS.find(s => s.id === timerSubjectId)?.name || 'Semester Subject'}`}
               </div>
 
+              {/* Toast Notification */}
+              {timerSaveToast && (
+                <div
+                  className="animate-fade-in"
+                  style={{
+                    marginTop: '8px',
+                    padding: '6px 14px',
+                    borderRadius: 'var(--radius-full)',
+                    backgroundColor: 'var(--color-sage-bg)',
+                    border: '1px solid var(--color-sage-border)',
+                    color: 'var(--color-botanical-dark)',
+                    fontSize: '0.8rem',
+                    fontWeight: 700,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px'
+                  }}
+                >
+                  <Sparkles size={14} />
+                  <span>{timerSaveToast}</span>
+                </div>
+              )}
+
               {/* Play / Pause / Reset Action Buttons */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginTop: '18px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '18px', flexWrap: 'wrap', justifyContent: 'center' }}>
                 {!isTimerRunning ? (
                   <button
                     onClick={startTimer}
@@ -1036,7 +1088,7 @@ export function TermEndPrep({ data, store, onNavigate }) {
                     }}
                   >
                     <Play size={18} fill="#FFFFFF" />
-                    <span>Start Focus</span>
+                    <span>{Math.max(0, timerDuration - timerRemaining) >= 10 && !isBreakMode ? 'Resume Focus' : 'Start Focus'}</span>
                   </button>
                 ) : (
                   <button
@@ -1058,6 +1110,31 @@ export function TermEndPrep({ data, store, onNavigate }) {
                   >
                     <Pause size={18} />
                     <span>Pause</span>
+                  </button>
+                )}
+
+                {/* Stop & Save Button */}
+                {Math.max(0, timerDuration - timerRemaining) >= 10 && !isBreakMode && (
+                  <button
+                    onClick={stopAndSaveTimer}
+                    title={`Stop early and record ${Math.max(1, Math.round(Math.max(0, timerDuration - timerRemaining) / 60))}m to your study tracker`}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      padding: '10px 18px',
+                      borderRadius: 'var(--radius-full)',
+                      backgroundColor: 'var(--color-sage)',
+                      color: '#FFFFFF',
+                      border: 'none',
+                      fontWeight: 700,
+                      fontSize: '0.9rem',
+                      cursor: 'pointer',
+                      boxShadow: 'var(--shadow-sm)'
+                    }}
+                  >
+                    <Square size={14} fill="#FFFFFF" />
+                    <span>Stop & Save ({Math.max(1, Math.round(Math.max(0, timerDuration - timerRemaining) / 60))}m)</span>
                   </button>
                 )}
 

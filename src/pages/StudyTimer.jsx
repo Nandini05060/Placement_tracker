@@ -14,7 +14,8 @@ import {
   Sparkles,
   Flame,
   Plus,
-  Minus
+  Minus,
+  Square
 } from 'lucide-react';
 import Modal from '../components/Modal.jsx';
 import audioService from '../services/audioService.js';
@@ -61,6 +62,7 @@ export function StudyTimer({ data, store }) {
   const [logSubject, setLogSubject] = useState(SUBJECTS[0]);
   const [logMinutes, setLogMinutes] = useState(30);
   const [logNotes, setLogNotes] = useState('');
+  const [saveToast, setSaveToast] = useState('');
 
   // Active tasks for today
   const todayTasks = (data.dailyTasks || []).filter(t => t.date === getTodayString() && !t.completed);
@@ -218,6 +220,44 @@ export function StudyTimer({ data, store }) {
     setSecondsRemaining(durationSeconds);
   }
 
+  function handleStopAndSave() {
+    audioService.playSuccess();
+    setIsRunning(false);
+    timerAnchorRef.current = null;
+
+    const elapsedSeconds = mode === 'stopwatch'
+      ? stopwatchSeconds
+      : Math.max(0, durationSeconds - secondsRemaining);
+
+    const sessionMinutes = Math.max(1, Math.round(elapsedSeconds / 60));
+    const linkedTask = todayTasks.find(t => t.id === selectedTaskId);
+
+    if (elapsedSeconds >= 10) {
+      store.addTimerSession({
+        subject: selectedSubject,
+        taskName: linkedTask ? linkedTask.text : `${mode.toUpperCase()} focus session (${sessionMinutes}m saved)`,
+        durationMinutes: sessionMinutes,
+        durationSeconds: elapsedSeconds,
+        dateStr: getTodayString()
+      });
+
+      if (linkedTask) {
+        store.updateTask(linkedTask.id, {
+          actualMinutes: (linkedTask.actualMinutes || 0) + sessionMinutes
+        });
+      }
+
+      setSaveToast(`🎉 Recorded ${sessionMinutes} minute${sessionMinutes > 1 ? 's' : ''} to your study tracker!`);
+      setTimeout(() => setSaveToast(''), 4000);
+    }
+
+    if (mode === 'stopwatch') {
+      setStopwatchSeconds(0);
+    } else {
+      setSecondsRemaining(durationSeconds);
+    }
+  }
+
   function handleSessionComplete() {
     audioService.playTimerBell();
 
@@ -272,6 +312,12 @@ export function StudyTimer({ data, store }) {
   const mins = Math.floor(displaySecs / 60);
   const secs = displaySecs % 60;
   const formattedTime = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+
+  const elapsedSeconds = mode === 'stopwatch'
+    ? stopwatchSeconds
+    : Math.max(0, durationSeconds - secondsRemaining);
+  const elapsedMins = Math.max(1, Math.round(elapsedSeconds / 60));
+  const hasElapsedStudyTime = elapsedSeconds >= 10 && !isBreak;
 
   // SVG Progress calculation
   const timerProgress = mode === 'stopwatch'
@@ -593,6 +639,32 @@ export function StudyTimer({ data, store }) {
           </div>
         )}
 
+        {/* Save Toast Notification */}
+        {saveToast && (
+          <div
+            className="animate-fade-in"
+            style={{
+              margin: '0 auto 18px auto',
+              maxWidth: '460px',
+              padding: '10px 18px',
+              borderRadius: 'var(--radius-md)',
+              backgroundColor: 'var(--color-sage-bg)',
+              border: '1px solid var(--color-sage-border)',
+              color: 'var(--color-botanical-dark)',
+              fontSize: '0.86rem',
+              fontWeight: 700,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '8px',
+              boxShadow: 'var(--shadow-sm)'
+            }}
+          >
+            <Sparkles size={16} />
+            <span>{saveToast}</span>
+          </div>
+        )}
+
         {/* Primary Action Controls */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px', flexWrap: 'wrap' }}>
           {!isRunning ? (
@@ -607,7 +679,7 @@ export function StudyTimer({ data, store }) {
               }}
             >
               <Play size={18} fill="currentColor" />
-              <span>Start Session</span>
+              <span>{hasElapsedStudyTime ? 'Resume Session' : 'Start Session'}</span>
             </button>
           ) : (
             <button
@@ -625,10 +697,35 @@ export function StudyTimer({ data, store }) {
             </button>
           )}
 
+          {/* Stop & Save Button */}
+          {hasElapsedStudyTime && (
+            <button
+              className="btn btn-primary btn-lg"
+              onClick={handleStopAndSave}
+              title={`Stop and record ${elapsedMins} minute${elapsedMins > 1 ? 's' : ''} to your tracker`}
+              style={{
+                padding: '12px 28px',
+                fontSize: '1rem',
+                fontWeight: 700,
+                borderRadius: 'var(--radius-lg)',
+                backgroundColor: 'var(--color-sage)',
+                borderColor: 'var(--color-sage-border)',
+                color: '#FFFFFF',
+                boxShadow: 'var(--shadow-sm)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px'
+              }}
+            >
+              <Square size={16} fill="#FFFFFF" />
+              <span>Stop & Save ({elapsedMins}m)</span>
+            </button>
+          )}
+
           <button
             className="btn btn-secondary btn-lg"
             onClick={handleReset}
-            title="Reset timer"
+            title="Reset timer without saving"
             style={{ padding: '12px 22px', borderRadius: 'var(--radius-lg)' }}
           >
             <RotateCcw size={18} />

@@ -17,7 +17,8 @@ import {
   Sparkles,
   Check,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  Square
 } from 'lucide-react';
 import Modal from '../components/Modal.jsx';
 import audioService from '../services/audioService.js';
@@ -117,6 +118,31 @@ export function CoreCsTracker({ data, store }) {
     }
 
     alert(`🎉 25-minute deep focus session completed for ${activeSubjectKey}!`);
+    setTimerSeconds(25 * 60);
+  }
+
+  function handleStopAndSaveTimer() {
+    audioService.playSuccess();
+    setIsTimerRunning(false);
+    const elapsedSeconds = Math.max(0, 25 * 60 - timerSeconds);
+    const sessionMinutes = Math.max(1, Math.round(elapsedSeconds / 60));
+
+    if (elapsedSeconds >= 10 && activeSubjectKey) {
+      store.addTimerSession({
+        subject: `Core CS: ${activeSubjectKey}`,
+        taskName: `Core CS Sprint: ${activeSubjectKey} (${sessionMinutes}m saved)`,
+        durationMinutes: sessionMinutes,
+        durationSeconds: elapsedSeconds,
+        dateStr: getTodayString()
+      });
+
+      const sub = coreSubjects[activeSubjectKey];
+      if (sub) {
+        store.updateCoreSubject(activeSubjectKey, {
+          studyHours: ((parseFloat(sub.studyHours || 0)) + (sessionMinutes / 60)).toFixed(1)
+        });
+      }
+    }
     setTimerSeconds(25 * 60);
   }
 
@@ -332,10 +358,10 @@ export function CoreCsTracker({ data, store }) {
                 {formattedTimer}
               </div>
 
-              <div style={{ display: 'flex', gap: '10px', marginTop: '12px' }}>
+              <div style={{ display: 'flex', gap: '8px', marginTop: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
                 {!isTimerRunning ? (
                   <button className="btn btn-primary" onClick={() => setIsTimerRunning(true)}>
-                    <Play size={16} fill="currentColor" /> Start Focus (25m)
+                    <Play size={16} fill="currentColor" /> {25 * 60 - timerSeconds >= 10 ? 'Resume Focus' : 'Start Focus (25m)'}
                   </button>
                 ) : (
                   <button className="btn btn-secondary" onClick={() => setIsTimerRunning(false)}>
@@ -343,9 +369,21 @@ export function CoreCsTracker({ data, store }) {
                   </button>
                 )}
 
+                {25 * 60 - timerSeconds >= 10 && (
+                  <button
+                    className="btn btn-primary"
+                    style={{ backgroundColor: 'var(--color-sage)', borderColor: 'var(--color-sage-border)', color: '#FFFFFF' }}
+                    onClick={handleStopAndSaveTimer}
+                    title="Stop early and record studied minutes"
+                  >
+                    <Square size={14} fill="#FFFFFF" /> Stop & Save ({Math.max(1, Math.round((25 * 60 - timerSeconds) / 60))}m)
+                  </button>
+                )}
+
                 <button
                   className="btn btn-secondary"
                   onClick={() => { setIsTimerRunning(false); setTimerSeconds(25 * 60); }}
+                  title="Reset timer without saving"
                 >
                   <RotateCcw size={15} />
                 </button>

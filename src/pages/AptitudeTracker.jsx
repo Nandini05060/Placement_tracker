@@ -16,7 +16,8 @@ import {
   Award,
   Check,
   FileText,
-  ListOrdered
+  ListOrdered,
+  Square
 } from 'lucide-react';
 import Modal from '../components/Modal.jsx';
 import audioService from '../services/audioService.js';
@@ -96,6 +97,25 @@ export function AptitudeTracker({ data, store }) {
     audioService.playClick();
     setIsTimerRunning(false);
     timerAnchorRef.current = null;
+    setTimerSeconds(30 * 60);
+  }
+
+  function handleStopAndSaveTimer() {
+    audioService.playSuccess();
+    setIsTimerRunning(false);
+    timerAnchorRef.current = null;
+    const elapsedSeconds = Math.max(0, 30 * 60 - timerSeconds);
+    const sessionMinutes = Math.max(1, Math.round(elapsedSeconds / 60));
+
+    if (elapsedSeconds >= 10) {
+      store.addTimerSession({
+        subject: 'Aptitude & Reasoning (R.S. Aggarwal)',
+        taskName: `Speed Drill: ${selectedSprintChapter} (${sessionMinutes}m saved)`,
+        durationMinutes: sessionMinutes,
+        durationSeconds: elapsedSeconds,
+        dateStr: getTodayString()
+      });
+    }
     setTimerSeconds(30 * 60);
   }
 
@@ -324,14 +344,14 @@ export function AptitudeTracker({ data, store }) {
               {formattedTime}
             </div>
 
-            <div style={{ display: 'flex', gap: '8px' }}>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center' }}>
               {!isTimerRunning ? (
                 <button
                   className="btn btn-primary"
                   onClick={handleStartTimer}
                   style={{ padding: '8px 20px', fontWeight: 700 }}
                 >
-                  <Play size={15} fill="currentColor" /> Start 30m Sprint
+                  <Play size={15} fill="currentColor" /> {30 * 60 - timerSeconds >= 10 ? 'Resume Sprint' : 'Start 30m Sprint'}
                 </button>
               ) : (
                 <button
@@ -343,10 +363,21 @@ export function AptitudeTracker({ data, store }) {
                 </button>
               )}
 
+              {30 * 60 - timerSeconds >= 10 && (
+                <button
+                  className="btn btn-primary"
+                  style={{ backgroundColor: 'var(--color-sage)', borderColor: 'var(--color-sage-border)', color: '#FFFFFF', padding: '8px 16px', fontWeight: 700 }}
+                  onClick={handleStopAndSaveTimer}
+                  title="Stop early and log your studied minutes"
+                >
+                  <Square size={13} fill="#FFFFFF" /> Stop & Save ({Math.max(1, Math.round((30 * 60 - timerSeconds) / 60))}m)
+                </button>
+              )}
+
               <button
                 className="btn btn-secondary"
                 onClick={handleResetTimer}
-                title="Reset timer to 30 mins"
+                title="Reset timer without saving"
               >
                 <RotateCcw size={15} />
               </button>
